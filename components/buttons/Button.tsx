@@ -1,4 +1,4 @@
-import styles from 'styles\Button.module.css'
+import 'styles\Button.module.css'
 
 interface ButtonProps{
     href?: string;

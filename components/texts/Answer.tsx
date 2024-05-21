@@ -1,4 +1,4 @@
-import styles from 'styles\Answer.module.css'
+import 'styles\Answer.module.css'
 
 interface AnswerProps{
     textAnswer: string;

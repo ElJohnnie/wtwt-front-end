@@ -1,4 +1,4 @@
-import styles from 'styles\Steps.modules.css'
+import 'styles\Steps.modules.css'
 
 interface StepsProps{
     number: number;

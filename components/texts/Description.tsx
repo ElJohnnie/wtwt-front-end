@@ -1,4 +1,4 @@
-import styles from 'styles\Description.modules.css'
+import 'styles\Description.modules.css'
 
 interface DescriptionProps{
     textDescription: string,

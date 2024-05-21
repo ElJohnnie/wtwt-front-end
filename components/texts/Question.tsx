@@ -1,4 +1,4 @@
-import styles from 'styles\Question.modules.css'
+import 'styles\Question.modules.css'
 
 interface QuestionProps{
     text: string;
