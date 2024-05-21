@@ -1,11 +1,10 @@
-import 'stylesButton.module.css';
-
-interface ButtonProps {
+export interface ButtonProps {
   href?: string;
   text: string;
   onClick?: (e?: any) => void;
 }
 
 export default function Button(props: ButtonProps) {
-  return <button></button>;
+  const { href, text, onClick } = props;
+  return <button>{text}</button>;
 }
