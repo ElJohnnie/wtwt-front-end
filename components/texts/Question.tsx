@@ -1,12 +1,14 @@
-import 'styles\Question.modules.css'
+import 'stylesQuestion.modules.css';
 
-interface QuestionProps{
-    text: string;
-    number: number;
+interface QuestionProps {
+  text: string;
+  number: number;
 }
 
-export default function Question(props: QuestionProps){
-     return <div>
-        <h1></h1>
-     </div>
+export default function Question(props: QuestionProps) {
+  return (
+    <div>
+      <h1></h1>
+    </div>
+  );
 }

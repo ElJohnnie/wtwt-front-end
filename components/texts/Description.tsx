@@ -1,11 +1,13 @@
-import 'styles\Description.modules.css'
+import 'stylesDescription.modules.css';
 
-interface DescriptionProps{
-    textDescription: string,
+interface DescriptionProps {
+  textDescription: string;
 }
 
-export default function Description(props: DescriptionProps){
-    return <div>
-        <p></p>
+export default function Description(props: DescriptionProps) {
+  return (
+    <div>
+      <p></p>
     </div>
+  );
 }
