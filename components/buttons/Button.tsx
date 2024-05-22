@@ -8,7 +8,7 @@ export default function Button(props: ButtonProps) {
   const { href, text, callback } = props;
   return (
     <button
-      className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+      className="bg-pink-600 hover:bg-pink-800 text-white font-bold py-2 px-12 rounded-full"
       onClick={callback}
     >
       {text}

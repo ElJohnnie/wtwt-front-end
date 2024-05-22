@@ -3,23 +3,20 @@ import { Meta, StoryFn } from '@storybook/react';
 import Button, { ButtonProps } from '../../components/buttons/Button';
 
 export default {
-  title: 'Components/Button',
+  title: 'Components/ButtonGroup',
   component: Button,
 } as Meta;
 
-const Template: StoryFn<ButtonProps> = (args) => <Button {...args} />;
+const ButtonGroupTemplate: StoryFn<ButtonProps> = (args) => (
+  <div className="flex space-x-10">
+    <Button {...args} />
+    <Button {...args} />
+    <Button {...args} />
+    <Button {...args} />
+  </div>
+);
 
-export const Default = Template.bind({});
-Default.args = {
-  text: 'Feliz',
-};
-
-export const WithOtherName = Template.bind({});
-WithOtherName.args = {
-  text: 'With other name Button',
-};
-
-export const WithCallback = Template.bind({});
+export const WithCallback = ButtonGroupTemplate.bind({});
 WithCallback.args = {
   text: 'With callback',
   callback: () => batatinha(),
