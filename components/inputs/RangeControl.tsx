@@ -1,4 +1,4 @@
-interface RangeControlProps {
+export interface RangeControlProps {
   value: number;
   min?: number;
   max?: number;

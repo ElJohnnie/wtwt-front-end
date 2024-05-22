@@ -18,3 +18,13 @@ export const WithOtherName = Template.bind({});
 WithOtherName.args = {
   text: 'With other name Button',
 };
+
+export const WithCallback = Template.bind({});
+WithCallback.args = {
+  text: 'With callback',
+  callback: () => batatinha(),
+};
+
+const batatinha = () => {
+  return alert('batatinha');
+};
