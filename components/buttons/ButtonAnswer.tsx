@@ -1,13 +1,12 @@
 import { useState } from 'react';
 
 export interface ButtonAnswerProps {
-  href?: string;
   text: string;
-  callback?: () => any;
+  callback?: () => void;
 }
 
 export default function ButtonAnswer(props: ButtonAnswerProps) {
-  const { href, text, callback } = props;
+  const { text, callback } = props;
   const [isSelected, setIsSelected] = useState(false);
 
   const handleClick = () => {
