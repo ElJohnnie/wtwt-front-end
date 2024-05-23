@@ -1,14 +1,15 @@
-import 'stylesQuestion.modules.css';
-
-interface QuestionProps {
+export interface QuestionProps {
   text: string;
-  number: number;
 }
 
 export default function Question(props: QuestionProps) {
+  const { text } = props;
+
   return (
-    <div>
-      <h1></h1>
+    <div
+      className={`py-2 px-12 rounded-full font-bold text-pink-600 text-center text-2xl`}
+    >
+      {text}
     </div>
   );
 }

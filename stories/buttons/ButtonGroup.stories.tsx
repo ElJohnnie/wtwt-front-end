@@ -1,18 +1,18 @@
 import React from 'react';
 import { Meta, StoryFn } from '@storybook/react';
-import Button, { ButtonProps } from '../../components/buttons/Button';
+import ButtonAnswer, { ButtonAnswerProps } from '../../components/buttons/ButtonAnswer';
 
 export default {
   title: 'Components/ButtonGroup',
-  component: Button,
+  component: ButtonAnswer,
 } as Meta;
 
-const ButtonGroupTemplate: StoryFn<ButtonProps> = (args) => (
+const ButtonGroupTemplate: StoryFn<ButtonAnswerProps> = (args) => (
   <div className="flex space-x-10">
-    <Button {...args} />
-    <Button {...args} />
-    <Button {...args} />
-    <Button {...args} />
+    <ButtonAnswer {...args} />
+    <ButtonAnswer {...args} />
+    <ButtonAnswer {...args} />
+    <ButtonAnswer {...args} />
   </div>
 );
 
