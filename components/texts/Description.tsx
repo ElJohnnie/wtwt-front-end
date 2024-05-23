@@ -1,13 +1,9 @@
-import 'stylesDescription.modules.css';
-
-interface DescriptionProps {
+export interface DescriptionProps {
   textDescription: string;
 }
 
 export default function Description(props: DescriptionProps) {
-  return (
-    <div>
-      <p></p>
-    </div>
-  );
+  const { textDescription } = props;
+
+  return <div className={`text-center text-pink-600`}>{textDescription}</div>;
 }
