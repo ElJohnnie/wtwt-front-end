@@ -15,7 +15,7 @@ const Template: StoryFn<ButtonAnswerProps> = (args) => (
 
 export const Default = Template.bind({});
 Default.args = {
-  text: 'Feliz',
+  text: 'LALA',
 };
 
 export const WithOtherName = Template.bind({});
