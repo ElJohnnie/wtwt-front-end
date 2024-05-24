@@ -4,7 +4,14 @@
 npm run typecheck && \
 npm run lint && \
 npm run format && \
-npm run test:unit && \
-npm run check-coverage
+npm run test:unit || {
+  echo "Erro: Os testes unitários falharam. Corrija os erros antes de continuar."
+  exit 1
+}
 
-exit $?
+npm run check-coverage || {
+  echo "Erro: A cobertura de código é baixa. Aumente a cobertura antes de continuar."
+  exit 1
+}
+
+exit 0
