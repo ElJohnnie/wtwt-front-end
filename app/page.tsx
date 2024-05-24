@@ -1,6 +1,5 @@
 'use client';
 import Image from 'next/image';
-import Button from '../components/buttons/Button';
 
 export default function Home() {
   return (
@@ -108,7 +107,6 @@ export default function Home() {
           </p>
         </a>
       </div>
-      <Button text="batata"></Button>
     </main>
   );
 }
