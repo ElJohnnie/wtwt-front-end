@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Description renderizar o component Description 1`] = `
+<div>
+  <div
+    class="text-center text-pink-600"
+  >
+    batatinha
+  </div>
+</div>
+`;
