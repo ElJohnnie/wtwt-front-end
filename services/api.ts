@@ -1,10 +1,11 @@
 import axios from 'axios';
 
 const axiosInstance = axios.create({
-  baseURL: 'http://localhost:5000/',
+  baseURL: process.env.BFF_BASE_URL,
   timeout: 5000,
   headers: {
     'Content-Type': 'application/json',
+    Authorization: `Bearer ${process.env.AUTHORIZATION_TOKEN} `,
   },
 });
 
