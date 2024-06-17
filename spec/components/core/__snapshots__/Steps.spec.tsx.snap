@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Steps quero renderizar o component de steps inicialmente 1`] = `
+<div>
+  <div
+    class="flex flex-row justify-center items-center"
+  >
+    <div
+      class="w-24 h-24 rounded-full  
+          inline-flex items-center justify-center  
+          text-white text-[24px] font-bold bg-pink-600"
+    >
+      5
+    </div>
+  </div>
+</div>
+`;

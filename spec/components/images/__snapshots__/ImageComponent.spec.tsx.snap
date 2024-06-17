@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ImageComponent quero que minha imagem renderize sem problemas 1`] = `
+<div>
+  <div
+    class="flex flex-col items-center mx-auto max-w-sm"
+  >
+    <figure
+      class="relative w-full h-64"
+    >
+      <img
+        alt="image description"
+        class="absolute inset-0"
+        data-nimg="fill"
+        decoding="async"
+        loading="lazy"
+        sizes="100vw"
+        src="/_next/image?url=https%3A%2F%2Fimage.tmdb.org%2Ft%2Fp%2Fw500%2FpB8BM7pdSp6B6Ih7QZ4DrQ3PmJK.jpg&w=3840&q=75"
+        srcset="/_next/image?url=https%3A%2F%2Fimage.tmdb.org%2Ft%2Fp%2Fw500%2FpB8BM7pdSp6B6Ih7QZ4DrQ3PmJK.jpg&w=640&q=75 640w, /_next/image?url=https%3A%2F%2Fimage.tmdb.org%2Ft%2Fp%2Fw500%2FpB8BM7pdSp6B6Ih7QZ4DrQ3PmJK.jpg&w=750&q=75 750w, /_next/image?url=https%3A%2F%2Fimage.tmdb.org%2Ft%2Fp%2Fw500%2FpB8BM7pdSp6B6Ih7QZ4DrQ3PmJK.jpg&w=828&q=75 828w, /_next/image?url=https%3A%2F%2Fimage.tmdb.org%2Ft%2Fp%2Fw500%2FpB8BM7pdSp6B6Ih7QZ4DrQ3PmJK.jpg&w=1080&q=75 1080w, /_next/image?url=https%3A%2F%2Fimage.tmdb.org%2Ft%2Fp%2Fw500%2FpB8BM7pdSp6B6Ih7QZ4DrQ3PmJK.jpg&w=1200&q=75 1200w, /_next/image?url=https%3A%2F%2Fimage.tmdb.org%2Ft%2Fp%2Fw500%2FpB8BM7pdSp6B6Ih7QZ4DrQ3PmJK.jpg&w=1920&q=75 1920w, /_next/image?url=https%3A%2F%2Fimage.tmdb.org%2Ft%2Fp%2Fw500%2FpB8BM7pdSp6B6Ih7QZ4DrQ3PmJK.jpg&w=2048&q=75 2048w, /_next/image?url=https%3A%2F%2Fimage.tmdb.org%2Ft%2Fp%2Fw500%2FpB8BM7pdSp6B6Ih7QZ4DrQ3PmJK.jpg&w=3840&q=75 3840w"
+        style="position: absolute; height: 100%; width: 100%; left: 0px; top: 0px; right: 0px; bottom: 0px; object-fit: contain; color: transparent;"
+      />
+    </figure>
+    <h3
+      class="font-bold text-pink-600 text-center text-lg mt-3 max-w-x"
+    >
+      Clube da Luta
+    </h3>
+    <p
+      class="text-pink-600 text-center text-sm mt-2 max-w-sm text-justify"
+    >
+      Um homem deprimido que sofre de insônia conhece um estranho vendedor chamado Tyler Durden e se vê morando em uma casa suja depois que seu perfeito apartamento é destruído. A dupla forma um clube com regras rígidas onde homens lutam. A parceria perfeita é comprometida quando uma mulher, Marla, atrai a atenção de Tyler.
+    </p>
+  </div>
+</div>
+`;
