@@ -6,11 +6,11 @@ exports[`Steps quero renderizar o component de steps inicialmente 1`] = `
     class="flex flex-row justify-center items-center"
   >
     <div
-      class="w-24 h-24 rounded-full  
+      class="size-10 md:size-16 xl:size-18 rounded-full  
           inline-flex items-center justify-center  
           text-white text-[24px] font-bold bg-pink-600"
     >
-      5
+      1
     </div>
   </div>
 </div>

@@ -5,9 +5,7 @@ import '@testing-library/jest-dom';
 
 describe('Description', () => {
   it('renderizar o component Description', () => {
-    const { container, getByText } = render(
-      <Description textDescription="batatinha" />,
-    );
+    const { container, getByText } = render(<Description text="batatinha" />);
 
     const receipt = getByText('batatinha');
     expect(receipt).toBeInTheDocument();
