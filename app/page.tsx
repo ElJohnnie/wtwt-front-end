@@ -16,29 +16,38 @@ export default function Home() {
           hasRange={true}
           isInactive={false}
           asComplete={true}
+          data-testid="step"
         />
         <Steps
           number="2"
           hasRange={true}
           isInactive={false}
           asComplete={true}
+          data-testid="step"
         />
         <Steps
           number="3"
           hasRange={true}
           isInactive={false}
           asComplete={true}
+          data-testid="step"
         />
         <Steps
           number="4"
           hasRange={true}
           isInactive={false}
           asComplete={false}
+          data-testid="step"
         />
-        <Steps number="5" hasRange={false} isInactive={true} />
+        <Steps
+          number="5"
+          hasRange={false}
+          isInactive={true}
+          data-testid="step"
+        />
       </div>
       <div className="flex items-center my-12">
-        <Question text="Teste 123" />
+        <Question text="Teste 123" data-testid="question" />
       </div>
       <div className="my-4 grid grid-cols-2 gap-4">
         {/* fazer um loop para os steps vindo de um context api*/}
