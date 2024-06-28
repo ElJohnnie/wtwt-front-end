@@ -1,65 +1,51 @@
 'use client';
-import '../styles/globals.css';
+import React, { useContext } from 'react';
+import { AppProvider, AppContext } from '../contexts/AppContext';
 import Steps from '../components/core/Steps';
 import Question from '../components/texts/Question';
 import ButtonAnswer from '../components/buttons/ButtonAnswer';
 import Description from '../components/texts/Description';
 import StepsButton from '../components/buttons/StepsButton';
 
-export default function Home() {
+const HomeContent: React.FC = () => {
+  const {
+    steps,
+    currentStep,
+    question,
+    answers,
+    answeredSteps,
+    nextStep,
+    prevStep,
+    answerQuestion,
+  } = useContext(AppContext);
+
   return (
     <main className="flex min-h-screen flex-col items-center p-12">
       <div className="flex justify-between flex-row items-center my-4">
-        {/* fazer um loop para os steps vindo de um context api*/}
-        <Steps
-          number="1"
-          hasRange={true}
-          isInactive={false}
-          asComplete={true}
-          data-testid="step"
-        />
-        <Steps
-          number="2"
-          hasRange={true}
-          isInactive={false}
-          asComplete={true}
-          data-testid="step"
-        />
-        <Steps
-          number="3"
-          hasRange={true}
-          isInactive={false}
-          asComplete={true}
-          data-testid="step"
-        />
-        <Steps
-          number="4"
-          hasRange={true}
-          isInactive={false}
-          asComplete={false}
-          data-testid="step"
-        />
-        <Steps
-          number="5"
-          hasRange={false}
-          isInactive={true}
-          data-testid="step"
-        />
+        {steps.current.map((step, index) => (
+          <Steps
+            key={index}
+            number={step.number}
+            hasRange={step.hasRange}
+            isInactive={index > currentStep}
+            asComplete={answeredSteps[index]}
+          />
+        ))}
       </div>
       <div className="flex items-center my-12">
-        <Question text="Teste 123" data-testid="question" />
+        <Question text={question.current[currentStep]} />
       </div>
       <div className="my-4 grid grid-cols-2 gap-4">
-        {/* fazer um loop para os steps vindo de um context api*/}
-        <ButtonAnswer text="Answer 1" />
-        <ButtonAnswer text="Answer 2" />
-        <ButtonAnswer text="Answer 3" />
-        <ButtonAnswer text="Answer 4" />
-        <ButtonAnswer text="Answer 5" />
-        <ButtonAnswer text="Answer 6" />
+        {answers.current[currentStep].map((answer, index) => (
+          <ButtonAnswer
+            key={index}
+            text={answer.text}
+            callback={answerQuestion}
+          />
+        ))}
       </div>
       <div className="flex items-center my-12">
-        <Description text={'Teste 123'} />
+        <Description text={question.current[currentStep]} />
       </div>
       <div className="flex flex-row items-center justify-between w-6/12">
         <div className="mr-2">
@@ -81,6 +67,7 @@ export default function Home() {
                 />
               </svg>
             }
+            callback={currentStep > 0 ? prevStep : undefined}
           />
         </div>
         <div className="ml-2">
@@ -101,9 +88,22 @@ export default function Home() {
                 />
               </svg>
             }
+            callback={
+              currentStep < steps.current.length - 1 ? nextStep : undefined
+            }
           />
         </div>
       </div>
     </main>
   );
-}
+};
+
+const Home: React.FC = () => {
+  return (
+    <AppProvider>
+      <HomeContent />
+    </AppProvider>
+  );
+};
+
+export default Home;
