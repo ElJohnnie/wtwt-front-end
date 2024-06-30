@@ -13,6 +13,7 @@ const HomeContent: React.FC = () => {
     currentStep,
     questions,
     answeredSteps,
+    answers,
     nextStep,
     prevStep,
     answerQuestion,
@@ -39,6 +40,7 @@ const HomeContent: React.FC = () => {
           <ButtonAnswer
             key={index}
             text={answer.text}
+            selectedAnswer={answers[currentStep]}
             callback={answerQuestion}
           />
         ))}

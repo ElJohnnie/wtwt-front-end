@@ -111,7 +111,7 @@ export const AppProvider: FC<AppProviderProps> = ({ children }) => {
     false,
     false,
   ]);
-  const answers = [] as string[];
+  const [answers, setAnswers] = useState<string[]>([]);
 
   const nextStep = () => {
     setCurrentStep((prev) => Math.min(prev + 1, steps.current.length - 1));
@@ -121,8 +121,12 @@ export const AppProvider: FC<AppProviderProps> = ({ children }) => {
     setCurrentStep((prev) => Math.max(prev - 1, 0));
   };
 
-  const answerQuestion = (element: string) => {
-    console.log(element);
+  const answerQuestion = (text: string) => {
+    setAnswers((prev) => {
+      const newAnswers = [...prev];
+      newAnswers[currentStep] = text;
+      return newAnswers;
+    });
     setAnsweredSteps((prev) => {
       const newAnsweredSteps = [...prev];
       newAnsweredSteps[currentStep] = true;
