@@ -1,4 +1,3 @@
-// context/AppContext.tsx
 import React, { createContext, useState, useRef, ReactNode, FC } from 'react';
 
 interface Step {
@@ -8,23 +7,32 @@ interface Step {
   asComplete: boolean;
 }
 
+interface Answer {
+  text: string;
+}
+
+interface Questions {
+  question: string;
+  answers: Answer[];
+}
+
 interface AppContextProps {
   steps: React.MutableRefObject<Step[]>;
   currentStep: number;
-  question: React.MutableRefObject<string[]>;
-  answers: React.MutableRefObject<{ text: string }[][]>;
+  questions: Questions[];
   answeredSteps: boolean[];
+  answers: string[];
   nextStep: () => void;
   prevStep: () => void;
-  answerQuestion: () => void;
+  answerQuestion: (text: string) => void;
 }
 
 const defaultState = {
   steps: { current: [] as Step[] },
   currentStep: 0,
-  question: { current: [] as string[] },
-  answers: { current: [] as { text: string }[][] },
+  questions: [],
   answeredSteps: [] as boolean[],
+  answers: [] as string[],
   nextStep: () => {
     throw new Error('nextStep function not implemented');
   },
@@ -52,20 +60,50 @@ export const AppProvider: FC<AppProviderProps> = ({ children }) => {
   ]);
 
   const [currentStep, setCurrentStep] = useState(0);
-  const question = useRef<string[]>([
-    'Question 1',
-    'Question 2',
-    'Question 3',
-    'Question 4',
-    'Question 5',
-  ]);
-  const answers = useRef<{ text: string }[][]>([
-    [{ text: 'Answer 1.1' }, { text: 'Answer 1.2' }, { text: 'Answer 1.3' }],
-    [{ text: 'Answer 2.1' }, { text: 'Answer 2.2' }, { text: 'Answer 2.3' }],
-    [{ text: 'Answer 3.1' }, { text: 'Answer 3.2' }, { text: 'Answer 3.3' }],
-    [{ text: 'Answer 4.1' }, { text: 'Answer 4.2' }, { text: 'Answer 4.3' }],
-    [{ text: 'Answer 5.1' }, { text: 'Answer 5.2' }, { text: 'Answer 5.3' }],
-  ]);
+
+  const questions = [
+    {
+      question: 'teste 123',
+      answers: [
+        { text: 'Answer 1.1' },
+        { text: 'Answer 1.2' },
+        { text: 'Answer 1.3' },
+      ],
+    },
+    {
+      question: 'teste 123',
+      answers: [
+        { text: 'Answer 1.1' },
+        { text: 'Answer 1.2' },
+        { text: 'Answer 1.3' },
+      ],
+    },
+    {
+      question: 'teste 123',
+      answers: [
+        { text: 'Answer 1.1' },
+        { text: 'Answer 1.2' },
+        { text: 'Answer 1.3' },
+      ],
+    },
+    {
+      question: 'teste 123',
+      answers: [
+        { text: 'Answer 1.1' },
+        { text: 'Answer 1.2' },
+        { text: 'Answer 1.3' },
+      ],
+    },
+    {
+      question: 'teste 123',
+      answers: [
+        { text: 'Answer 1.1' },
+        { text: 'Answer 1.2' },
+        { text: 'Answer 1.3' },
+      ],
+    },
+  ];
+
   const [answeredSteps, setAnsweredSteps] = useState<boolean[]>([
     false,
     false,
@@ -73,6 +111,7 @@ export const AppProvider: FC<AppProviderProps> = ({ children }) => {
     false,
     false,
   ]);
+  const answers = [] as string[];
 
   const nextStep = () => {
     setCurrentStep((prev) => Math.min(prev + 1, steps.current.length - 1));
@@ -82,7 +121,8 @@ export const AppProvider: FC<AppProviderProps> = ({ children }) => {
     setCurrentStep((prev) => Math.max(prev - 1, 0));
   };
 
-  const answerQuestion = () => {
+  const answerQuestion = (element: string) => {
+    console.log(element);
     setAnsweredSteps((prev) => {
       const newAnsweredSteps = [...prev];
       newAnsweredSteps[currentStep] = true;
@@ -96,9 +136,9 @@ export const AppProvider: FC<AppProviderProps> = ({ children }) => {
       value={{
         steps,
         currentStep,
-        question,
-        answers,
+        questions,
         answeredSteps,
+        answers,
         nextStep,
         prevStep,
         answerQuestion,

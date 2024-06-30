@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 export interface ButtonAnswerProps {
   text: string;
-  callback?: () => void;
+  callback?: (value: string) => void;
 }
 
 export default function ButtonAnswer(props: ButtonAnswerProps) {
@@ -12,7 +12,7 @@ export default function ButtonAnswer(props: ButtonAnswerProps) {
   const handleClick = () => {
     setIsSelected(!isSelected);
     if (callback) {
-      callback();
+      callback(text);
     }
   };
 

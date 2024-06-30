@@ -4,15 +4,14 @@ import { AppProvider, AppContext } from '../contexts/AppContext';
 import Steps from '../components/core/Steps';
 import Question from '../components/texts/Question';
 import ButtonAnswer from '../components/buttons/ButtonAnswer';
-import Description from '../components/texts/Description';
+// import Description from '../components/texts/Description';
 import StepsButton from '../components/buttons/StepsButton';
 
 const HomeContent: React.FC = () => {
   const {
     steps,
     currentStep,
-    question,
-    answers,
+    questions,
     answeredSteps,
     nextStep,
     prevStep,
@@ -33,10 +32,10 @@ const HomeContent: React.FC = () => {
         ))}
       </div>
       <div className="flex items-center my-12">
-        <Question text={question.current[currentStep]} />
+        <Question text={questions[currentStep].question} />
       </div>
       <div className="my-4 grid grid-cols-2 gap-4">
-        {answers.current[currentStep].map((answer, index) => (
+        {questions[currentStep].answers.map((answer, index) => (
           <ButtonAnswer
             key={index}
             text={answer.text}
@@ -44,9 +43,9 @@ const HomeContent: React.FC = () => {
           />
         ))}
       </div>
-      <div className="flex items-center my-12">
-        <Description text={question.current[currentStep]} />
-      </div>
+      {/* <div className="flex items-center my-12">
+        <Description text={questions[currentStep]} />
+      </div> */}
       <div className="flex flex-row items-center justify-between w-6/12">
         <div className="mr-2">
           <StepsButton
