@@ -11,12 +11,12 @@ const Template: StoryFn<StepsProps> = (args) => <Steps {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {
-  number: 1,
+  number: '1',
   hasRange: false,
 };
 
 export const WithRange = Template.bind({});
 WithRange.args = {
-  number: 1,
+  number: '1',
   hasRange: true,
 };

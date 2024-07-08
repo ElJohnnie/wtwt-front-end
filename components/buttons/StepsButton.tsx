@@ -13,7 +13,7 @@ export default function StepsButton(props: StepsButtonProps) {
       <button
         className="w-24 h-24 rounded-full  
           inline-flex items-center justify-center  
-          text-white text-[24px] font-bold bg-pink-600 hover:bg-pink-400"
+          text-white text-[24px] font-bold bg-pink-600 hover:bg-pink-800"
         onClick={callback}
       >
         {icon}

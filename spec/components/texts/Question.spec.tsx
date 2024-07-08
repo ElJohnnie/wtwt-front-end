@@ -4,7 +4,7 @@ import Question from '../../../components/texts/Question';
 import '@testing-library/jest-dom';
 
 describe('Description', () => {
-  it('renderizar o component Description', () => {
+  it('renderizar o component Question', () => {
     const { container, getByText } = render(<Question text="batatinha?" />);
 
     const receipt = getByText('batatinha?');
