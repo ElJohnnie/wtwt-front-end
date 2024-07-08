@@ -4,7 +4,7 @@ import { AppProvider, AppContext } from '../contexts/AppContext';
 import Steps from '../components/core/Steps';
 import Question from '../components/texts/Question';
 import ButtonAnswer from '../components/buttons/ButtonAnswer';
-// import Description from '../components/texts/Description';
+import Description from '../components/texts/Description';
 import StepsButton from '../components/buttons/StepsButton';
 
 const HomeContent: React.FC = () => {
@@ -45,11 +45,11 @@ const HomeContent: React.FC = () => {
           />
         ))}
       </div>
-      {/* <div className="flex items-center my-12">
-        <Description text={questions[currentStep]} />
-      </div> */}
-      <div className="flex flex-row items-center justify-between w-6/12">
-        <div className="mr-2">
+      <div className="flex items-center my-12">
+        <Description text={questions[currentStep].description} />
+      </div>
+      <div className="flex flex-row items-center justify-center w-6/12 space-x-4">
+        <div className={`${currentStep <= 0 ? 'hidden' : ''}`}>
           <StepsButton
             icon={
               <svg
@@ -71,7 +71,11 @@ const HomeContent: React.FC = () => {
             callback={currentStep > 0 ? prevStep : undefined}
           />
         </div>
-        <div className="ml-2">
+        <div
+          className={`${
+            currentStep >= 4 || !answeredSteps[currentStep] ? 'hidden' : ''
+          }`}
+        >
           <StepsButton
             icon={
               <svg

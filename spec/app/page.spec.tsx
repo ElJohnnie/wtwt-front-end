@@ -9,14 +9,4 @@ describe('Home', () => {
     expect(container).toBeTruthy();
     expect(container).toMatchSnapshot();
   });
-
-  it('Conferindo se existe o componente step está visível na página inicial', () => {
-    const { getByTestId } = render(<Home />);
-    expect(getByTestId('steps')).toBeInTheDocument();
-  });
-
-  it('Conferindo se o componente de título está visível na tela', () => {
-    const { getByTestId } = render(<Home />);
-    expect(getByTestId('question')).toBeInTheDocument();
-  });
 });

@@ -1,4 +1,11 @@
-import React, { createContext, useState, useRef, ReactNode, FC } from 'react';
+import React, {
+  createContext,
+  useState,
+  useRef,
+  useCallback,
+  ReactNode,
+  FC,
+} from 'react';
 
 interface Step {
   number: string;
@@ -14,6 +21,7 @@ interface Answer {
 interface Questions {
   question: string;
   answers: Answer[];
+  description: string;
 }
 
 interface AppContextProps {
@@ -59,51 +67,64 @@ export const AppProvider: FC<AppProviderProps> = ({ children }) => {
     { number: '5', hasRange: false, isInactive: true, asComplete: false },
   ]);
 
-  const [currentStep, setCurrentStep] = useState(0);
-
-  const questions = [
+  const questions: Questions[] = [
     {
-      question: 'teste 123',
+      question: 'Como você está se sentindo agora?',
       answers: [
-        { text: 'Answer 1.1' },
-        { text: 'Answer 1.2' },
-        { text: 'Answer 1.3' },
+        { text: 'Feliz' },
+        { text: 'Triste' },
+        { text: 'Ansioso' },
+        { text: 'Bem animado' },
+        { text: 'Entediado' },
       ],
+      description: 'teste 123',
     },
     {
-      question: 'teste 123',
+      question: 'Qual o seu estilo de filme favorito?',
       answers: [
-        { text: 'Answer 1.1' },
-        { text: 'Answer 1.2' },
-        { text: 'Answer 1.3' },
+        { text: 'Ação' },
+        { text: 'Aventura' },
+        { text: 'Animação' },
+        { text: 'Comédia' },
+        { text: 'Drama' },
+        { text: 'Fantasia' },
+        { text: 'SciFi' },
+        { text: 'Thriller' },
+        { text: 'Terror/Suspense' },
       ],
+      description: 'teste 123',
     },
     {
-      question: 'teste 123',
+      question: 'Seu segundo estilo de filme favorito?',
       answers: [
-        { text: 'Answer 1.1' },
-        { text: 'Answer 1.2' },
-        { text: 'Answer 1.3' },
+        { text: 'Ação' },
+        { text: 'Aventura' },
+        { text: 'Animação' },
+        { text: 'Comédia' },
+        { text: 'Drama' },
+        { text: 'Fantasia' },
+        { text: 'SciFi' },
+        { text: 'Thriller' },
+        { text: 'Terror/Suspense' },
       ],
+      description: 'teste 123',
     },
     {
-      question: 'teste 123',
+      question: 'Qual periodo de lançamento mais lhe convém?',
       answers: [
-        { text: 'Answer 1.1' },
-        { text: 'Answer 1.2' },
-        { text: 'Answer 1.3' },
+        { text: '2000' },
+        { text: '1990' },
+        { text: '1980' },
+        { text: '1970' },
+        { text: '1960' },
+        { text: '1950' },
+        { text: '1940' },
       ],
-    },
-    {
-      question: 'teste 123',
-      answers: [
-        { text: 'Answer 1.1' },
-        { text: 'Answer 1.2' },
-        { text: 'Answer 1.3' },
-      ],
+      description: 'teste 123',
     },
   ];
 
+  const [currentStep, setCurrentStep] = useState(0);
   const [answeredSteps, setAnsweredSteps] = useState<boolean[]>([
     false,
     false,
@@ -113,27 +134,30 @@ export const AppProvider: FC<AppProviderProps> = ({ children }) => {
   ]);
   const [answers, setAnswers] = useState<string[]>([]);
 
-  const nextStep = () => {
+  const nextStep = useCallback(() => {
     setCurrentStep((prev) => Math.min(prev + 1, steps.current.length - 1));
-  };
+  }, []);
 
-  const prevStep = () => {
+  const prevStep = useCallback(() => {
     setCurrentStep((prev) => Math.max(prev - 1, 0));
-  };
+  }, []);
 
-  const answerQuestion = (text: string) => {
-    setAnswers((prev) => {
-      const newAnswers = [...prev];
-      newAnswers[currentStep] = text;
-      return newAnswers;
-    });
-    setAnsweredSteps((prev) => {
-      const newAnsweredSteps = [...prev];
-      newAnsweredSteps[currentStep] = true;
-      return newAnsweredSteps;
-    });
-    nextStep();
-  };
+  const answerQuestion = useCallback(
+    (text: string) => {
+      setAnswers((prev) => {
+        const newAnswers = [...prev];
+        newAnswers[currentStep] = text;
+        return newAnswers;
+      });
+      setAnsweredSteps((prev) => {
+        const newAnsweredSteps = [...prev];
+        newAnsweredSteps[currentStep] = true;
+        return newAnsweredSteps;
+      });
+      nextStep();
+    },
+    [currentStep, nextStep],
+  );
 
   return (
     <AppContext.Provider
