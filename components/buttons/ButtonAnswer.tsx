@@ -1,25 +1,23 @@
-import { useState } from 'react';
-
 export interface ButtonAnswerProps {
   text: string;
-  callback?: () => void;
+  selectedAnswer?: string;
+  callback?: (value: string) => void;
 }
 
 export default function ButtonAnswer(props: ButtonAnswerProps) {
-  const { text, callback } = props;
-  const [isSelected, setIsSelected] = useState(false);
+  const { text, callback, selectedAnswer } = props;
+  const validateAnswer = text === selectedAnswer;
 
   const handleClick = () => {
-    setIsSelected(!isSelected);
     if (callback) {
-      callback();
+      callback(text);
     }
   };
 
   return (
     <button
-      className={`py-2 px-12 rounded-full font-bold text-white ${
-        isSelected ? 'bg-pink-400' : 'bg-pink-600 hover:bg-pink-800'
+      className={`focus:outline-none focus:ring-4 font-medium text-xl px-8 md:px-12 py-4 lg:px-24 lg:py-5 text-center mb-2 hover:bg-pink-800  rounded-full text-white ${
+        validateAnswer ? 'bg-pink-900' : 'bg-pink-600'
       }`}
       onClick={handleClick}
     >

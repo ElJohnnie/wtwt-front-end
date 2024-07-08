@@ -13,5 +13,5 @@ const Template: StoryFn<DescriptionProps> = (args) => <Description {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {
-  textDescription: 'Escolha uma opção para o próximo passo',
+  text: 'Escolha uma opção para o próximo passo',
 };
