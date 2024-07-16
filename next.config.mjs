@@ -2,7 +2,7 @@ import withBundleAnalyzer from '@next/bundle-analyzer';
 import BundleSizePlugin from './bundle-size-plugin.mjs';
 
 const bundleAnalyzer = withBundleAnalyzer({
-  enabled: true,
+  enabled: false,
   openAnalyzer: false,
   generateStatsFile: true,
   analyzerMode: 'static',
@@ -11,6 +11,9 @@ const bundleAnalyzer = withBundleAnalyzer({
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  images: {
+    domains: ['community.revelo.com.br'],
+  },
   async rewrites() {
     return [
       {
@@ -19,8 +22,8 @@ const nextConfig = {
       },
     ];
   },
-  webpack(config, { isServer }) {
-    if (!isServer) {
+  webpack(config, { isServer, dev }) {
+    if (!isServer && !dev) {
       config.plugins.push(new BundleSizePlugin());
     }
     return config;

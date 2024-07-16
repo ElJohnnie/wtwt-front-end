@@ -24,6 +24,7 @@ export interface AppContextProps {
   nextStep: () => void;
   prevStep: () => void;
   answerQuestion: (text: string) => void;
+  showResult: boolean;
 }
 
 export interface StepsButtonProps {
@@ -48,8 +49,8 @@ export interface StepsProps {
 
 export interface ImageComponentProps {
   href: string;
-  title: string;
-  description: string;
+  title?: string;
+  description?: string;
 }
 
 export interface DescriptionProps {

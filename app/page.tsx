@@ -1,13 +1,16 @@
 'use client';
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { AppProvider, AppContext } from '../contexts/AppContext';
 import Steps from '../components/core/Steps';
 import Question from '../components/texts/Question';
 import ButtonAnswer from '../components/buttons/ButtonAnswer';
 import Description from '../components/texts/Description';
 import StepsButton from '../components/buttons/StepsButton';
+import { RoutesUrls } from '../utils/enums/routesUrl';
+import { useNavigation } from '../hooks/useNavigation';
+useNavigation;
 
-const HomeContent: React.FC = () => {
+const Home: React.FC = () => {
   const {
     steps,
     currentStep,
@@ -17,7 +20,16 @@ const HomeContent: React.FC = () => {
     nextStep,
     prevStep,
     answerQuestion,
+    showResult,
   } = useContext(AppContext);
+
+  const { replace } = useNavigation();
+
+  useEffect(() => {
+    if (showResult) {
+      replace(RoutesUrls.RESULT);
+    }
+  }, [showResult, replace]);
 
   return (
     <main className="flex min-h-screen flex-col items-center p-12">
@@ -71,11 +83,7 @@ const HomeContent: React.FC = () => {
             callback={currentStep > 0 ? prevStep : undefined}
           />
         </div>
-        <div
-          className={`${
-            currentStep >= 4 || !answeredSteps[currentStep] ? 'hidden' : ''
-          }`}
-        >
+        <div className={`${!answeredSteps[currentStep] ? 'hidden' : ''}`}>
           <StepsButton
             icon={
               <svg
@@ -103,12 +111,12 @@ const HomeContent: React.FC = () => {
   );
 };
 
-const Home: React.FC = () => {
+const HomePage: React.FC = () => {
   return (
     <AppProvider>
-      <HomeContent />
+      <Home />
     </AppProvider>
   );
 };
 
-export default Home;
+export default HomePage;

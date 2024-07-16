@@ -23,6 +23,7 @@ const defaultState = {
   answerQuestion: () => {
     throw new Error('answerQuestion function not implemented');
   },
+  showResult: false,
 };
 
 export const AppContext = createContext<AppContextProps>(defaultState);
@@ -97,7 +98,10 @@ export const AppProvider: FC<AppProviderProps> = ({ children }) => {
     },
   ];
 
-  const [currentStep, setCurrentStep] = useState(0);
+  const [currentStep, setCurrentStep] = useState<number>(0);
+
+  const [showResult, setShowResult] = useState<boolean>(false);
+
   const [answeredSteps, setAnsweredSteps] = useState<boolean[]>([
     false,
     false,
@@ -117,19 +121,33 @@ export const AppProvider: FC<AppProviderProps> = ({ children }) => {
 
   const answerQuestion = useCallback(
     (text: string) => {
-      setAnswers((prev) => {
-        const newAnswers = [...prev];
-        newAnswers[currentStep] = text;
-        return newAnswers;
-      });
-      setAnsweredSteps((prev) => {
-        const newAnsweredSteps = [...prev];
-        newAnsweredSteps[currentStep] = true;
-        return newAnsweredSteps;
-      });
-      nextStep();
+      if (currentStep < questions.length - 1) {
+        setAnswers((prev) => {
+          const newAnswers = [...prev];
+          newAnswers[currentStep] = text;
+          return newAnswers;
+        });
+        setAnsweredSteps((prev) => {
+          const newAnsweredSteps = [...prev];
+          newAnsweredSteps[currentStep] = true;
+          return newAnsweredSteps;
+        });
+        nextStep();
+      } else {
+        setAnswers((prev) => {
+          const newAnswers = [...prev];
+          newAnswers[currentStep] = text;
+          return newAnswers;
+        });
+        setAnsweredSteps((prev) => {
+          const newAnsweredSteps = [...prev];
+          newAnsweredSteps[currentStep] = true;
+          return newAnsweredSteps;
+        });
+        setShowResult(true);
+      }
     },
-    [currentStep, nextStep],
+    [currentStep, nextStep, questions.length],
   );
 
   return (
@@ -143,6 +161,7 @@ export const AppProvider: FC<AppProviderProps> = ({ children }) => {
         nextStep,
         prevStep,
         answerQuestion,
+        showResult,
       }}
     >
       {children}
