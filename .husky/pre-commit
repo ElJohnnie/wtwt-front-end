@@ -8,5 +8,6 @@ npm run test:unit || {
   echo "Erro: Verifique as cobertura ou se algum teste falhou."
   exit 1
 }
+npm run build
 
 exit 0
