@@ -1,0 +1,61 @@
+export interface Step {
+  number: string;
+  hasRange: boolean;
+  isInactive: boolean;
+  asComplete: boolean;
+}
+
+export interface Answer {
+  text: string;
+}
+
+export interface Questions {
+  question: string;
+  answers: Answer[];
+  description: string;
+}
+
+export interface AppContextProps {
+  steps: React.MutableRefObject<Step[]>;
+  currentStep: number;
+  questions: Questions[];
+  answeredSteps: boolean[];
+  answers: string[];
+  nextStep: () => void;
+  prevStep: () => void;
+  answerQuestion: (text: string) => void;
+}
+
+export interface StepsButtonProps {
+  icon: JSX.Element;
+  callback?: () => void;
+  text?: string;
+}
+
+export interface ButtonAnswerProps {
+  text: string;
+  selectedAnswer?: string;
+  callback?: (value: string) => void;
+}
+
+export interface StepsProps {
+  number: string;
+  hasRange: boolean;
+  isEmpty?: boolean;
+  asComplete?: boolean;
+  isInactive: boolean;
+}
+
+export interface ImageComponentProps {
+  href: string;
+  title: string;
+  description: string;
+}
+
+export interface DescriptionProps {
+  text: string;
+}
+
+export interface QuestionProps {
+  text: string;
+}

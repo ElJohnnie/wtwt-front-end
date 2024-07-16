@@ -1,6 +1,7 @@
 import React from 'react';
 import { Meta, StoryFn } from '@storybook/react';
-import Question, { QuestionProps } from '../../components/texts/Question';
+import Question from '../../components/texts/Question';
+import { QuestionProps } from '../../types';
 
 export default {
   title: 'Components/Question',

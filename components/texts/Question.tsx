@@ -1,6 +1,5 @@
-export interface QuestionProps {
-  text: string;
-}
+import React from 'react';
+import { QuestionProps } from '../../types';
 
 export default function Question(props: QuestionProps) {
   const { text } = props;

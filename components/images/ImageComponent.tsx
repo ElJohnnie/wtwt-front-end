@@ -1,11 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
-
-export interface ImageComponentProps {
-  href: string;
-  title: string;
-  description: string;
-}
+import { ImageComponentProps } from '../../types';
 
 export default function ImageComponent(props: ImageComponentProps) {
   const { href, title, description } = props;
@@ -23,7 +18,7 @@ export default function ImageComponent(props: ImageComponentProps) {
       <h3 className="font-bold text-pink-600 text-center text-lg mt-3 max-w-x">
         {title}
       </h3>
-      <p className="text-pink-600 text-center text-sm mt-2 max-w-sm text-justify">
+      <p className="text-pink-600 text-center text-sm mt-2 max-w-sm">
         {description}
       </p>
     </div>

@@ -1,8 +1,7 @@
 import React from 'react';
 import { Meta, StoryFn } from '@storybook/react';
-import StepsButton, {
-  StepsButtonProps,
-} from '../../components/buttons/StepsButton';
+import StepsButton from '../../components/buttons/StepsButton';
+import { StepsButtonProps } from '../../types';
 
 export default {
   title: 'Components/StepsButton',

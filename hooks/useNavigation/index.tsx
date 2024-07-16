@@ -7,7 +7,7 @@ export const useNavigation = () => {
   const redirect = (url: RouteUrl) => {
     router.push(url);
   };
-  const replace = (route: string) => {
+  const replace = (route: RouteUrl) => {
     router.replace(route);
   };
   const back = () => {

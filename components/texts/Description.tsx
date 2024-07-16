@@ -1,6 +1,5 @@
-export interface DescriptionProps {
-  text: string;
-}
+import React from 'react';
+import { DescriptionProps } from '../../types';
 
 export default function Description(props: DescriptionProps) {
   const { text } = props;
