@@ -1,10 +1,6 @@
 import React from 'react';
 
-export interface StepsButtonProps {
-  icon: JSX.Element;
-  callback?: () => void;
-  text?: string;
-}
+import { StepsButtonProps } from '../../types';
 
 export default function StepsButton(props: StepsButtonProps) {
   const { icon, callback, text } = props;

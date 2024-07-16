@@ -1,8 +1,7 @@
 import React from 'react';
 import { Meta, StoryFn } from '@storybook/react';
-import ButtonAnswer, {
-  ButtonAnswerProps,
-} from '../../components/buttons/ButtonAnswer';
+import ButtonAnswer from '../../components/buttons/ButtonAnswer';
+import { ButtonAnswerProps } from '../../types';
 
 export default {
   title: 'Components/ButtonGroup',

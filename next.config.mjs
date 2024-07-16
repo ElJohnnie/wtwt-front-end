@@ -1,3 +1,14 @@
+import withBundleAnalyzer from '@next/bundle-analyzer';
+import BundleSizePlugin from './bundle-size-plugin.mjs';
+
+const bundleAnalyzer = withBundleAnalyzer({
+  enabled: true,
+  openAnalyzer: false,
+  generateStatsFile: true,
+  analyzerMode: 'static',
+  reportFilename: './bundle-analyzer-report.html',
+});
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   async rewrites() {
@@ -8,6 +19,12 @@ const nextConfig = {
       },
     ];
   },
+  webpack(config, { isServer }) {
+    if (!isServer) {
+      config.plugins.push(new BundleSizePlugin());
+    }
+    return config;
+  },
 };
 
-export default nextConfig;
+export default bundleAnalyzer(nextConfig);

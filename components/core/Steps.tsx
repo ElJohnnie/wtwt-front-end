@@ -1,12 +1,5 @@
 import React from 'react';
-
-export interface StepsProps {
-  number: string;
-  hasRange: boolean;
-  isEmpty?: boolean;
-  asComplete?: boolean;
-  isInactive: boolean;
-}
+import { StepsProps } from '../../types';
 
 export default function Steps(props: StepsProps) {
   const { number, hasRange, asComplete, isEmpty, isInactive } = props;

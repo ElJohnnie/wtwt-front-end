@@ -6,34 +6,7 @@ import React, {
   ReactNode,
   FC,
 } from 'react';
-
-interface Step {
-  number: string;
-  hasRange: boolean;
-  isInactive: boolean;
-  asComplete: boolean;
-}
-
-interface Answer {
-  text: string;
-}
-
-interface Questions {
-  question: string;
-  answers: Answer[];
-  description: string;
-}
-
-interface AppContextProps {
-  steps: React.MutableRefObject<Step[]>;
-  currentStep: number;
-  questions: Questions[];
-  answeredSteps: boolean[];
-  answers: string[];
-  nextStep: () => void;
-  prevStep: () => void;
-  answerQuestion: (text: string) => void;
-}
+import { AppContextProps, Step, Questions } from '../types';
 
 const defaultState = {
   steps: { current: [] as Step[] },

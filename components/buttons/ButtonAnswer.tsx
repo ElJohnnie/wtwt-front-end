@@ -1,8 +1,5 @@
-export interface ButtonAnswerProps {
-  text: string;
-  selectedAnswer?: string;
-  callback?: (value: string) => void;
-}
+import React from 'react';
+import { ButtonAnswerProps } from '../../types';
 
 export default function ButtonAnswer(props: ButtonAnswerProps) {
   const { text, callback, selectedAnswer } = props;
