@@ -12,7 +12,7 @@ const bundleAnalyzer = withBundleAnalyzer({
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ['community.revelo.com.br'],
+    domains: ['community.revelo.com.br', 'image.tmdb.org'],
   },
   async rewrites() {
     return [

@@ -1,6 +1,6 @@
 'use client';
 import React, { useContext, useEffect } from 'react';
-import { AppProvider, AppContext } from '../contexts/AppContext';
+import { AppContext } from '../contexts/AppContext';
 import Steps from '../components/core/Steps';
 import Question from '../components/texts/Question';
 import ButtonAnswer from '../components/buttons/ButtonAnswer';
@@ -8,7 +8,6 @@ import Description from '../components/texts/Description';
 import StepsButton from '../components/buttons/StepsButton';
 import { RoutesUrls } from '../utils/enums/routesUrl';
 import { useNavigation } from '../hooks/useNavigation';
-useNavigation;
 
 const Home: React.FC = () => {
   const {
@@ -52,6 +51,7 @@ const Home: React.FC = () => {
           <ButtonAnswer
             key={index}
             text={answer.text}
+            value={answer.value}
             selectedAnswer={answers[currentStep]}
             callback={answerQuestion}
           />
@@ -112,11 +112,7 @@ const Home: React.FC = () => {
 };
 
 const HomePage: React.FC = () => {
-  return (
-    <AppProvider>
-      <Home />
-    </AppProvider>
-  );
+  return <Home />;
 };
 
 export default HomePage;
