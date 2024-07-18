@@ -46,7 +46,7 @@ const Home: React.FC = () => {
       <div className="flex items-center my-12">
         <Question text={questions[currentStep].question} />
       </div>
-      <div className="my-4 grid grid-cols-2 gap-4">
+      <div className="my-4 flex flex-wrap gap-4 justify-center max-w-2xl">
         {questions[currentStep].answers.map((answer, index) => (
           <ButtonAnswer
             key={index}
