@@ -53,7 +53,7 @@ const Home: React.FC = () => {
             text={answer.text}
             value={answer.value}
             selectedAnswer={answers[currentStep]}
-            callback={answerQuestion}
+            onClick={answerQuestion}
           />
         ))}
       </div>
@@ -80,7 +80,7 @@ const Home: React.FC = () => {
                 />
               </svg>
             }
-            callback={currentStep > 0 ? prevStep : undefined}
+            onClick={currentStep > 0 ? prevStep : undefined}
           />
         </div>
         <div className={`${!answeredSteps[currentStep] ? 'hidden' : ''}`}>
@@ -101,7 +101,7 @@ const Home: React.FC = () => {
                 />
               </svg>
             }
-            callback={
+            onClick={
               currentStep < steps.current.length - 1 ? nextStep : undefined
             }
           />

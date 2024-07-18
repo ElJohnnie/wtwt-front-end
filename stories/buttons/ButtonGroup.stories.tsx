@@ -20,7 +20,7 @@ const ButtonGroupTemplate: StoryFn<ButtonAnswerProps> = (args) => (
 export const WithCallback = ButtonGroupTemplate.bind({});
 WithCallback.args = {
   text: 'With callback',
-  callback: () => batatinha(),
+  onClick: () => batatinha(),
 };
 
 const batatinha = () => {

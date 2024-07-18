@@ -89,7 +89,7 @@ WithCallback.args = {
       />
     </svg>
   ),
-  callback: () => batatinha(),
+  onClick: () => batatinha(),
 };
 
 const batatinha = () => {

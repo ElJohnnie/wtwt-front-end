@@ -30,7 +30,7 @@ export interface AppContextProps {
 
 export interface StepsButtonProps {
   icon: JSX.Element;
-  callback?: () => void;
+  onClick?: () => void;
   text?: string;
 }
 
@@ -38,7 +38,7 @@ export interface ButtonAnswerProps {
   text: string;
   selectedAnswer?: string;
   value?: string;
-  callback?: (value: string) => void;
+  onClick?: (value: string) => void;
 }
 
 export interface StepsProps {

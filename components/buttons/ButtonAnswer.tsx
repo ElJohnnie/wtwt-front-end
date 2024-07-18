@@ -2,12 +2,12 @@ import React from 'react';
 import { ButtonAnswerProps } from '../../types';
 
 export default function ButtonAnswer(props: ButtonAnswerProps) {
-  const { text, callback, selectedAnswer, value } = props;
+  const { text, onClick, selectedAnswer, value } = props;
   const validateAnswer = text === selectedAnswer;
 
   const handleClick = () => {
-    if (callback && value) {
-      callback(value);
+    if (onClick && value) {
+      onClick(value);
     }
   };
 

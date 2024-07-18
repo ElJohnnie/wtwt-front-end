@@ -47,6 +47,10 @@ const Result: FC = () => {
     }
   }, [answers, replace]);
 
+  const goToStart = () => {
+    replace(RoutesUrls.HOME);
+  };
+
   useEffect(() => {
     loadData();
   }, [loadData]);
@@ -71,6 +75,7 @@ const Result: FC = () => {
           <div className="my-4 grid grid-cols-2 gap-4">
             <StepsButton
               text="Refazer do início"
+              onClick={goToStart}
               icon={
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
