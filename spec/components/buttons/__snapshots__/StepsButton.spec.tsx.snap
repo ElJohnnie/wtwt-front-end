@@ -6,7 +6,7 @@ exports[`StepsButton quero renderizar o StepsButton inicialmente 1`] = `
     class="w-full flex flex-col justify-center items-center"
   >
     <button
-      class="w-24 h-24 rounded-full   inline-flex items-center justify-center   text-white text-[24px] font-bold bg-pink-600 hover:bg-pink-400"
+      class="w-24 h-24 rounded-full   inline-flex items-center justify-center   text-white text-[24px] font-bold bg-pink-600 hover:bg-pink-800"
     >
       <svg
         class="size-6"

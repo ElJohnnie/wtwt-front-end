@@ -1,5 +1,19 @@
+import withBundleAnalyzer from '@next/bundle-analyzer';
+import BundleSizePlugin from './bundle-size-plugin.mjs';
+
+const bundleAnalyzer = withBundleAnalyzer({
+  enabled: false,
+  openAnalyzer: false,
+  generateStatsFile: true,
+  analyzerMode: 'static',
+  reportFilename: './bundle-analyzer-report.html',
+});
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  images: {
+    domains: ['community.revelo.com.br', 'image.tmdb.org'],
+  },
   async rewrites() {
     return [
       {
@@ -8,6 +22,12 @@ const nextConfig = {
       },
     ];
   },
+  webpack(config, { isServer, dev }) {
+    if (!isServer && !dev) {
+      config.plugins.push(new BundleSizePlugin());
+    }
+    return config;
+  },
 };
 
-export default nextConfig;
+export default bundleAnalyzer(nextConfig);

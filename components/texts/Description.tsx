@@ -1,9 +1,8 @@
-export interface DescriptionProps {
-  textDescription: string;
-}
+import React from 'react';
+import { DescriptionProps } from '../../types';
 
 export default function Description(props: DescriptionProps) {
-  const { textDescription } = props;
+  const { text } = props;
 
-  return <div className={`text-center text-pink-600`}>{textDescription}</div>;
+  return <div className={`text-center text-pink-600`}>{text}</div>;
 }

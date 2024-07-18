@@ -1,8 +1,7 @@
 import React from 'react';
 import { Meta, StoryFn } from '@storybook/react';
-import ImageComponent, {
-  ImageComponentProps,
-} from '../../components/images/ImageComponent';
+import ImageComponent from '../../components/images/ImageComponent';
+import { ImageComponentProps } from '../../types';
 
 export default {
   title: 'Components/ImageComponent',

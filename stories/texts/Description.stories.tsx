@@ -1,8 +1,7 @@
 import React from 'react';
 import { Meta, StoryFn } from '@storybook/react';
-import Description, {
-  DescriptionProps,
-} from '../../components/texts/Description';
+import Description from '../../components/texts/Description';
+import { DescriptionProps } from '../../types';
 
 export default {
   title: 'Components/Description',
@@ -13,5 +12,5 @@ const Template: StoryFn<DescriptionProps> = (args) => <Description {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {
-  textDescription: 'Escolha uma opção para o próximo passo',
+  text: 'Escolha uma opção para o próximo passo',
 };

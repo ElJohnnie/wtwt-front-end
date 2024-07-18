@@ -6,7 +6,7 @@ describe('Steps', () => {
   it('quero renderizar o component de steps inicialmente', () => {
     const { container } = render(
       <Steps
-        number={5}
+        number={'1'}
         hasRange={false}
         asComplete={false}
         isEmpty={false}
@@ -19,7 +19,7 @@ describe('Steps', () => {
   it('quero renderizar o component de steps inativo', () => {
     const { container } = render(
       <Steps
-        number={5}
+        number={'1'}
         hasRange={false}
         asComplete={false}
         isEmpty={false}
@@ -31,7 +31,7 @@ describe('Steps', () => {
   it('quero renderizar o component de steps com o range completo', () => {
     const { container } = render(
       <Steps
-        number={5}
+        number={'1'}
         hasRange={true}
         asComplete={true}
         isEmpty={false}
@@ -43,7 +43,7 @@ describe('Steps', () => {
   it('quero renderizar o component de steps com o range incompleto', () => {
     const { container } = render(
       <Steps
-        number={5}
+        number={'1'}
         hasRange={true}
         asComplete={false}
         isEmpty={false}
@@ -55,7 +55,7 @@ describe('Steps', () => {
   it('quero renderizar o component de steps com o range vazio', () => {
     const { container } = render(
       <Steps
-        number={5}
+        number={'1'}
         hasRange={true}
         asComplete={false}
         isEmpty={true}
