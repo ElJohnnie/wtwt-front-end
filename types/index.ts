@@ -26,6 +26,7 @@ export interface AppContextProps {
   prevStep: () => void;
   answerQuestion: (text: string) => void;
   showResult: boolean;
+  resetState: () => void;
 }
 
 export interface StepsButtonProps {

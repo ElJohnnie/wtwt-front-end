@@ -24,6 +24,9 @@ const defaultState = {
     throw new Error('answerQuestion function not implemented');
   },
   showResult: false,
+  resetState: () => {
+    throw new Error('resetState function not implemented');
+  },
 };
 
 export const AppContext = createContext<AppContextProps>(defaultState);
@@ -51,7 +54,7 @@ export const AppProvider: FC<AppProviderProps> = ({ children }) => {
         { text: 'Bem animado', value: 'excited' },
         { text: 'Entediado', value: 'bored' },
       ],
-      description: 'teste 123',
+      description: '',
     },
     {
       question: 'Qual o seu estilo de filme favorito?',
@@ -66,7 +69,7 @@ export const AppProvider: FC<AppProviderProps> = ({ children }) => {
         { text: 'Thriller', value: 'Thriller' },
         { text: 'Terror/Suspense', value: 'Horror' },
       ],
-      description: 'teste 123',
+      description: '',
     },
     {
       question: 'Seu segundo estilo de filme favorito?',
@@ -81,11 +84,12 @@ export const AppProvider: FC<AppProviderProps> = ({ children }) => {
         { text: 'Thriller', value: 'Thriller' },
         { text: 'Terror/Suspense', value: 'Horror' },
       ],
-      description: 'teste 123',
+      description: '',
     },
     {
       question: 'Qual período de lançamento mais lhe convém?',
       answers: [
+        { text: '2010', value: '2010' },
         { text: '2000', value: '2000' },
         { text: '1990', value: '1990' },
         { text: '1980', value: '1980' },
@@ -94,14 +98,12 @@ export const AppProvider: FC<AppProviderProps> = ({ children }) => {
         { text: '1950', value: '1950' },
         { text: '1940', value: '1940' },
       ],
-      description: 'teste 123',
+      description: '',
     },
   ];
 
   const [currentStep, setCurrentStep] = useState<number>(0);
-
   const [showResult, setShowResult] = useState<boolean>(false);
-
   const [answeredSteps, setAnsweredSteps] = useState<boolean[]>([
     false,
     false,
@@ -150,6 +152,13 @@ export const AppProvider: FC<AppProviderProps> = ({ children }) => {
     [currentStep, nextStep, questions.length],
   );
 
+  const resetState = useCallback(() => {
+    setCurrentStep(0);
+    setShowResult(false);
+    setAnsweredSteps([false, false, false, false, false]);
+    setAnswers([]);
+  }, []);
+
   return (
     <AppContext.Provider
       value={{
@@ -162,6 +171,7 @@ export const AppProvider: FC<AppProviderProps> = ({ children }) => {
         prevStep,
         answerQuestion,
         showResult,
+        resetState,
       }}
     >
       {children}
