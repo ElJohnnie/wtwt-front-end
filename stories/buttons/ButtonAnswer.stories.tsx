@@ -25,7 +25,7 @@ WithOtherName.args = {
 export const WithCallback = Template.bind({});
 WithCallback.args = {
   text: 'With callback',
-  callback: () => batatinha(),
+  onClick: () => batatinha(),
 };
 
 const batatinha = () => {

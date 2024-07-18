@@ -3,14 +3,14 @@ import React from 'react';
 import { StepsButtonProps } from '../../types';
 
 export default function StepsButton(props: StepsButtonProps) {
-  const { icon, callback, text } = props;
+  const { icon, onClick, text } = props;
   return (
     <div className="w-full flex flex-col justify-center items-center">
       <button
         className="w-24 h-24 rounded-full  
           inline-flex items-center justify-center  
           text-white text-[24px] font-bold bg-pink-600 hover:bg-pink-800"
-        onClick={callback}
+        onClick={onClick}
       >
         {icon}
       </button>

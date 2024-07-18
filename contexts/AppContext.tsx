@@ -23,6 +23,10 @@ const defaultState = {
   answerQuestion: () => {
     throw new Error('answerQuestion function not implemented');
   },
+  showResult: false,
+  resetState: () => {
+    throw new Error('resetState function not implemented');
+  },
 };
 
 export const AppContext = createContext<AppContextProps>(defaultState);
@@ -44,60 +48,62 @@ export const AppProvider: FC<AppProviderProps> = ({ children }) => {
     {
       question: 'Como você está se sentindo agora?',
       answers: [
-        { text: 'Feliz' },
-        { text: 'Triste' },
-        { text: 'Ansioso' },
-        { text: 'Bem animado' },
-        { text: 'Entediado' },
+        { text: 'Feliz', value: 'happy' },
+        { text: 'Triste', value: 'sad' },
+        { text: 'Ansioso', value: 'anxious' },
+        { text: 'Bem animado', value: 'excited' },
+        { text: 'Entediado', value: 'bored' },
       ],
-      description: 'teste 123',
+      description: '',
     },
     {
       question: 'Qual o seu estilo de filme favorito?',
       answers: [
-        { text: 'Ação' },
-        { text: 'Aventura' },
-        { text: 'Animação' },
-        { text: 'Comédia' },
-        { text: 'Drama' },
-        { text: 'Fantasia' },
-        { text: 'SciFi' },
-        { text: 'Thriller' },
-        { text: 'Terror/Suspense' },
+        { text: 'Ação', value: 'Action' },
+        { text: 'Aventura', value: 'Adventure' },
+        { text: 'Animação', value: 'Animation' },
+        { text: 'Comédia', value: 'Comedy' },
+        { text: 'Drama', value: 'Drama' },
+        { text: 'Fantasia', value: 'Fantasy' },
+        { text: 'SciFi', value: 'SciFi' },
+        { text: 'Thriller', value: 'Thriller' },
+        { text: 'Terror/Suspense', value: 'Horror' },
       ],
-      description: 'teste 123',
+      description: '',
     },
     {
       question: 'Seu segundo estilo de filme favorito?',
       answers: [
-        { text: 'Ação' },
-        { text: 'Aventura' },
-        { text: 'Animação' },
-        { text: 'Comédia' },
-        { text: 'Drama' },
-        { text: 'Fantasia' },
-        { text: 'SciFi' },
-        { text: 'Thriller' },
-        { text: 'Terror/Suspense' },
+        { text: 'Ação', value: 'Action' },
+        { text: 'Aventura', value: 'Adventure' },
+        { text: 'Animação', value: 'Animation' },
+        { text: 'Comédia', value: 'Comedy' },
+        { text: 'Drama', value: 'Drama' },
+        { text: 'Fantasia', value: 'Fantasy' },
+        { text: 'SciFi', value: 'SciFi' },
+        { text: 'Thriller', value: 'Thriller' },
+        { text: 'Terror/Suspense', value: 'Horror' },
       ],
-      description: 'teste 123',
+      description: '',
     },
     {
-      question: 'Qual periodo de lançamento mais lhe convém?',
+      question: 'Qual período de lançamento mais lhe convém?',
       answers: [
-        { text: '2000' },
-        { text: '1990' },
-        { text: '1980' },
-        { text: '1970' },
-        { text: '1960' },
-        { text: '1950' },
-        { text: '1940' },
+        { text: '2010', value: '2010' },
+        { text: '2000', value: '2000' },
+        { text: '1990', value: '1990' },
+        { text: '1980', value: '1980' },
+        { text: '1970', value: '1970' },
+        { text: '1960', value: '1960' },
+        { text: '1950', value: '1950' },
+        { text: '1940', value: '1940' },
       ],
-      description: 'teste 123',
+      description: '',
     },
   ];
 
-  const [currentStep, setCurrentStep] = useState(0);
+  const [currentStep, setCurrentStep] = useState<number>(0);
+  const [showResult, setShowResult] = useState<boolean>(false);
   const [answeredSteps, setAnsweredSteps] = useState<boolean[]>([
     false,
     false,
@@ -117,20 +123,41 @@ export const AppProvider: FC<AppProviderProps> = ({ children }) => {
 
   const answerQuestion = useCallback(
     (text: string) => {
-      setAnswers((prev) => {
-        const newAnswers = [...prev];
-        newAnswers[currentStep] = text;
-        return newAnswers;
-      });
-      setAnsweredSteps((prev) => {
-        const newAnsweredSteps = [...prev];
-        newAnsweredSteps[currentStep] = true;
-        return newAnsweredSteps;
-      });
-      nextStep();
+      if (currentStep < questions.length - 1) {
+        setAnswers((prev) => {
+          const newAnswers = [...prev];
+          newAnswers[currentStep] = text;
+          return newAnswers;
+        });
+        setAnsweredSteps((prev) => {
+          const newAnsweredSteps = [...prev];
+          newAnsweredSteps[currentStep] = true;
+          return newAnsweredSteps;
+        });
+        nextStep();
+      } else {
+        setAnswers((prev) => {
+          const newAnswers = [...prev];
+          newAnswers[currentStep] = text;
+          return newAnswers;
+        });
+        setAnsweredSteps((prev) => {
+          const newAnsweredSteps = [...prev];
+          newAnsweredSteps[currentStep] = true;
+          return newAnsweredSteps;
+        });
+        setShowResult(true);
+      }
     },
-    [currentStep, nextStep],
+    [currentStep, nextStep, questions.length],
   );
+
+  const resetState = useCallback(() => {
+    setCurrentStep(0);
+    setShowResult(false);
+    setAnsweredSteps([false, false, false, false, false]);
+    setAnswers([]);
+  }, []);
 
   return (
     <AppContext.Provider
@@ -143,6 +170,8 @@ export const AppProvider: FC<AppProviderProps> = ({ children }) => {
         nextStep,
         prevStep,
         answerQuestion,
+        showResult,
+        resetState,
       }}
     >
       {children}

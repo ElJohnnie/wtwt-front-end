@@ -7,6 +7,7 @@ export interface Step {
 
 export interface Answer {
   text: string;
+  value: string;
 }
 
 export interface Questions {
@@ -24,18 +25,21 @@ export interface AppContextProps {
   nextStep: () => void;
   prevStep: () => void;
   answerQuestion: (text: string) => void;
+  showResult: boolean;
+  resetState: () => void;
 }
 
 export interface StepsButtonProps {
   icon: JSX.Element;
-  callback?: () => void;
+  onClick?: () => void;
   text?: string;
 }
 
 export interface ButtonAnswerProps {
   text: string;
   selectedAnswer?: string;
-  callback?: (value: string) => void;
+  value?: string;
+  onClick?: (value: string) => void;
 }
 
 export interface StepsProps {
@@ -48,8 +52,8 @@ export interface StepsProps {
 
 export interface ImageComponentProps {
   href: string;
-  title: string;
-  description: string;
+  title?: string;
+  description?: string;
 }
 
 export interface DescriptionProps {
@@ -58,4 +62,37 @@ export interface DescriptionProps {
 
 export interface QuestionProps {
   text: string;
+}
+
+export interface Movie {
+  adult: boolean;
+  backdrop_path: string | null;
+  genre_ids: number[];
+  id: number;
+  original_language: string;
+  original_title: string;
+  overview: string;
+  popularity: number;
+  poster_path: string | null;
+  release_date: string;
+  title: string;
+  video: boolean;
+  vote_average: number;
+  vote_count: number;
+}
+
+interface DetailedMovieResponse {
+  page: number;
+  results: Movie[];
+  total_pages: number;
+  total_results: number;
+}
+
+interface RecommendedMovieResponse {
+  title: string;
+}
+
+export interface MoviesResponse {
+  recommendedMovie: RecommendedMovieResponse;
+  detailedMovie: DetailedMovieResponse;
 }

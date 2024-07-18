@@ -1,13 +1,15 @@
 'use client';
-import React, { useContext } from 'react';
-import { AppProvider, AppContext } from '../contexts/AppContext';
+import React, { useContext, useEffect } from 'react';
+import { AppContext } from '../contexts/AppContext';
 import Steps from '../components/core/Steps';
 import Question from '../components/texts/Question';
 import ButtonAnswer from '../components/buttons/ButtonAnswer';
 import Description from '../components/texts/Description';
 import StepsButton from '../components/buttons/StepsButton';
+import { RoutesUrls } from '../utils/enums/routesUrl';
+import { useNavigation } from '../hooks/useNavigation';
 
-const HomeContent: React.FC = () => {
+const Home: React.FC = () => {
   const {
     steps,
     currentStep,
@@ -17,7 +19,16 @@ const HomeContent: React.FC = () => {
     nextStep,
     prevStep,
     answerQuestion,
+    showResult,
   } = useContext(AppContext);
+
+  const { replace } = useNavigation();
+
+  useEffect(() => {
+    if (showResult) {
+      replace(RoutesUrls.RESULT);
+    }
+  }, [showResult, replace]);
 
   return (
     <main className="flex min-h-screen flex-col items-center p-12">
@@ -35,13 +46,14 @@ const HomeContent: React.FC = () => {
       <div className="flex items-center my-12">
         <Question text={questions[currentStep].question} />
       </div>
-      <div className="my-4 grid grid-cols-2 gap-4">
+      <div className="my-4 flex flex-wrap gap-4 justify-center max-w-2xl">
         {questions[currentStep].answers.map((answer, index) => (
           <ButtonAnswer
             key={index}
             text={answer.text}
+            value={answer.value}
             selectedAnswer={answers[currentStep]}
-            callback={answerQuestion}
+            onClick={answerQuestion}
           />
         ))}
       </div>
@@ -68,14 +80,10 @@ const HomeContent: React.FC = () => {
                 />
               </svg>
             }
-            callback={currentStep > 0 ? prevStep : undefined}
+            onClick={currentStep > 0 ? prevStep : undefined}
           />
         </div>
-        <div
-          className={`${
-            currentStep >= 4 || !answeredSteps[currentStep] ? 'hidden' : ''
-          }`}
-        >
+        <div className={`${!answeredSteps[currentStep] ? 'hidden' : ''}`}>
           <StepsButton
             icon={
               <svg
@@ -93,7 +101,7 @@ const HomeContent: React.FC = () => {
                 />
               </svg>
             }
-            callback={
+            onClick={
               currentStep < steps.current.length - 1 ? nextStep : undefined
             }
           />
@@ -103,12 +111,8 @@ const HomeContent: React.FC = () => {
   );
 };
 
-const Home: React.FC = () => {
-  return (
-    <AppProvider>
-      <HomeContent />
-    </AppProvider>
-  );
+const HomePage: React.FC = () => {
+  return <Home />;
 };
 
-export default Home;
+export default HomePage;

@@ -1,4 +1,4 @@
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/navigation';
 import { RouteUrl } from '../../utils/enums/routesUrl';
 
 export const useNavigation = () => {

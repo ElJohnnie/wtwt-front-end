@@ -5,6 +5,17 @@ import RootLayout from '../../app/layout';
 import Home from '../../app/page';
 import { metadata } from '../../app/layout';
 
+const redirectMock = jest.fn();
+const replaceMock = jest.fn();
+
+jest.mock('../../hooks/useNavigation/index.tsx', () => ({
+  ...jest.requireActual('../../hooks/useNavigation/index.tsx'),
+  useNavigation: () => ({
+    redirect: redirectMock,
+    replace: replaceMock,
+  }),
+}));
+
 describe('RootLayout', () => {
   it('Renderizando o layout raiz', () => {
     const { container } = render(

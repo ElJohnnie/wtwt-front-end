@@ -5,14 +5,14 @@ import { ImageComponentProps } from '../../types';
 export default function ImageComponent(props: ImageComponentProps) {
   const { href, title, description } = props;
   return (
-    <div className="flex flex-col items-center mx-auto max-w-sm">
-      <figure className="relative w-full h-64">
+    <div className="flex flex-col justify-center items-center mx-auto max-w-sm">
+      <figure className="w-full">
         <Image
-          layout="fill"
-          objectFit="contain"
+          layout="responsive"
           src={href}
           alt="image description"
-          className="absolute inset-0"
+          width={80}
+          height={80}
         />
       </figure>
       <h3 className="font-bold text-pink-600 text-center text-lg mt-3 max-w-x">
