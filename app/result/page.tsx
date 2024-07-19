@@ -15,37 +15,42 @@ import { AppContext } from '../../contexts/AppContext';
 import { RoutesUrls } from '../../utils/enums/routesUrl';
 import { useNavigation } from '../../hooks/useNavigation';
 import { MoviesResponse, Movie } from '../../types';
+import { FetchError } from '../../types';
 
 const Result: FC = () => {
   const { replace } = useNavigation();
-
   const { answers, resetState } = useContext(AppContext);
-
   const [loading, setLoading] = useState(true);
-
   const result = useRef<Movie | null>(null);
 
-  const loadData = useCallback(async () => {
-    if (answers.length < 4) {
-      replace(RoutesUrls.HOME);
-      return;
-    }
+  const loadData = useCallback(
+    async (signal: AbortSignal) => {
+      if (answers.length < 4) {
+        replace(RoutesUrls.HOME);
+        return;
+      }
 
-    try {
-      const response: MoviesResponse = await fetchData('/movies', {
-        mood: answers[0],
-        primaryGenre: answers[1],
-        secondaryGenre: answers[2],
-        epoch: answers[3],
-      });
+      try {
+        const response: MoviesResponse = await fetchData('/movies', {
+          mood: answers[0],
+          primaryGenre: answers[1],
+          secondaryGenre: answers[2],
+          epoch: answers[3],
+          signal,
+        });
 
-      result.current = response.detailedMovie.results[0];
-    } catch (error) {
-      console.error('Failed to fetch movies:', error);
-    } finally {
-      setLoading(false);
-    }
-  }, [answers, replace]);
+        result.current = response.detailedMovie.results[0];
+      } catch (error) {
+        const fetchError = error as FetchError;
+        if (fetchError.name !== 'AbortError') {
+          console.error('Failed to fetch movies:', fetchError);
+        }
+      } finally {
+        setLoading(false);
+      }
+    },
+    [answers, replace],
+  );
 
   const goToStart = () => {
     resetState();
@@ -53,7 +58,12 @@ const Result: FC = () => {
   };
 
   useEffect(() => {
-    loadData();
+    const abortController = new AbortController();
+    loadData(abortController.signal);
+
+    return () => {
+      abortController.abort();
+    };
   }, [loadData]);
 
   return (
