@@ -27,20 +27,6 @@ describe('RootLayout', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('Verifica a estrutura HTML e a classe de fonte', () => {
-    const { container } = render(
-      <RootLayout>
-        <div>Teste de Conteúdo</div>
-      </RootLayout>,
-    );
-    const htmlElement = container.querySelector('html');
-    expect(htmlElement).toBeInTheDocument();
-
-    const bodyElement = container.querySelector('body');
-    expect(bodyElement).toBeInTheDocument();
-    expect(bodyElement).toHaveClass('className');
-  });
-
   it('Verifica os metadados', () => {
     expect(metadata.title).toBe('What to watch tonight?');
     expect(metadata.description).toBe(

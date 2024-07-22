@@ -1,14 +1,14 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 import '@testing-library/jest-dom';
-import Home from '../../app/page';
-import { AppContext } from '../../contexts/AppContext';
+import ErrorPage from '../../../app/error/page';
+import { AppContext } from '../../../contexts/AppContext';
 
 const redirectMock = jest.fn();
 const replaceMock = jest.fn();
 
-jest.mock('../../hooks/useNavigation/index.tsx', () => ({
-  ...jest.requireActual('../../hooks/useNavigation/index.tsx'),
+jest.mock('../../../hooks/useNavigation/index.tsx', () => ({
+  ...jest.requireActual('../../../hooks/useNavigation/index.tsx'),
   useNavigation: () => ({
     redirect: redirectMock,
     replace: replaceMock,
@@ -38,10 +38,9 @@ const mockContextValue = {
       ],
       description: 'teste 123',
     },
-    // Adicione mais perguntas conforme necessário
   ],
-  answeredSteps: [false, false, false, false, false],
-  answers: [],
+  answeredSteps: [true, true, true, true],
+  answers: ['any', 'any', 'any', 'any'],
   nextStep: jest.fn(),
   prevStep: jest.fn(),
   answerQuestion: jest.fn(),
@@ -49,13 +48,14 @@ const mockContextValue = {
   resetState: jest.fn(),
 };
 
-describe('Home', () => {
-  it('Renderizando a página inicial', () => {
+describe('ErrorPage', () => {
+  it('Renderizando a página de erro', () => {
     const { container } = render(
       <AppContext.Provider value={mockContextValue}>
-        <Home />
+        <ErrorPage />
       </AppContext.Provider>,
     );
+
     expect(container).toBeTruthy();
     expect(container).toMatchSnapshot();
   });
