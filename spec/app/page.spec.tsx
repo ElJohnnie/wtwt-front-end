@@ -46,6 +46,7 @@ const mockContextValue = {
   prevStep: jest.fn(),
   answerQuestion: jest.fn(),
   showResult: false,
+  resetState: jest.fn(),
 };
 
 describe('Home', () => {

@@ -1,3 +1,8 @@
+export interface FetchError extends Error {
+  name: string;
+  message: string;
+}
+
 export interface Step {
   number: string;
   hasRange: boolean;
