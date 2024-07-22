@@ -1,0 +1,209 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test home page Testando completamente a home page 1`] = `
+<div>
+  <main
+    class="flex min-h-screen flex-col items-center p-12"
+  >
+    <div
+      class="flex justify-between flex-row items-center my-4"
+    >
+      <div
+        class="flex flex-row justify-center items-center"
+      >
+        <div
+          class="size-10 md:size-16 xl:size-18 rounded-full  
+          inline-flex items-center justify-center  
+          text-white text-[24px] font-bold bg-pink-600"
+        >
+          1
+        </div>
+        <div
+          class="w-8 lg:w-24 md:w-16 bg-gray-200 rounded-full invisible md:visible mx-0 h-2.5 md:mx-4 dark:bg-gray-700"
+        >
+          <div
+            class="bg-pink-600 h-2.5 rounded-full"
+            style="width: 50%;"
+          />
+        </div>
+      </div>
+      <div
+        class="flex flex-row justify-center items-center"
+      >
+        <div
+          class="size-10 md:size-16 xl:size-18 rounded-full  
+          inline-flex items-center justify-center  
+          text-white text-[24px] font-bold bg-pink-400"
+        >
+          2
+        </div>
+        <div
+          class="w-8 lg:w-24 md:w-16 bg-gray-200 rounded-full invisible md:visible mx-0 h-2.5 md:mx-4 dark:bg-gray-700"
+        >
+          <div
+            class="bg-pink-600 h-2.5 rounded-full"
+            style="width: 0%;"
+          />
+        </div>
+      </div>
+      <div
+        class="flex flex-row justify-center items-center"
+      >
+        <div
+          class="size-10 md:size-16 xl:size-18 rounded-full  
+          inline-flex items-center justify-center  
+          text-white text-[24px] font-bold bg-pink-400"
+        >
+          3
+        </div>
+        <div
+          class="w-8 lg:w-24 md:w-16 bg-gray-200 rounded-full invisible md:visible mx-0 h-2.5 md:mx-4 dark:bg-gray-700"
+        >
+          <div
+            class="bg-pink-600 h-2.5 rounded-full"
+            style="width: 0%;"
+          />
+        </div>
+      </div>
+      <div
+        class="flex flex-row justify-center items-center"
+      >
+        <div
+          class="size-10 md:size-16 xl:size-18 rounded-full  
+          inline-flex items-center justify-center  
+          text-white text-[24px] font-bold bg-pink-400"
+        >
+          4
+        </div>
+        <div
+          class="w-8 lg:w-24 md:w-16 bg-gray-200 rounded-full invisible md:visible mx-0 h-2.5 md:mx-4 dark:bg-gray-700"
+        >
+          <div
+            class="bg-pink-600 h-2.5 rounded-full"
+            style="width: 0%;"
+          />
+        </div>
+      </div>
+      <div
+        class="flex flex-row justify-center items-center"
+      >
+        <div
+          class="size-10 md:size-16 xl:size-18 rounded-full  
+          inline-flex items-center justify-center  
+          text-white text-[24px] font-bold bg-pink-400"
+        >
+          5
+        </div>
+      </div>
+    </div>
+    <div
+      class="flex items-center my-12"
+    >
+      <div
+        class="py-2 px-2 md:px-12 rounded-full font-bold text-pink-600 text-center text-2xl md:text-4xl"
+      >
+        Como você está se sentindo agora?
+      </div>
+    </div>
+    <div
+      class="my-4 flex flex-wrap gap-4 justify-center max-w-2xl"
+    >
+      <button
+        class="focus:outline-none focus:ring-4 font-medium text-xl px-8 md:px-12 py-4 lg:px-24 lg:py-5 text-center mb-2 hover:bg-pink-800  rounded-full text-white bg-pink-600"
+      >
+        Feliz
+      </button>
+      <button
+        class="focus:outline-none focus:ring-4 font-medium text-xl px-8 md:px-12 py-4 lg:px-24 lg:py-5 text-center mb-2 hover:bg-pink-800  rounded-full text-white bg-pink-600"
+      >
+        Triste
+      </button>
+      <button
+        class="focus:outline-none focus:ring-4 font-medium text-xl px-8 md:px-12 py-4 lg:px-24 lg:py-5 text-center mb-2 hover:bg-pink-800  rounded-full text-white bg-pink-600"
+      >
+        Ansioso
+      </button>
+      <button
+        class="focus:outline-none focus:ring-4 font-medium text-xl px-8 md:px-12 py-4 lg:px-24 lg:py-5 text-center mb-2 hover:bg-pink-800  rounded-full text-white bg-pink-600"
+      >
+        Bem animado
+      </button>
+      <button
+        class="focus:outline-none focus:ring-4 font-medium text-xl px-8 md:px-12 py-4 lg:px-24 lg:py-5 text-center mb-2 hover:bg-pink-800  rounded-full text-white bg-pink-600"
+      >
+        Entediado
+      </button>
+    </div>
+    <div
+      class="flex items-center my-12"
+    >
+      <div
+        class="text-center text-pink-600"
+      />
+    </div>
+    <div
+      class="flex flex-row items-center justify-center w-6/12 space-x-4"
+    >
+      <div
+        class="hidden"
+      >
+        <div
+          class="w-full flex flex-col justify-center items-center"
+        >
+          <button
+            class="w-24 h-24 rounded-full   inline-flex items-center justify-center   text-white text-[24px] font-bold bg-pink-600 hover:bg-pink-800"
+          >
+            <svg
+              class="size-6"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+              style="transform: scale(-1, 1);"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </button>
+          <p
+            class="text-[18px] mt-1 text-pink-600"
+          />
+        </div>
+      </div>
+      <div
+        class="hidden"
+      >
+        <div
+          class="w-full flex flex-col justify-center items-center"
+        >
+          <button
+            class="w-24 h-24 rounded-full   inline-flex items-center justify-center   text-white text-[24px] font-bold bg-pink-600 hover:bg-pink-800"
+          >
+            <svg
+              class="size-6"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </button>
+          <p
+            class="text-[18px] mt-1 text-pink-600"
+          />
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+`;
