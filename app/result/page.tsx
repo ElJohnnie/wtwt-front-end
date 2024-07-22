@@ -15,7 +15,6 @@ import { AppContext } from '../../contexts/AppContext';
 import { RoutesUrls } from '../../utils/enums/routesUrl';
 import { useNavigation } from '../../hooks/useNavigation';
 import { MoviesResponse, Movie } from '../../types';
-import { FetchError } from '../../types';
 
 const Result: FC = () => {
   const { replace } = useNavigation();
@@ -41,10 +40,7 @@ const Result: FC = () => {
 
         result.current = response.detailedMovie.results[0];
       } catch (error) {
-        const fetchError = error as FetchError;
-        if (fetchError.name !== 'AbortError') {
-          console.error('Failed to fetch movies:', fetchError);
-        }
+        replace(RoutesUrls.ERROR);
       } finally {
         setLoading(false);
       }
