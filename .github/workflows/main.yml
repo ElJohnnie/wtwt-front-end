@@ -10,7 +10,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  test:
+  quality-gate:
     runs-on: ubuntu-latest
 
     steps:
