@@ -49,7 +49,9 @@ const Result: FC = () => {
   );
 
   const goToStart = () => {
-    resetState();
+    if (resetState) {
+      resetState();
+    }
     replace(RoutesUrls.HOME);
   };
 
@@ -83,6 +85,7 @@ const Result: FC = () => {
             <StepsButton
               text="Refazer novamente"
               onClick={goToStart}
+              testId="go-to-start"
               icon={
                 <svg
                   xmlns="http://www.w3.org/2000/svg"

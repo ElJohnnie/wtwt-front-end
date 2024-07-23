@@ -26,6 +26,7 @@ exports[`ErrorPage Renderizando a página de erro 1`] = `
         >
           <button
             class="w-24 h-24 rounded-full   inline-flex items-center justify-center   text-white text-[24px] font-bold bg-pink-600 hover:bg-pink-800"
+            data-testid="try-again"
           >
             <svg
               class="size-6"
@@ -53,6 +54,7 @@ exports[`ErrorPage Renderizando a página de erro 1`] = `
         >
           <button
             class="w-24 h-24 rounded-full   inline-flex items-center justify-center   text-white text-[24px] font-bold bg-pink-600 hover:bg-pink-800"
+            data-testid="go-to-start"
           >
             <svg
               class="size-6"

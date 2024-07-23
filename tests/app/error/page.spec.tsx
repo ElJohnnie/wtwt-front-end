@@ -1,8 +1,9 @@
-import React from 'react';
-import { render } from '@testing-library/react';
+import React, { act } from 'react';
+import { fireEvent, render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import ErrorPage from '../../../app/error/page';
 import { AppContext } from '../../../contexts/AppContext';
+import { RoutesUrls } from '../../../utils/enums/routesUrl';
 
 const redirectMock = jest.fn();
 const replaceMock = jest.fn();
@@ -49,6 +50,10 @@ const mockContextValue = {
 };
 
 describe('ErrorPage', () => {
+  beforeEach(() => {
+    jest.clearAllMocks();
+  });
+
   it('Renderizando a página de erro', () => {
     const { container } = render(
       <AppContext.Provider value={mockContextValue}>
@@ -58,5 +63,41 @@ describe('ErrorPage', () => {
 
     expect(container).toBeTruthy();
     expect(container).toMatchSnapshot();
+  });
+
+  it('Clicando no botão de voltar para a página inicial', () => {
+    const { getByTestId } = render(
+      <AppContext.Provider value={mockContextValue}>
+        <ErrorPage />
+      </AppContext.Provider>,
+    );
+
+    screen.logTestingPlaygroundURL();
+
+    const backButton = getByTestId('go-to-start');
+    expect(backButton).toBeInTheDocument();
+
+    act(() => {
+      fireEvent.click(backButton);
+    });
+
+    expect(replaceMock).toHaveBeenCalledWith(RoutesUrls.HOME);
+  });
+
+  it('Clicando no botão de tentar novamente', () => {
+    const { getByTestId } = render(
+      <AppContext.Provider value={mockContextValue}>
+        <ErrorPage />
+      </AppContext.Provider>,
+    );
+
+    const tryAgainButton = getByTestId('try-again');
+    expect(tryAgainButton).toBeInTheDocument();
+
+    act(() => {
+      fireEvent.click(tryAgainButton);
+    });
+
+    expect(replaceMock).toHaveBeenCalledWith(RoutesUrls.RESULT);
   });
 });

@@ -14,19 +14,7 @@ const defaultState = {
   questions: [],
   answeredSteps: [] as boolean[],
   answers: [] as string[],
-  nextStep: () => {
-    throw new Error('nextStep function not implemented');
-  },
-  prevStep: () => {
-    throw new Error('prevStep function not implemented');
-  },
-  answerQuestion: () => {
-    throw new Error('answerQuestion function not implemented');
-  },
   showResult: false,
-  resetState: () => {
-    throw new Error('resetState function not implemented');
-  },
 };
 
 export const AppContext = createContext<AppContextProps>(defaultState);

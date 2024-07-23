@@ -14,7 +14,9 @@ const ErrorPage: FC = () => {
   };
 
   const goToStart = () => {
-    resetState();
+    if (resetState) {
+      resetState();
+    }
     replace(RoutesUrls.HOME);
   };
   return (
@@ -27,6 +29,7 @@ const ErrorPage: FC = () => {
         <div className="my-4 flex space-x-4 p-4">
           <StepsButton
             text="Tentar novamente"
+            testId="try-again"
             onClick={handleBack}
             icon={
               <svg
@@ -49,6 +52,7 @@ const ErrorPage: FC = () => {
           <StepsButton
             text="Refazer novamente"
             onClick={goToStart}
+            testId="go-to-start"
             icon={
               <svg
                 xmlns="http://www.w3.org/2000/svg"
