@@ -27,17 +27,18 @@ export interface AppContextProps {
   questions: Questions[];
   answeredSteps: boolean[];
   answers: string[];
-  nextStep: () => void;
-  prevStep: () => void;
-  answerQuestion: (text: string) => void;
+  nextStep?: () => void;
+  prevStep?: () => void;
+  answerQuestion?: (text: string) => void;
   showResult: boolean;
-  resetState: () => void;
+  resetState?: () => void;
 }
 
 export interface StepsButtonProps {
   icon: JSX.Element;
   onClick?: () => void;
   text?: string;
+  testId?: string;
 }
 
 export interface ButtonAnswerProps {
