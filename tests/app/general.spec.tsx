@@ -4,6 +4,7 @@ import '@testing-library/jest-dom';
 import Home from '../../app/page';
 import { metadata } from '../../app/layout';
 import { Providers } from '../../app/providers';
+import { RoutesUrls } from '../../utils/enums/routesUrl';
 
 const redirectMock = jest.fn();
 const replaceMock = jest.fn();
@@ -52,6 +53,14 @@ describe('Test home page', () => {
     expect(container).toHaveTextContent(
       'Qual período de lançamento mais lhe convém?',
     );
+
+    const yearStepButton = getByText('1990');
+
+    act(() => {
+      fireEvent.click(yearStepButton);
+    });
+
+    expect(replaceMock).toHaveBeenCalledWith(RoutesUrls.RESULT);
   });
 
   it('Verifica os metadados', () => {
