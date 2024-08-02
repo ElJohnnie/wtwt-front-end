@@ -5,3 +5,4 @@ storybook-static
 coverage
 .env.local
 analyze
+docker.env
