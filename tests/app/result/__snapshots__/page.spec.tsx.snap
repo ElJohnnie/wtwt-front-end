@@ -9,7 +9,7 @@ exports[`ResultPage Renderizando a página de resultado 1`] = `
       class="flex flex-col items-center my-4"
     >
       <div
-        class="flex flex-col justify-center items-center mx-auto max-w-sm"
+        class="flex flex-col justify-center items-center mx-auto"
       >
         <figure
           class="w-full"

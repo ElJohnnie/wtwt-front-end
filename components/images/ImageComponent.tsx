@@ -5,7 +5,7 @@ import { ImageComponentProps } from '../../types';
 export default function ImageComponent(props: ImageComponentProps) {
   const { href, title, description } = props;
   return (
-    <div className="flex flex-col justify-center items-center mx-auto max-w-sm">
+    <div className="flex flex-col justify-center items-center mx-auto">
       <figure className="w-full">
         <Image
           layout="responsive"
