@@ -3,7 +3,7 @@
 exports[`ImageComponent quero que minha imagem renderize sem problemas 1`] = `
 <div>
   <div
-    class="flex flex-col justify-center items-center mx-auto max-w-sm"
+    class="flex flex-col justify-center items-center mx-auto"
   >
     <figure
       class="w-full"
