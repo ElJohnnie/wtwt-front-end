@@ -18,20 +18,16 @@ exports[`ResultPage Renderizando a página de resultado 1`] = `
             alt="image description"
             height="80"
             layout="responsive"
-            src="undefined/path/to/backdrop.jpg"
+            src="undefinedundefined"
             width="80"
           />
         </figure>
         <h3
           class="font-bold text-pink-600 text-center text-lg mt-3 max-w-x"
-        >
-          Mock Movie Title
-        </h3>
+        />
         <p
           class="text-pink-600 text-center text-sm mt-2 max-w-sm"
-        >
-          A brief overview of the movie.
-        </p>
+        />
       </div>
     </div>
     <div
