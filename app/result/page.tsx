@@ -14,13 +14,13 @@ import { fetchData } from '../../services/api';
 import { AppContext } from '../../contexts/AppContext';
 import { RoutesUrls } from '../../utils/enums/routesUrl';
 import { useNavigation } from '../../hooks/useNavigation';
-import { MoviesResponse, Movie } from '../../types';
+import { MoviesResponse } from '../../types';
 
 const Result: FC = () => {
   const { replace } = useNavigation();
   const { answers, resetState } = useContext(AppContext);
   const [loading, setLoading] = useState(true);
-  const result = useRef<Movie | null>(null);
+  const result = useRef<MoviesResponse | null>(null);
 
   const loadData = useCallback(
     async (signal: AbortSignal) => {
@@ -38,7 +38,7 @@ const Result: FC = () => {
           signal,
         });
 
-        result.current = response.detailedMovie.results[0];
+        result.current = response;
       } catch (error) {
         replace(RoutesUrls.ERROR);
       } finally {
@@ -76,7 +76,7 @@ const Result: FC = () => {
             {result.current && (
               <ImageComponent
                 href={`${process.env.NEXT_PUBLIC_THE_MOVIE_DB_IMAGE_BASE_URL}${result.current.backdrop_path}`}
-                title={result.current.original_title}
+                title={result.current.title}
                 description={result.current.overview}
               />
             )}

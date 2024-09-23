@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "npm run nvm-check && next dev",
     "build": "next build",
     "start": "next start",
     "lint": "eslint \"**/*.{ts,tsx}\" --max-warnings=0",
@@ -15,7 +15,8 @@
     "test:unit": "jest --coverage --silent",
     "test:watch": "jest --watch",
     "prepare": "husky install",
-    "typecheck": "tsc --project tsconfig.json --noEmit"
+    "typecheck": "tsc --project tsconfig.json --noEmit",
+    "nvm-check": "node -e \"require('child_process').exec('nvm use .', (err) => { if (err) console.log('NVM is not installed.'); })\""
   },
   "dependencies": {
     "@heroicons/react": "^2.1.3",
