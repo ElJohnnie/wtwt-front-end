@@ -132,7 +132,7 @@ exports[`RootLayout Renderizando o layout raiz 1`] = `
           <button
             class="focus:outline-none focus:ring-4 font-medium text-xl px-8 md:px-12 py-4 lg:px-24 lg:py-5 text-center mb-2 hover:bg-pink-800  rounded-full text-white bg-pink-600"
           >
-            Bem animado
+            Animado
           </button>
           <button
             class="focus:outline-none focus:ring-4 font-medium text-xl px-8 md:px-12 py-4 lg:px-24 lg:py-5 text-center mb-2 hover:bg-pink-800  rounded-full text-white bg-pink-600"

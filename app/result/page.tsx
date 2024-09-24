@@ -1,12 +1,5 @@
 'use client';
-import React, {
-  FC,
-  useEffect,
-  useState,
-  useCallback,
-  useContext,
-  useRef,
-} from 'react';
+import React, { FC, useEffect, useState, useContext, useRef } from 'react';
 import ImageComponent from '../../components/images/ImageComponent';
 import StepsButton from '../../components/buttons/StepsButton';
 import LoadingComponent from '../../components/loading/LoadingComponent';
@@ -15,6 +8,7 @@ import { AppContext } from '../../contexts/AppContext';
 import { RoutesUrls } from '../../utils/enums/routesUrl';
 import { useNavigation } from '../../hooks/useNavigation';
 import { MoviesResponse } from '../../types';
+import StarRating from '../../components/star-rating/StarRatingComponent';
 
 const Result: FC = () => {
   const { replace } = useNavigation();
@@ -22,8 +16,9 @@ const Result: FC = () => {
   const [loading, setLoading] = useState(true);
   const result = useRef<MoviesResponse | null>(null);
 
-  const loadData = useCallback(
-    async (signal: AbortSignal) => {
+  useEffect(() => {
+    const loadData = async (signal: AbortSignal) => {
+      console.log('entrou aqui');
       if (answers.length < 4) {
         replace(RoutesUrls.HOME);
         return;
@@ -44,9 +39,15 @@ const Result: FC = () => {
       } finally {
         setLoading(false);
       }
-    },
-    [answers, replace],
-  );
+    };
+
+    const abortController = new AbortController();
+    loadData(abortController.signal);
+
+    return () => {
+      abortController.abort();
+    };
+  });
 
   const goToStart = () => {
     if (resetState) {
@@ -54,15 +55,6 @@ const Result: FC = () => {
     }
     replace(RoutesUrls.HOME);
   };
-
-  useEffect(() => {
-    const abortController = new AbortController();
-    loadData(abortController.signal);
-
-    return () => {
-      abortController.abort();
-    };
-  }, [loadData]);
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-center p-12">
@@ -79,6 +71,11 @@ const Result: FC = () => {
                 title={result.current.title}
                 description={result.current.overview}
               />
+            )}
+          </div>
+          <div className="flex flex-col items-center my-4">
+            {result.current && (
+              <StarRating rating={result.current.popularity}></StarRating>
             )}
           </div>
           <div className="my-4 grid">

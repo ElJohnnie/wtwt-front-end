@@ -39,7 +39,7 @@ export const AppProvider: FC<AppProviderProps> = ({ children }) => {
         { text: 'Feliz', value: 'happy' },
         { text: 'Triste', value: 'sad' },
         { text: 'Ansioso', value: 'anxious' },
-        { text: 'Bem animado', value: 'excited' },
+        { text: 'Animado', value: 'excited' },
         { text: 'Entediado', value: 'bored' },
       ],
       description: '',
@@ -77,6 +77,7 @@ export const AppProvider: FC<AppProviderProps> = ({ children }) => {
     {
       question: 'Qual período de lançamento mais lhe convém?',
       answers: [
+        { text: '2020', value: '2020' },
         { text: '2010', value: '2010' },
         { text: '2000', value: '2000' },
         { text: '1990', value: '1990' },
@@ -92,14 +93,8 @@ export const AppProvider: FC<AppProviderProps> = ({ children }) => {
 
   const [currentStep, setCurrentStep] = useState<number>(0);
   const [showResult, setShowResult] = useState<boolean>(false);
-  const [answeredSteps, setAnsweredSteps] = useState<boolean[]>([
-    false,
-    false,
-    false,
-    false,
-    false,
-  ]);
-  const [answers, setAnswers] = useState<string[]>([]);
+  const answeredSteps = useRef<boolean[]>([false, false, false, false, false]);
+  const answers = useRef<string[]>([]);
 
   const nextStep = useCallback(() => {
     setCurrentStep((prev) => Math.min(prev + 1, steps.current.length - 1));
@@ -112,28 +107,16 @@ export const AppProvider: FC<AppProviderProps> = ({ children }) => {
   const answerQuestion = useCallback(
     (text: string) => {
       if (currentStep < questions.length - 1) {
-        setAnswers((prev) => {
-          const newAnswers = [...prev];
-          newAnswers[currentStep] = text;
-          return newAnswers;
-        });
-        setAnsweredSteps((prev) => {
-          const newAnsweredSteps = [...prev];
-          newAnsweredSteps[currentStep] = true;
-          return newAnsweredSteps;
-        });
+        answers.current = [...answers.current];
+        answers.current[currentStep] = text;
+        answeredSteps.current = [...answeredSteps.current];
+        answeredSteps.current[currentStep] = true;
         nextStep();
       } else {
-        setAnswers((prev) => {
-          const newAnswers = [...prev];
-          newAnswers[currentStep] = text;
-          return newAnswers;
-        });
-        setAnsweredSteps((prev) => {
-          const newAnsweredSteps = [...prev];
-          newAnsweredSteps[currentStep] = true;
-          return newAnsweredSteps;
-        });
+        answers.current = [...answers.current];
+        answers.current[currentStep] = text;
+        answeredSteps.current = [...answeredSteps.current];
+        answeredSteps.current[currentStep] = true;
         setShowResult(true);
       }
     },
@@ -143,8 +126,8 @@ export const AppProvider: FC<AppProviderProps> = ({ children }) => {
   const resetState = useCallback(() => {
     setCurrentStep(0);
     setShowResult(false);
-    setAnsweredSteps([false, false, false, false, false]);
-    setAnswers([]);
+    answeredSteps.current = [false, false, false, false, false];
+    answers.current = [];
   }, []);
 
   return (
@@ -153,8 +136,8 @@ export const AppProvider: FC<AppProviderProps> = ({ children }) => {
         steps,
         currentStep,
         questions,
-        answeredSteps,
-        answers,
+        answeredSteps: answeredSteps.current,
+        answers: answers.current,
         nextStep,
         prevStep,
         answerQuestion,

@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`StarRatingComponent renders correctly with a rating of 10 1`] = `
+<div>
+  <div>
+    <span
+      style="font-size: 2rem; color: rgb(255, 215, 0);"
+    >
+      ★
+    </span>
+    <span
+      style="font-size: 2rem; color: rgb(255, 215, 0);"
+    >
+      ★
+    </span>
+    <span
+      style="font-size: 2rem; color: rgb(255, 215, 0);"
+    >
+      ★
+    </span>
+    <span
+      style="font-size: 2rem; color: rgb(255, 215, 0);"
+    >
+      ★
+    </span>
+    <span
+      style="font-size: 2rem; color: rgb(255, 215, 0);"
+    >
+      ★
+    </span>
+  </div>
+</div>
+`;
