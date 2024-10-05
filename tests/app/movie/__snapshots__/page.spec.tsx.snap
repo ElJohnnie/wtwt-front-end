@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Test home page Testando completamente a home page 1`] = `
+exports[`Home Renderizando a página inicial 1`] = `
 <div>
   <main
     class="flex min-h-screen flex-col items-center justify-center"
@@ -25,7 +25,7 @@ exports[`Test home page Testando completamente a home page 1`] = `
               >
                 <svg
                   aria-hidden="true"
-                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiStepIcon-root Mui-active css-nwqhv8-MuiSvgIcon-root-MuiStepIcon-root"
+                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiStepIcon-root Mui-active css-15rfbsb-MuiSvgIcon-root-MuiStepIcon-root"
                   focusable="false"
                   viewBox="0 0 24 24"
                 >
@@ -68,7 +68,7 @@ exports[`Test home page Testando completamente a home page 1`] = `
               >
                 <svg
                   aria-hidden="true"
-                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiStepIcon-root css-nwqhv8-MuiSvgIcon-root-MuiStepIcon-root"
+                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiStepIcon-root css-15rfbsb-MuiSvgIcon-root-MuiStepIcon-root"
                   focusable="false"
                   viewBox="0 0 24 24"
                 >
@@ -111,7 +111,7 @@ exports[`Test home page Testando completamente a home page 1`] = `
               >
                 <svg
                   aria-hidden="true"
-                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiStepIcon-root css-nwqhv8-MuiSvgIcon-root-MuiStepIcon-root"
+                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiStepIcon-root css-15rfbsb-MuiSvgIcon-root-MuiStepIcon-root"
                   focusable="false"
                   viewBox="0 0 24 24"
                 >
@@ -154,7 +154,7 @@ exports[`Test home page Testando completamente a home page 1`] = `
               >
                 <svg
                   aria-hidden="true"
-                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiStepIcon-root css-nwqhv8-MuiSvgIcon-root-MuiStepIcon-root"
+                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiStepIcon-root css-15rfbsb-MuiSvgIcon-root-MuiStepIcon-root"
                   focusable="false"
                   viewBox="0 0 24 24"
                 >
@@ -179,6 +179,49 @@ exports[`Test home page Testando completamente a home page 1`] = `
               />
             </span>
           </div>
+          <div
+            class="MuiStepConnector-root MuiStepConnector-horizontal Mui-disabled css-j5w0w9-MuiStepConnector-root"
+          >
+            <span
+              class="MuiStepConnector-line MuiStepConnector-lineHorizontal css-1qv8q39-MuiStepConnector-line"
+            />
+          </div>
+          <div
+            class="MuiStep-root MuiStep-horizontal css-nd0xiu-MuiStep-root"
+          >
+            <span
+              class="MuiStepLabel-root MuiStepLabel-horizontal Mui-disabled css-ascpo7-MuiStepLabel-root"
+            >
+              <span
+                class="MuiStepLabel-iconContainer Mui-disabled css-vnkopk-MuiStepLabel-iconContainer"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiStepIcon-root css-15rfbsb-MuiSvgIcon-root-MuiStepIcon-root"
+                  focusable="false"
+                  viewBox="0 0 24 24"
+                >
+                  <circle
+                    cx="12"
+                    cy="12"
+                    r="12"
+                  />
+                  <text
+                    class="MuiStepIcon-text css-117w1su-MuiStepIcon-text"
+                    dominant-baseline="central"
+                    text-anchor="middle"
+                    x="12"
+                    y="12"
+                  >
+                    5
+                  </text>
+                </svg>
+              </span>
+              <span
+                class="MuiStepLabel-labelContainer css-1vyamtt-MuiStepLabel-labelContainer"
+              />
+            </span>
+          </div>
         </div>
       </div>
     </div>
@@ -189,7 +232,7 @@ exports[`Test home page Testando completamente a home page 1`] = `
         class="py-2 px-2 md:px-12 rounded-full text-center"
       >
         <h2
-          class="MuiTypography-root MuiTypography-h2 css-12vu8f8-MuiTypography-root"
+          class="MuiTypography-root MuiTypography-h2 css-1bkebpk-MuiTypography-root"
         >
           Como você está se sentindo agora?
         </h2>
@@ -199,35 +242,35 @@ exports[`Test home page Testando completamente a home page 1`] = `
       class="my-4 flex flex-wrap gap-4 justify-center max-w-2xl"
     >
       <button
-        class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeLarge MuiButton-containedSizeLarge MuiButton-colorPrimary MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeLarge MuiButton-containedSizeLarge MuiButton-colorPrimary css-1r976ha-MuiButtonBase-root-MuiButton-root"
+        class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeLarge MuiButton-containedSizeLarge MuiButton-colorPrimary MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeLarge MuiButton-containedSizeLarge MuiButton-colorPrimary css-1jzwgk1-MuiButtonBase-root-MuiButton-root"
         tabindex="0"
         type="button"
       >
         Feliz
       </button>
       <button
-        class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeLarge MuiButton-containedSizeLarge MuiButton-colorPrimary MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeLarge MuiButton-containedSizeLarge MuiButton-colorPrimary css-1r976ha-MuiButtonBase-root-MuiButton-root"
+        class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeLarge MuiButton-containedSizeLarge MuiButton-colorPrimary MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeLarge MuiButton-containedSizeLarge MuiButton-colorPrimary css-1jzwgk1-MuiButtonBase-root-MuiButton-root"
         tabindex="0"
         type="button"
       >
         Triste
       </button>
       <button
-        class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeLarge MuiButton-containedSizeLarge MuiButton-colorPrimary MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeLarge MuiButton-containedSizeLarge MuiButton-colorPrimary css-1r976ha-MuiButtonBase-root-MuiButton-root"
+        class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeLarge MuiButton-containedSizeLarge MuiButton-colorPrimary MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeLarge MuiButton-containedSizeLarge MuiButton-colorPrimary css-1jzwgk1-MuiButtonBase-root-MuiButton-root"
         tabindex="0"
         type="button"
       >
         Ansioso
       </button>
       <button
-        class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeLarge MuiButton-containedSizeLarge MuiButton-colorPrimary MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeLarge MuiButton-containedSizeLarge MuiButton-colorPrimary css-1r976ha-MuiButtonBase-root-MuiButton-root"
+        class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeLarge MuiButton-containedSizeLarge MuiButton-colorPrimary MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeLarge MuiButton-containedSizeLarge MuiButton-colorPrimary css-1jzwgk1-MuiButtonBase-root-MuiButton-root"
         tabindex="0"
         type="button"
       >
-        Animado
+        Bem animado
       </button>
       <button
-        class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeLarge MuiButton-containedSizeLarge MuiButton-colorPrimary MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeLarge MuiButton-containedSizeLarge MuiButton-colorPrimary css-1r976ha-MuiButtonBase-root-MuiButton-root"
+        class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeLarge MuiButton-containedSizeLarge MuiButton-colorPrimary MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeLarge MuiButton-containedSizeLarge MuiButton-colorPrimary css-1jzwgk1-MuiButtonBase-root-MuiButton-root"
         tabindex="0"
         type="button"
       >
@@ -243,7 +286,7 @@ exports[`Test home page Testando completamente a home page 1`] = `
         <p
           class="MuiTypography-root MuiTypography-body1 css-1edfpdg-MuiTypography-root"
         >
-          Escolha a emoção que mais reflete seu estado atual.
+          teste 123
         </p>
       </div>
     </div>
@@ -257,7 +300,7 @@ exports[`Test home page Testando completamente a home page 1`] = `
           class="w-full flex flex-col justify-center items-center"
         >
           <button
-            class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeLarge MuiButton-containedSizeLarge MuiButton-colorPrimary MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeLarge MuiButton-containedSizeLarge MuiButton-colorPrimary css-1r976ha-MuiButtonBase-root-MuiButton-root"
+            class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeLarge MuiButton-containedSizeLarge MuiButton-colorPrimary MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeLarge MuiButton-containedSizeLarge MuiButton-colorPrimary css-1jzwgk1-MuiButtonBase-root-MuiButton-root"
             tabindex="0"
             type="button"
           >

@@ -35,7 +35,7 @@ export interface AppContextProps {
 }
 
 export interface StepsButtonProps {
-  icon: JSX.Element;
+  type: string;
   onClick?: () => void;
   text?: string;
   testId?: string;
@@ -54,6 +54,11 @@ export interface StepsProps {
   isEmpty?: boolean;
   asComplete?: boolean;
   isInactive: boolean;
+}
+
+export interface StepsPropsNew {
+  steps: Step[];
+  currentStep: number;
 }
 
 export interface ImageComponentProps {

@@ -9,6 +9,7 @@ import { RoutesUrls } from '../../utils/enums/routesUrl';
 import { useNavigation } from '../../hooks/useNavigation';
 import { MoviesResponse } from '../../types';
 import StarRating from '../../components/star-rating/StarRatingComponent';
+import { executeWithDelay } from '../../utils/execute-with-delay';
 
 const Result: FC = () => {
   const { replace } = useNavigation();
@@ -16,22 +17,26 @@ const Result: FC = () => {
   const [loading, setLoading] = useState(true);
   const result = useRef<MoviesResponse | null>(null);
 
+  const TIME_DELAY = 5000;
+
   useEffect(() => {
     const loadData = async (signal: AbortSignal) => {
-      console.log('entrou aqui');
       if (answers.length < 4) {
         replace(RoutesUrls.HOME);
         return;
       }
 
       try {
-        const response: MoviesResponse = await fetchData('/movies', {
-          mood: answers[0],
-          primaryGenre: answers[1],
-          secondaryGenre: answers[2],
-          epoch: answers[3],
-          signal,
-        });
+        const response: MoviesResponse = await executeWithDelay(
+          fetchData('/movies', {
+            mood: answers[0],
+            primaryGenre: answers[1],
+            secondaryGenre: answers[2],
+            epoch: answers[3],
+            signal,
+          }),
+          TIME_DELAY,
+        );
 
         result.current = response;
       } catch (error) {
@@ -83,22 +88,7 @@ const Result: FC = () => {
               text="Refazer novamente"
               onClick={goToStart}
               testId="go-to-start"
-              icon={
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth="1.5"
-                  stroke="currentColor"
-                  className="size-6"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M8.25 9V5.25A2.25 2.25 0 0 1 10.5 3h6a2.25 2.25 0 0 1 2.25 2.25v13.5A2.25 2.25 0 0 1 16.5 21h-6a2.25 2.25 0 0 1-2.25-2.25V15m-3 0-3-3m0 0 3-3m-3 3H15"
-                  />
-                </svg>
-              }
+              type={'go-to-start'}
             />
           </div>
         </>

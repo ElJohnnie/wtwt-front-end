@@ -6,6 +6,11 @@ import { AppContext } from '../../../contexts/AppContext';
 import { axiosInstance } from '../../../services/api';
 import { RoutesUrls } from '../../../utils/enums/routesUrl';
 
+jest.mock('lottie-react', () => ({
+  __esModule: true,
+  default: () => <div>Lottie Mock</div>,
+}));
+
 const redirectMock = jest.fn();
 const replaceMock = jest.fn();
 
@@ -91,7 +96,13 @@ const mockMoviesResponse = {
 describe('ResultPage', () => {
   beforeEach(() => {
     jest.clearAllMocks();
+    jest.useFakeTimers();
   });
+
+  afterEach(() => {
+    jest.useRealTimers();
+  });
+
   it('Renderizando a página de resultado', async () => {
     jest
       .spyOn(axiosInstance, 'get')
@@ -103,12 +114,14 @@ describe('ResultPage', () => {
       </AppContext.Provider>,
     );
 
-    await waitFor(() => {
-      expect(screen.queryByRole('img')).toBeInTheDocument();
-    });
-
     expect(container).toBeTruthy();
     expect(container).toMatchSnapshot();
+
+    jest.advanceTimersByTime(5000);
+
+    await waitFor(() => {
+      expect(screen.getByText('Recommended Movie Title')).toBeInTheDocument();
+    });
   });
 
   it('Clicando no botão de voltar para a página inicial', async () => {
@@ -122,27 +135,32 @@ describe('ResultPage', () => {
       </AppContext.Provider>,
     );
 
+    jest.advanceTimersByTime(5000);
+
     await waitFor(() => {
       expect(screen.getByTestId('go-to-start')).toBeInTheDocument();
     });
 
     const backButton = screen.getByTestId('go-to-start');
-    expect(backButton).toBeInTheDocument();
-
     fireEvent.click(backButton);
 
     expect(replaceMock).toHaveBeenCalledWith(RoutesUrls.HOME);
   });
 
   it('Impedindo de acessar a página caso não tenha quatro respostas', async () => {
-    mockContextValue.answers = [];
+    const insufficientAnswersContextValue = {
+      ...mockContextValue,
+      answers: [],
+    };
 
     render(
-      <AppContext.Provider value={mockContextValue}>
+      <AppContext.Provider value={insufficientAnswersContextValue}>
         <ResultPage />
       </AppContext.Provider>,
     );
 
-    expect(replaceMock).toHaveBeenCalledWith(RoutesUrls.HOME);
+    await waitFor(() => {
+      expect(replaceMock).toHaveBeenCalledWith(RoutesUrls.HOME);
+    });
   });
 });

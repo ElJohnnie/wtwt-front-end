@@ -1,10 +1,15 @@
 import React, { act } from 'react';
 import { render, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom';
-import Home from '../../app/page';
+import HomePage from '../../app/movie/page';
 import { metadata } from '../../app/layout';
 import { Providers } from '../../app/providers';
 import { RoutesUrls } from '../../utils/enums/routesUrl';
+
+jest.mock('lottie-react', () => ({
+  __esModule: true,
+  default: () => <div>Lottie Mock</div>,
+}));
 
 const redirectMock = jest.fn();
 const replaceMock = jest.fn();
@@ -21,7 +26,7 @@ describe('Test home page', () => {
   it('Testando completamente a home page', () => {
     const { container, getByText } = render(
       <Providers>
-        <Home />
+        <HomePage />
       </Providers>,
     );
     expect(container).toBeTruthy();

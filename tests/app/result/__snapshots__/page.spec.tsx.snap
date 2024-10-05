@@ -6,91 +6,14 @@ exports[`ResultPage Renderizando a página de resultado 1`] = `
     class="flex min-h-screen flex-col items-center justify-center p-12"
   >
     <div
-      class="flex flex-col items-center my-4"
+      class="flex items-center justify-center w-full h-full"
     >
       <div
-        class="flex flex-col justify-center items-center mx-auto"
+        style="width: 450px; height: 450px;"
       >
-        <figure
-          class="w-full"
-        >
-          <img
-            alt="image description"
-            height="80"
-            layout="responsive"
-            src="undefinedundefined"
-            width="80"
-          />
-        </figure>
-        <h3
-          class="font-bold text-pink-600 text-center text-lg mt-3 max-w-x"
-        />
-        <p
-          class="text-pink-600 text-center text-sm mt-2 max-w-sm"
-        />
-      </div>
-    </div>
-    <div
-      class="flex flex-col items-center my-4"
-    >
-      <div>
-        <span
-          style="font-size: 2rem; color: rgb(255, 215, 0);"
-        >
-          ☆
-        </span>
-        <span
-          style="font-size: 2rem; color: rgb(255, 215, 0);"
-        >
-          ☆
-        </span>
-        <span
-          style="font-size: 2rem; color: rgb(255, 215, 0);"
-        >
-          ☆
-        </span>
-        <span
-          style="font-size: 2rem; color: rgb(255, 215, 0);"
-        >
-          ☆
-        </span>
-        <span
-          style="font-size: 2rem; color: rgb(255, 215, 0);"
-        >
-          ☆
-        </span>
-      </div>
-    </div>
-    <div
-      class="my-4 grid"
-    >
-      <div
-        class="w-full flex flex-col justify-center items-center"
-      >
-        <button
-          class="w-24 h-24 rounded-full   inline-flex items-center justify-center   text-white text-[24px] font-bold bg-pink-600 hover:bg-pink-800"
-          data-testid="go-to-start"
-        >
-          <svg
-            class="size-6"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="1.5"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M8.25 9V5.25A2.25 2.25 0 0 1 10.5 3h6a2.25 2.25 0 0 1 2.25 2.25v13.5A2.25 2.25 0 0 1 16.5 21h-6a2.25 2.25 0 0 1-2.25-2.25V15m-3 0-3-3m0 0 3-3m-3 3H15"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-          </svg>
-        </button>
-        <p
-          class="text-[18px] mt-1 text-pink-600"
-        >
-          Refazer novamente
-        </p>
+        <div>
+          Lottie Mock
+        </div>
       </div>
     </div>
   </main>

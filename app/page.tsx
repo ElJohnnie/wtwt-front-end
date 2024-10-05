@@ -1,118 +1,215 @@
 'use client';
-import React, { useContext, useEffect } from 'react';
-import { AppContext } from '../contexts/AppContext';
-import Steps from '../components/core/Steps';
-import Question from '../components/texts/Question';
-import ButtonAnswer from '../components/buttons/ButtonAnswer';
-import Description from '../components/texts/Description';
-import StepsButton from '../components/buttons/StepsButton';
-import { RoutesUrls } from '../utils/enums/routesUrl';
-import { useNavigation } from '../hooks/useNavigation';
+import React from 'react';
+import { Container, Typography, Button, Box, Paper, Grid } from '@mui/material';
+import LoadingComponent from '../components/loading/LoadingComponent';
+import Link from 'next/link';
+import {
+  Star as StarIcon,
+  BarChart as BarChartIcon,
+  FilterList as FilterListIcon,
+  Movie as MovieIcon,
+  MonetizationOn as MonetizationOnIcon,
+} from '@mui/icons-material';
+import Navbar from '../components/navbar/NavBar';
+import Footer from '../components/footer/Footer';
 
-const Home: React.FC = () => {
-  const {
-    steps,
-    currentStep,
-    questions,
-    answeredSteps,
-    answers,
-    nextStep,
-    prevStep,
-    answerQuestion,
-    showResult,
-  } = useContext(AppContext);
+const featuresData = [
+  {
+    title: 'Recomendações Personalizadas',
+    description:
+      'Receba sugestões de filmes com base em seu humor e preferências de gênero.',
+    icon: <StarIcon fontSize="large" sx={{ color: '#FFD700' }} />,
+  },
+  {
+    title: 'Análise de Clustering',
+    description:
+      'Utiliza algoritmos de clustering para agrupar filmes semelhantes.',
+    icon: <BarChartIcon fontSize="large" sx={{ color: '#4CAF50' }} />,
+  },
+  {
+    title: 'Filtros Avançados',
+    description:
+      'Encontre exatamente o que você deseja, seja um clássico ou uma nova descoberta.',
+    icon: <FilterListIcon fontSize="large" sx={{ color: '#2196F3' }} />,
+  },
+];
 
-  const { replace } = useNavigation();
-
-  useEffect(() => {
-    if (showResult) {
-      replace(RoutesUrls.RESULT);
-    }
-  });
-
+const HeroFeaturesPage = () => {
   return (
-    <main className="flex min-h-screen flex-col items-center p-12">
-      <div className="flex justify-between flex-row items-center my-4">
-        {steps.current.map((step, index) => (
-          <Steps
-            key={index}
-            number={step.number}
-            hasRange={step.hasRange}
-            isInactive={index > currentStep}
-            asComplete={answeredSteps[index]}
-          />
-        ))}
-      </div>
-      <div className="flex items-center my-12">
-        <Question text={questions[currentStep].question} />
-      </div>
-      <div className="my-4 flex flex-wrap gap-4 justify-center max-w-2xl">
-        {questions[currentStep].answers.map((answer, index) => (
-          <ButtonAnswer
-            key={index}
-            text={answer.text}
-            value={answer.value}
-            selectedAnswer={answers[currentStep]}
-            onClick={answerQuestion}
-          />
-        ))}
-      </div>
-      <div className="flex items-center my-12">
-        <Description text={questions[currentStep].description} />
-      </div>
-      <div className="flex flex-row items-center justify-center w-6/12 space-x-4">
-        <div className={`${currentStep <= 0 ? 'hidden' : ''}`}>
-          <StepsButton
-            icon={
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={1.5}
-                stroke="currentColor"
-                className="size-6"
-                style={{ transform: 'scale(-1, 1)' }}
+    <>
+      <Navbar />
+      <Container>
+        <Box
+          sx={{
+            display: 'flex',
+            flexDirection: { xs: 'column', md: 'row' },
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            minHeight: '60vh',
+            backgroundImage:
+              'url("https://source.unsplash.com/random/1920x1080?movies")',
+            backgroundSize: 'cover',
+            padding: { xs: 3, sm: 4, md: 8 },
+            borderRadius: 2,
+            position: 'relative',
+            height: { xs: 'calc(100vh - 56px)', md: 'calc(80vh - 128px)' },
+            marginBottom: { xs: 4, md: 8 },
+          }}
+        >
+          <Box sx={{ flex: 1, display: 'flex', justifyContent: 'center' }}>
+            <LoadingComponent />
+          </Box>
+
+          <Box sx={{ flex: 1, mt: { xs: 4, md: 0 } }}>
+            <Typography
+              variant="h2"
+              gutterBottom
+              sx={{
+                color: 'black',
+                marginBottom: 2,
+                fontSize: { xs: '2rem', sm: '2.5rem', md: '3rem' },
+              }}
+            >
+              What to watch tonight?
+            </Typography>
+            <Typography
+              variant="h5"
+              gutterBottom
+              sx={{
+                color: 'black',
+                marginBottom: 4,
+                fontSize: { xs: '1.2rem', md: '1.5rem' },
+              }}
+            >
+              Descubra o filme perfeito em instantes! Deixe de lado a busca
+              interminável nas plataformas de streaming e permita que nossas
+              recomendações personalizadas combinem com seu humor e gosto.
+            </Typography>
+            <Box
+              sx={{
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+              }}
+            >
+              <Link href="/movie" passHref>
+                <Button
+                  variant="contained"
+                  color="primary"
+                  size="large"
+                  sx={{ marginTop: 4, marginBottom: 2 }}
+                  startIcon={<MovieIcon />}
+                >
+                  Encontrar um filme
+                </Button>
+              </Link>
+            </Box>
+          </Box>
+        </Box>
+
+        <Box
+          sx={{
+            padding: { xs: 2, sm: 3, md: 8 },
+            marginTop: { xs: 2, sm: 3, md: 4 },
+          }}
+        >
+          <Typography
+            variant="h4"
+            align="center"
+            gutterBottom
+            sx={{ fontSize: { xs: '1.8rem', md: '2.2rem' } }}
+          >
+            Nossa Intenção
+          </Typography>
+          <Typography
+            variant="body1"
+            align="center"
+            sx={{ marginBottom: 4, fontSize: { xs: '1rem', md: '1.2rem' } }}
+          >
+            Este projeto é um esforço independente, desenvolvido com o objetivo
+            de simplificar a experiência de escolha de filmes. Utilizamos um
+            algoritmo de clustering que ainda está em fase de calibração para
+            oferecer recomendações cada vez mais precisas. Sua contribuição é
+            bem-vinda!
+          </Typography>
+          <Box
+            sx={{
+              display: 'flex',
+              justifyContent: 'center',
+              marginBottom: { xs: 2, sm: 4 },
+            }}
+          >
+            <Link href="https://www.buymeacoffee.com/seu_usuario" passHref>
+              <Button
+                variant="contained"
+                color="primary"
+                size="large"
+                startIcon={<MonetizationOnIcon />}
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"
-                />
-              </svg>
-            }
-            onClick={currentStep > 0 ? prevStep : undefined}
-          />
-        </div>
-        <div className={`${!answeredSteps[currentStep] ? 'hidden' : ''}`}>
-          <StepsButton
-            icon={
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={1.5}
-                stroke="currentColor"
-                className="size-6"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"
-                />
-              </svg>
-            }
-            onClick={
-              currentStep < steps.current.length - 1 ? nextStep : undefined
-            }
-          />
-        </div>
-      </div>
-    </main>
+                Apoie nosso trabalho
+              </Button>
+            </Link>
+          </Box>
+        </Box>
+
+        <Box sx={{ padding: { xs: 2, sm: 4, md: 8 } }}>
+          <Typography
+            variant="h4"
+            align="center"
+            gutterBottom
+            sx={{ fontSize: { xs: '1.8rem', md: '2.2rem' } }}
+          >
+            Funcionalidades
+          </Typography>
+          <Grid container spacing={4}>
+            {featuresData.map((feature, index) => (
+              <Grid item xs={12} sm={6} md={4} key={index}>
+                <Paper
+                  elevation={3}
+                  sx={{
+                    padding: { xs: 2, sm: 3 },
+                    textAlign: 'center',
+                    height: '100%',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    minHeight: 220,
+                  }}
+                >
+                  <Box
+                    sx={{
+                      display: 'flex',
+                      justifyContent: 'center',
+                      alignItems: 'center',
+                    }}
+                  >
+                    {feature.icon}
+                  </Box>
+                  <Typography
+                    variant="h6"
+                    sx={{
+                      marginTop: 2,
+                      fontSize: { xs: '1.2rem', md: '1.5rem' },
+                    }}
+                  >
+                    {feature.title}
+                  </Typography>
+                  <Typography
+                    variant="body2"
+                    sx={{ fontSize: { xs: '0.9rem', md: '1rem' } }}
+                  >
+                    {feature.description}
+                  </Typography>
+                </Paper>
+              </Grid>
+            ))}
+          </Grid>
+        </Box>
+      </Container>
+      <Footer />
+    </>
   );
 };
 
-const HomePage: React.FC = () => {
-  return <Home />;
-};
-
-export default HomePage;
+export default HeroFeaturesPage;
