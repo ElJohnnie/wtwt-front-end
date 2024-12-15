@@ -39,7 +39,7 @@ const Home: React.FC = () => {
       <div className="my-4 flex flex-wrap gap-4 justify-center max-w-2xl">
         {questions[currentStep].answers.map((answer, index) => (
           <ButtonAnswer
-            key={index}
+            key={answer.text}
             text={answer.text}
             value={answer.value}
             selectedAnswer={answers[index]}
