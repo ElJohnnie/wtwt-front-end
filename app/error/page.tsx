@@ -22,23 +22,16 @@ const ErrorPage: FC = () => {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen p-4">
       <div className="p-8 md:p-16 max-w-lg w-full text-center">
-        <h1 className="text-4xl font-bold text-pink-600 mb-4">
+        <h1 className="text-4xl font-bold text-slate-900 mb-4">
           Algo saiu do controle
         </h1>
-        <p className="text-pink-700 mb-8">Gostaria de tentar novamente?</p>
+        <p className="text-slate-700 mb-8">Vamos tentar novamente!</p>
         <div className="my-4 flex space-x-4 p-4">
           <StepsButton
             text="Tentar novamente"
             testId="try-again"
             onClick={handleBack}
             type="try-again"
-          />
-
-          <StepsButton
-            text="Refazer novamente"
-            onClick={goToStart}
-            testId="go-to-start"
-            type={'go-to-start'}
           />
         </div>
       </div>
