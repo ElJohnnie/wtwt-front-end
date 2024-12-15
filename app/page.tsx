@@ -47,14 +47,12 @@ const HeroFeaturesPage = () => {
             alignItems: 'center',
             justifyContent: 'space-between',
             minHeight: '60vh',
-            backgroundImage:
-              'url("https://source.unsplash.com/random/1920x1080?movies")',
-            backgroundSize: 'cover',
             padding: { xs: 3, sm: 4, md: 8 },
             borderRadius: 2,
             position: 'relative',
-            height: { xs: 'calc(100vh - 56px)', md: 'calc(80vh - 128px)' },
+            height: 'auto',
             marginBottom: { xs: 4, md: 8 },
+            textAlign: { xs: 'center', md: 'left' },
           }}
         >
           <Box sx={{ flex: 1, display: 'flex', justifyContent: 'center' }}>
