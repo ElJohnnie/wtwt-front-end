@@ -5,6 +5,11 @@ import ErrorPage from '../../../app/error/page';
 import { AppContext } from '../../../contexts/AppContext';
 import { RoutesUrls } from '../../../utils/enums/routesUrl';
 
+jest.mock('lottie-react', () => ({
+  __esModule: true,
+  default: () => <div>Lottie Mock</div>,
+}));
+
 const redirectMock = jest.fn();
 const replaceMock = jest.fn();
 

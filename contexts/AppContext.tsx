@@ -29,7 +29,6 @@ export const AppProvider: FC<AppProviderProps> = ({ children }) => {
     { number: '2', hasRange: true, isInactive: true, asComplete: false },
     { number: '3', hasRange: true, isInactive: true, asComplete: false },
     { number: '4', hasRange: true, isInactive: true, asComplete: false },
-    { number: '5', hasRange: false, isInactive: true, asComplete: false },
   ]);
 
   const questions: Questions[] = [
@@ -42,7 +41,7 @@ export const AppProvider: FC<AppProviderProps> = ({ children }) => {
         { text: 'Animado', value: 'excited' },
         { text: 'Entediado', value: 'bored' },
       ],
-      description: '',
+      description: 'Escolha a emoção que mais reflete seu estado atual.',
     },
     {
       question: 'Qual o seu estilo de filme favorito?',
@@ -57,7 +56,7 @@ export const AppProvider: FC<AppProviderProps> = ({ children }) => {
         { text: 'Thriller', value: 'Thriller' },
         { text: 'Terror/Suspense', value: 'Horror' },
       ],
-      description: '',
+      description: 'Escolha o gênero de filme que você mais gosta de assistir.',
     },
     {
       question: 'Seu segundo estilo de filme favorito?',
@@ -72,7 +71,8 @@ export const AppProvider: FC<AppProviderProps> = ({ children }) => {
         { text: 'Thriller', value: 'Thriller' },
         { text: 'Terror/Suspense', value: 'Horror' },
       ],
-      description: '',
+      description:
+        'Escolha o segundo gênero de filme que você mais gosta de assistir.',
     },
     {
       question: 'Qual período de lançamento mais lhe convém?',
@@ -87,7 +87,8 @@ export const AppProvider: FC<AppProviderProps> = ({ children }) => {
         { text: '1950', value: '1950' },
         { text: '1940', value: '1940' },
       ],
-      description: '',
+      description:
+        'Escolha a década de filmes que você mais gosta ou se identifica.',
     },
   ];
 

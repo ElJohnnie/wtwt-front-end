@@ -3,9 +3,13 @@
 exports[`Description renderizar o component Description 1`] = `
 <div>
   <div
-    class="text-center text-pink-600"
+    class="text-center text-slate-700"
   >
-    batatinha
+    <p
+      class="MuiTypography-root MuiTypography-body1 css-1edfpdg-MuiTypography-root"
+    >
+      batatinha
+    </p>
   </div>
 </div>
 `;

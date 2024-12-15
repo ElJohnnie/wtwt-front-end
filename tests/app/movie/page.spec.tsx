@@ -1,14 +1,19 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 import '@testing-library/jest-dom';
-import Home from '../../app/page';
-import { AppContext } from '../../contexts/AppContext';
+import HomePage from '../../../app/movie/page';
+import { AppContext } from '../../../contexts/AppContext';
+
+jest.mock('lottie-react', () => ({
+  __esModule: true,
+  default: () => <div>Lottie Mock</div>,
+}));
 
 const redirectMock = jest.fn();
 const replaceMock = jest.fn();
 
-jest.mock('../../hooks/useNavigation/index.tsx', () => ({
-  ...jest.requireActual('../../hooks/useNavigation/index.tsx'),
+jest.mock('../../../hooks/useNavigation/index.tsx', () => ({
+  ...jest.requireActual('../../../hooks/useNavigation/index.tsx'),
   useNavigation: () => ({
     redirect: redirectMock,
     replace: replaceMock,
@@ -52,7 +57,7 @@ describe('Home', () => {
   it('Renderizando a página inicial', () => {
     const { container } = render(
       <AppContext.Provider value={mockContextValue}>
-        <Home />
+        <HomePage />
       </AppContext.Provider>,
     );
 

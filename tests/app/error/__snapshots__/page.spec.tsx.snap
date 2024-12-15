@@ -25,57 +25,45 @@ exports[`ErrorPage Renderizando a página de erro 1`] = `
           class="w-full flex flex-col justify-center items-center"
         >
           <button
-            class="w-24 h-24 rounded-full   inline-flex items-center justify-center   text-white text-[24px] font-bold bg-pink-600 hover:bg-pink-800"
+            class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary css-142372x-MuiButtonBase-root-MuiButton-root"
             data-testid="try-again"
+            tabindex="0"
+            type="button"
           >
             <svg
-              class="size-6"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="1.5"
+              aria-hidden="true"
+              class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-20bmp1-MuiSvgIcon-root"
+              data-testid="ReplayIcon"
+              focusable="false"
               viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
             >
               <path
-                d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0 3.181 3.183a8.25 8.25 0 0 0 13.803-3.7M4.031 9.865a8.25 8.25 0 0 1 13.803-3.7l3.181 3.182m0-4.991v4.99"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                d="M12 5V1L7 6l5 5V7c3.31 0 6 2.69 6 6s-2.69 6-6 6-6-2.69-6-6H4c0 4.42 3.58 8 8 8s8-3.58 8-8-3.58-8-8-8"
               />
             </svg>
           </button>
-          <p
-            class="text-[18px] mt-1 text-pink-600"
-          >
-            Tentar novamente
-          </p>
         </div>
         <div
           class="w-full flex flex-col justify-center items-center"
         >
           <button
-            class="w-24 h-24 rounded-full   inline-flex items-center justify-center   text-white text-[24px] font-bold bg-pink-600 hover:bg-pink-800"
+            class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary css-142372x-MuiButtonBase-root-MuiButton-root"
             data-testid="go-to-start"
+            tabindex="0"
+            type="button"
           >
             <svg
-              class="size-6"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="1.5"
+              aria-hidden="true"
+              class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-20bmp1-MuiSvgIcon-root"
+              data-testid="ReplayIcon"
+              focusable="false"
               viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
             >
               <path
-                d="M8.25 9V5.25A2.25 2.25 0 0 1 10.5 3h6a2.25 2.25 0 0 1 2.25 2.25v13.5A2.25 2.25 0 0 1 16.5 21h-6a2.25 2.25 0 0 1-2.25-2.25V15m-3 0-3-3m0 0 3-3m-3 3H15"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                d="M12 5V1L7 6l5 5V7c3.31 0 6 2.69 6 6s-2.69 6-6 6-6-2.69-6-6H4c0 4.42 3.58 8 8 8s8-3.58 8-8-3.58-8-8-8"
               />
             </svg>
           </button>
-          <p
-            class="text-[18px] mt-1 text-pink-600"
-          >
-            Refazer novamente
-          </p>
         </div>
       </div>
     </div>

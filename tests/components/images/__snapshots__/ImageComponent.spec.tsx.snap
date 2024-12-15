@@ -22,12 +22,12 @@ exports[`ImageComponent quero que minha imagem renderize sem problemas 1`] = `
       />
     </figure>
     <h3
-      class="font-bold text-pink-600 text-center text-lg mt-3 max-w-x"
+      class="font-bold text-slate-900 text-center text-lg mt-3 max-w-x"
     >
       Clube da Luta
     </h3>
     <p
-      class="text-pink-600 text-center text-sm mt-2 max-w-sm"
+      class="text-slate-700 text-center text-sm mt-2 max-w-sm"
     >
       Um homem deprimido que sofre de insônia conhece um estranho vendedor chamado Tyler Durden e se vê morando em uma casa suja depois que seu perfeito apartamento é destruído. A dupla forma um clube com regras rígidas onde homens lutam. A parceria perfeita é comprometida quando uma mulher, Marla, atrai a atenção de Tyler.
     </p>

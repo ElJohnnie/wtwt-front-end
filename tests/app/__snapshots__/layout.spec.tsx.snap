@@ -9,96 +9,182 @@ exports[`RootLayout Renderizando o layout raiz 1`] = `
       class="className"
     >
       <main
-        class="flex min-h-screen flex-col items-center p-12"
+        class="flex min-h-screen flex-col items-center justify-center"
       >
         <div
-          class="flex justify-between flex-row items-center my-4"
+          class="flex justify-between flex-row items-center"
         >
           <div
-            class="flex flex-row justify-center items-center"
+            class="MuiBox-root css-1tylbmg"
           >
             <div
-              class="size-10 md:size-16 xl:size-18 rounded-full  
-          inline-flex items-center justify-center  
-          text-white text-[24px] font-bold bg-pink-600"
-            >
-              1
-            </div>
-            <div
-              class="w-8 lg:w-24 md:w-16 bg-gray-200 rounded-full invisible md:visible mx-0 h-2.5 md:mx-4 dark:bg-gray-700"
+              class="MuiStepper-root MuiStepper-horizontal css-1a9jkgz-MuiStepper-root"
             >
               <div
-                class="bg-pink-600 h-2.5 rounded-full"
-                style="width: 50%;"
-              />
-            </div>
-          </div>
-          <div
-            class="flex flex-row justify-center items-center"
-          >
-            <div
-              class="size-10 md:size-16 xl:size-18 rounded-full  
-          inline-flex items-center justify-center  
-          text-white text-[24px] font-bold bg-pink-400"
-            >
-              2
-            </div>
-            <div
-              class="w-8 lg:w-24 md:w-16 bg-gray-200 rounded-full invisible md:visible mx-0 h-2.5 md:mx-4 dark:bg-gray-700"
-            >
+                class="MuiStep-root MuiStep-horizontal css-nd0xiu-MuiStep-root"
+              >
+                <span
+                  class="MuiStepLabel-root MuiStepLabel-horizontal css-ascpo7-MuiStepLabel-root"
+                >
+                  <span
+                    class="MuiStepLabel-iconContainer Mui-active css-vnkopk-MuiStepLabel-iconContainer"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiStepIcon-root Mui-active css-nwqhv8-MuiSvgIcon-root-MuiStepIcon-root"
+                      focusable="false"
+                      viewBox="0 0 24 24"
+                    >
+                      <circle
+                        cx="12"
+                        cy="12"
+                        r="12"
+                      />
+                      <text
+                        class="MuiStepIcon-text css-117w1su-MuiStepIcon-text"
+                        dominant-baseline="central"
+                        text-anchor="middle"
+                        x="12"
+                        y="12"
+                      >
+                        1
+                      </text>
+                    </svg>
+                  </span>
+                  <span
+                    class="MuiStepLabel-labelContainer css-1vyamtt-MuiStepLabel-labelContainer"
+                  />
+                </span>
+              </div>
               <div
-                class="bg-pink-600 h-2.5 rounded-full"
-                style="width: 0%;"
-              />
-            </div>
-          </div>
-          <div
-            class="flex flex-row justify-center items-center"
-          >
-            <div
-              class="size-10 md:size-16 xl:size-18 rounded-full  
-          inline-flex items-center justify-center  
-          text-white text-[24px] font-bold bg-pink-400"
-            >
-              3
-            </div>
-            <div
-              class="w-8 lg:w-24 md:w-16 bg-gray-200 rounded-full invisible md:visible mx-0 h-2.5 md:mx-4 dark:bg-gray-700"
-            >
+                class="MuiStepConnector-root MuiStepConnector-horizontal Mui-disabled css-j5w0w9-MuiStepConnector-root"
+              >
+                <span
+                  class="MuiStepConnector-line MuiStepConnector-lineHorizontal css-1qv8q39-MuiStepConnector-line"
+                />
+              </div>
               <div
-                class="bg-pink-600 h-2.5 rounded-full"
-                style="width: 0%;"
-              />
-            </div>
-          </div>
-          <div
-            class="flex flex-row justify-center items-center"
-          >
-            <div
-              class="size-10 md:size-16 xl:size-18 rounded-full  
-          inline-flex items-center justify-center  
-          text-white text-[24px] font-bold bg-pink-400"
-            >
-              4
-            </div>
-            <div
-              class="w-8 lg:w-24 md:w-16 bg-gray-200 rounded-full invisible md:visible mx-0 h-2.5 md:mx-4 dark:bg-gray-700"
-            >
+                class="MuiStep-root MuiStep-horizontal css-nd0xiu-MuiStep-root"
+              >
+                <span
+                  class="MuiStepLabel-root MuiStepLabel-horizontal Mui-disabled css-ascpo7-MuiStepLabel-root"
+                >
+                  <span
+                    class="MuiStepLabel-iconContainer Mui-disabled css-vnkopk-MuiStepLabel-iconContainer"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiStepIcon-root css-nwqhv8-MuiSvgIcon-root-MuiStepIcon-root"
+                      focusable="false"
+                      viewBox="0 0 24 24"
+                    >
+                      <circle
+                        cx="12"
+                        cy="12"
+                        r="12"
+                      />
+                      <text
+                        class="MuiStepIcon-text css-117w1su-MuiStepIcon-text"
+                        dominant-baseline="central"
+                        text-anchor="middle"
+                        x="12"
+                        y="12"
+                      >
+                        2
+                      </text>
+                    </svg>
+                  </span>
+                  <span
+                    class="MuiStepLabel-labelContainer css-1vyamtt-MuiStepLabel-labelContainer"
+                  />
+                </span>
+              </div>
               <div
-                class="bg-pink-600 h-2.5 rounded-full"
-                style="width: 0%;"
-              />
-            </div>
-          </div>
-          <div
-            class="flex flex-row justify-center items-center"
-          >
-            <div
-              class="size-10 md:size-16 xl:size-18 rounded-full  
-          inline-flex items-center justify-center  
-          text-white text-[24px] font-bold bg-pink-400"
-            >
-              5
+                class="MuiStepConnector-root MuiStepConnector-horizontal Mui-disabled css-j5w0w9-MuiStepConnector-root"
+              >
+                <span
+                  class="MuiStepConnector-line MuiStepConnector-lineHorizontal css-1qv8q39-MuiStepConnector-line"
+                />
+              </div>
+              <div
+                class="MuiStep-root MuiStep-horizontal css-nd0xiu-MuiStep-root"
+              >
+                <span
+                  class="MuiStepLabel-root MuiStepLabel-horizontal Mui-disabled css-ascpo7-MuiStepLabel-root"
+                >
+                  <span
+                    class="MuiStepLabel-iconContainer Mui-disabled css-vnkopk-MuiStepLabel-iconContainer"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiStepIcon-root css-nwqhv8-MuiSvgIcon-root-MuiStepIcon-root"
+                      focusable="false"
+                      viewBox="0 0 24 24"
+                    >
+                      <circle
+                        cx="12"
+                        cy="12"
+                        r="12"
+                      />
+                      <text
+                        class="MuiStepIcon-text css-117w1su-MuiStepIcon-text"
+                        dominant-baseline="central"
+                        text-anchor="middle"
+                        x="12"
+                        y="12"
+                      >
+                        3
+                      </text>
+                    </svg>
+                  </span>
+                  <span
+                    class="MuiStepLabel-labelContainer css-1vyamtt-MuiStepLabel-labelContainer"
+                  />
+                </span>
+              </div>
+              <div
+                class="MuiStepConnector-root MuiStepConnector-horizontal Mui-disabled css-j5w0w9-MuiStepConnector-root"
+              >
+                <span
+                  class="MuiStepConnector-line MuiStepConnector-lineHorizontal css-1qv8q39-MuiStepConnector-line"
+                />
+              </div>
+              <div
+                class="MuiStep-root MuiStep-horizontal css-nd0xiu-MuiStep-root"
+              >
+                <span
+                  class="MuiStepLabel-root MuiStepLabel-horizontal Mui-disabled css-ascpo7-MuiStepLabel-root"
+                >
+                  <span
+                    class="MuiStepLabel-iconContainer Mui-disabled css-vnkopk-MuiStepLabel-iconContainer"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiStepIcon-root css-nwqhv8-MuiSvgIcon-root-MuiStepIcon-root"
+                      focusable="false"
+                      viewBox="0 0 24 24"
+                    >
+                      <circle
+                        cx="12"
+                        cy="12"
+                        r="12"
+                      />
+                      <text
+                        class="MuiStepIcon-text css-117w1su-MuiStepIcon-text"
+                        dominant-baseline="central"
+                        text-anchor="middle"
+                        x="12"
+                        y="12"
+                      >
+                        4
+                      </text>
+                    </svg>
+                  </span>
+                  <span
+                    class="MuiStepLabel-labelContainer css-1vyamtt-MuiStepLabel-labelContainer"
+                  />
+                </span>
+              </div>
             </div>
           </div>
         </div>
@@ -106,36 +192,50 @@ exports[`RootLayout Renderizando o layout raiz 1`] = `
           class="flex items-center my-12"
         >
           <div
-            class="py-2 px-2 md:px-12 rounded-full font-bold text-pink-600 text-center text-2xl md:text-4xl"
+            class="py-2 px-2 md:px-12 rounded-full text-center"
           >
-            Como você está se sentindo agora?
+            <h2
+              class="MuiTypography-root MuiTypography-h2 css-12vu8f8-MuiTypography-root"
+            >
+              Como você está se sentindo agora?
+            </h2>
           </div>
         </div>
         <div
           class="my-4 flex flex-wrap gap-4 justify-center max-w-2xl"
         >
           <button
-            class="focus:outline-none focus:ring-4 font-medium text-xl px-8 md:px-12 py-4 lg:px-24 lg:py-5 text-center mb-2 hover:bg-pink-800  rounded-full text-white bg-pink-600"
+            class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeLarge MuiButton-containedSizeLarge MuiButton-colorPrimary MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeLarge MuiButton-containedSizeLarge MuiButton-colorPrimary css-1r976ha-MuiButtonBase-root-MuiButton-root"
+            tabindex="0"
+            type="button"
           >
             Feliz
           </button>
           <button
-            class="focus:outline-none focus:ring-4 font-medium text-xl px-8 md:px-12 py-4 lg:px-24 lg:py-5 text-center mb-2 hover:bg-pink-800  rounded-full text-white bg-pink-600"
+            class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeLarge MuiButton-containedSizeLarge MuiButton-colorPrimary MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeLarge MuiButton-containedSizeLarge MuiButton-colorPrimary css-1r976ha-MuiButtonBase-root-MuiButton-root"
+            tabindex="0"
+            type="button"
           >
             Triste
           </button>
           <button
-            class="focus:outline-none focus:ring-4 font-medium text-xl px-8 md:px-12 py-4 lg:px-24 lg:py-5 text-center mb-2 hover:bg-pink-800  rounded-full text-white bg-pink-600"
+            class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeLarge MuiButton-containedSizeLarge MuiButton-colorPrimary MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeLarge MuiButton-containedSizeLarge MuiButton-colorPrimary css-1r976ha-MuiButtonBase-root-MuiButton-root"
+            tabindex="0"
+            type="button"
           >
             Ansioso
           </button>
           <button
-            class="focus:outline-none focus:ring-4 font-medium text-xl px-8 md:px-12 py-4 lg:px-24 lg:py-5 text-center mb-2 hover:bg-pink-800  rounded-full text-white bg-pink-600"
+            class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeLarge MuiButton-containedSizeLarge MuiButton-colorPrimary MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeLarge MuiButton-containedSizeLarge MuiButton-colorPrimary css-1r976ha-MuiButtonBase-root-MuiButton-root"
+            tabindex="0"
+            type="button"
           >
             Animado
           </button>
           <button
-            class="focus:outline-none focus:ring-4 font-medium text-xl px-8 md:px-12 py-4 lg:px-24 lg:py-5 text-center mb-2 hover:bg-pink-800  rounded-full text-white bg-pink-600"
+            class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeLarge MuiButton-containedSizeLarge MuiButton-colorPrimary MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeLarge MuiButton-containedSizeLarge MuiButton-colorPrimary css-1r976ha-MuiButtonBase-root-MuiButton-root"
+            tabindex="0"
+            type="button"
           >
             Entediado
           </button>
@@ -144,8 +244,14 @@ exports[`RootLayout Renderizando o layout raiz 1`] = `
           class="flex items-center my-12"
         >
           <div
-            class="text-center text-pink-600"
-          />
+            class="text-center text-slate-700"
+          >
+            <p
+              class="MuiTypography-root MuiTypography-body1 css-1edfpdg-MuiTypography-root"
+            >
+              Escolha a emoção que mais reflete seu estado atual.
+            </p>
+          </div>
         </div>
         <div
           class="flex flex-row items-center justify-center w-6/12 space-x-4"
@@ -157,56 +263,22 @@ exports[`RootLayout Renderizando o layout raiz 1`] = `
               class="w-full flex flex-col justify-center items-center"
             >
               <button
-                class="w-24 h-24 rounded-full   inline-flex items-center justify-center   text-white text-[24px] font-bold bg-pink-600 hover:bg-pink-800"
+                class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeLarge MuiButton-containedSizeLarge MuiButton-colorPrimary MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeLarge MuiButton-containedSizeLarge MuiButton-colorPrimary css-1r976ha-MuiButtonBase-root-MuiButton-root"
+                tabindex="0"
+                type="button"
               >
                 <svg
-                  class="size-6"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="1.5"
-                  style="transform: scale(-1, 1);"
+                  aria-hidden="true"
+                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-20bmp1-MuiSvgIcon-root"
+                  data-testid="UndoIcon"
+                  focusable="false"
                   viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+                    d="M12.5 8c-2.65 0-5.05.99-6.9 2.6L2 7v9h9l-3.62-3.62c1.39-1.16 3.16-1.88 5.12-1.88 3.54 0 6.55 2.31 7.6 5.5l2.37-.78C21.08 11.03 17.15 8 12.5 8"
                   />
                 </svg>
               </button>
-              <p
-                class="text-[18px] mt-1 text-pink-600"
-              />
-            </div>
-          </div>
-          <div
-            class="hidden"
-          >
-            <div
-              class="w-full flex flex-col justify-center items-center"
-            >
-              <button
-                class="w-24 h-24 rounded-full   inline-flex items-center justify-center   text-white text-[24px] font-bold bg-pink-600 hover:bg-pink-800"
-              >
-                <svg
-                  class="size-6"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="1.5"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </svg>
-              </button>
-              <p
-                class="text-[18px] mt-1 text-pink-600"
-              />
             </div>
           </div>
         </div>

@@ -1,10 +1,5 @@
 import React, { useMemo } from 'react';
-
-const starStyle = {
-  fontSize: '2rem',
-  color: '#FFD700',
-};
-
+import { Rating } from '@mui/material';
 interface StarRatingProps {
   rating: number;
 }
@@ -21,21 +16,7 @@ const getStarCount = (rating: number): number => {
 const StarRating: React.FC<StarRatingProps> = ({ rating }) => {
   const starCount = useMemo(() => getStarCount(rating), [rating]);
 
-  const stars = useMemo(
-    () =>
-      Array.from({ length: 5 }, (_, index) => (index < starCount ? '★' : '☆')),
-    [starCount],
-  );
-
-  return (
-    <div>
-      {stars.map((star, index) => (
-        <span key={index} style={starStyle}>
-          {star}
-        </span>
-      ))}
-    </div>
-  );
+  return <Rating name="read-only" value={starCount} readOnly />;
 };
 
 export default StarRating;

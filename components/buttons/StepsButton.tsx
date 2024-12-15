@@ -1,21 +1,48 @@
 import React from 'react';
 import { StepsButtonProps } from '../../types';
+import { Button } from '@mui/material';
+import { Redo, Undo, Replay } from '@mui/icons-material';
 
 export default function StepsButton(props: StepsButtonProps) {
-  const { icon, onClick, text, testId } = props;
+  const { type, onClick, testId } = props;
+  const ButtonComponent = () => {
+    if (type === 'go-to-start' || type === 'try-again') {
+      return (
+        <Button variant="contained" onClick={onClick} data-testid={testId}>
+          <Replay>Refazer</Replay>
+        </Button>
+      );
+    }
+    if (type === 'next-step') {
+      return (
+        <Button
+          variant="contained"
+          size="large"
+          onClick={onClick}
+          data-testid={testId}
+        >
+          <Redo></Redo>
+        </Button>
+      );
+    }
+    if (type === 'prev-step') {
+      return (
+        <Button
+          variant="contained"
+          size="large"
+          onClick={onClick}
+          data-testid={testId}
+        >
+          <Undo></Undo>
+        </Button>
+      );
+    }
+  };
 
   return (
     <div className="w-full flex flex-col justify-center items-center">
-      <button
-        className="w-24 h-24 rounded-full  
-          inline-flex items-center justify-center  
-          text-white text-[24px] font-bold bg-pink-600 hover:bg-pink-800"
-        onClick={onClick}
-        data-testid={testId}
-      >
-        {icon}
-      </button>
-      <p className="text-[18px] mt-1 text-pink-600">{text}</p>
+      <ButtonComponent />
+      {/* <p className="text-[18px] mt-1 text-pink-600">{text}</p> */}
     </div>
   );
 }
