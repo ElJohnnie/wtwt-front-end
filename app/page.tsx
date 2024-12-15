@@ -12,6 +12,7 @@ import {
 } from '@mui/icons-material';
 import Navbar from '../components/navbar/NavBar';
 import Footer from '../components/footer/Footer';
+import { RoutesUrls } from '../utils/enums/routesUrl';
 
 const featuresData = [
   {
@@ -92,7 +93,7 @@ const HeroFeaturesPage = () => {
                 alignItems: 'center',
               }}
             >
-              <Link href="/movie" passHref>
+              <Link href={RoutesUrls.MOVIE} passHref>
                 <Button
                   variant="contained"
                   color="primary"

@@ -5,6 +5,7 @@ import ResultPage from '../../../app/result/page';
 import { AppContext } from '../../../contexts/AppContext';
 import { axiosInstance } from '../../../services/api';
 import { RoutesUrls } from '../../../utils/enums/routesUrl';
+import { renderWithOutContextProvider } from '../../../utils/tests/helpers';
 
 jest.mock('lottie-react', () => ({
   __esModule: true,
@@ -108,7 +109,7 @@ describe('ResultPage', () => {
       .spyOn(axiosInstance, 'get')
       .mockResolvedValueOnce({ data: mockMoviesResponse });
 
-    const { container } = render(
+    const { container } = renderWithOutContextProvider(
       <AppContext.Provider value={mockContextValue}>
         <ResultPage />
       </AppContext.Provider>,

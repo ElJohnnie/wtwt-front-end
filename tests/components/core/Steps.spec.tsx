@@ -1,10 +1,10 @@
 import React from 'react';
-import { render } from '@testing-library/react';
 import Steps from '../../../components/core/Steps';
+import { renderWithOutContextProvider } from '../../../utils/tests/helpers';
 
 describe('Steps', () => {
   it('quero renderizar o component de steps inicialmente', () => {
-    const { container } = render(
+    const { container } = renderWithOutContextProvider(
       <Steps
         number={'1'}
         hasRange={false}
@@ -17,7 +17,7 @@ describe('Steps', () => {
     expect(container).toMatchSnapshot();
   });
   it('quero renderizar o component de steps inativo', () => {
-    const { container } = render(
+    const { container } = renderWithOutContextProvider(
       <Steps
         number={'1'}
         hasRange={false}
@@ -29,7 +29,7 @@ describe('Steps', () => {
     expect(container).toBeTruthy();
   });
   it('quero renderizar o component de steps com o range completo', () => {
-    const { container } = render(
+    const { container } = renderWithOutContextProvider(
       <Steps
         number={'1'}
         hasRange={true}
@@ -41,7 +41,7 @@ describe('Steps', () => {
     expect(container).toBeTruthy();
   });
   it('quero renderizar o component de steps com o range incompleto', () => {
-    const { container } = render(
+    const { container } = renderWithOutContextProvider(
       <Steps
         number={'1'}
         hasRange={true}
@@ -53,7 +53,7 @@ describe('Steps', () => {
     expect(container).toBeTruthy();
   });
   it('quero renderizar o component de steps com o range vazio', () => {
-    const { container } = render(
+    const { container } = renderWithOutContextProvider(
       <Steps
         number={'1'}
         hasRange={true}

@@ -25,7 +25,7 @@ exports[`Home Renderizando a página inicial 1`] = `
               >
                 <svg
                   aria-hidden="true"
-                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiStepIcon-root Mui-active css-15rfbsb-MuiSvgIcon-root-MuiStepIcon-root"
+                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiStepIcon-root Mui-active css-nwqhv8-MuiSvgIcon-root-MuiStepIcon-root"
                   focusable="false"
                   viewBox="0 0 24 24"
                 >
@@ -68,7 +68,7 @@ exports[`Home Renderizando a página inicial 1`] = `
               >
                 <svg
                   aria-hidden="true"
-                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiStepIcon-root css-15rfbsb-MuiSvgIcon-root-MuiStepIcon-root"
+                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiStepIcon-root css-nwqhv8-MuiSvgIcon-root-MuiStepIcon-root"
                   focusable="false"
                   viewBox="0 0 24 24"
                 >
@@ -111,7 +111,7 @@ exports[`Home Renderizando a página inicial 1`] = `
               >
                 <svg
                   aria-hidden="true"
-                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiStepIcon-root css-15rfbsb-MuiSvgIcon-root-MuiStepIcon-root"
+                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiStepIcon-root css-nwqhv8-MuiSvgIcon-root-MuiStepIcon-root"
                   focusable="false"
                   viewBox="0 0 24 24"
                 >
@@ -154,7 +154,7 @@ exports[`Home Renderizando a página inicial 1`] = `
               >
                 <svg
                   aria-hidden="true"
-                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiStepIcon-root css-15rfbsb-MuiSvgIcon-root-MuiStepIcon-root"
+                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiStepIcon-root css-nwqhv8-MuiSvgIcon-root-MuiStepIcon-root"
                   focusable="false"
                   viewBox="0 0 24 24"
                 >
@@ -197,7 +197,7 @@ exports[`Home Renderizando a página inicial 1`] = `
               >
                 <svg
                   aria-hidden="true"
-                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiStepIcon-root css-15rfbsb-MuiSvgIcon-root-MuiStepIcon-root"
+                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiStepIcon-root css-nwqhv8-MuiSvgIcon-root-MuiStepIcon-root"
                   focusable="false"
                   viewBox="0 0 24 24"
                 >
@@ -232,7 +232,7 @@ exports[`Home Renderizando a página inicial 1`] = `
         class="py-2 px-2 md:px-12 rounded-full text-center"
       >
         <h2
-          class="MuiTypography-root MuiTypography-h2 css-1bkebpk-MuiTypography-root"
+          class="MuiTypography-root MuiTypography-h2 css-12vu8f8-MuiTypography-root"
         >
           Como você está se sentindo agora?
         </h2>
@@ -242,35 +242,35 @@ exports[`Home Renderizando a página inicial 1`] = `
       class="my-4 flex flex-wrap gap-4 justify-center max-w-2xl"
     >
       <button
-        class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeLarge MuiButton-containedSizeLarge MuiButton-colorPrimary MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeLarge MuiButton-containedSizeLarge MuiButton-colorPrimary css-1jzwgk1-MuiButtonBase-root-MuiButton-root"
+        class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeLarge MuiButton-containedSizeLarge MuiButton-colorPrimary MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeLarge MuiButton-containedSizeLarge MuiButton-colorPrimary css-1r976ha-MuiButtonBase-root-MuiButton-root"
         tabindex="0"
         type="button"
       >
         Feliz
       </button>
       <button
-        class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeLarge MuiButton-containedSizeLarge MuiButton-colorPrimary MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeLarge MuiButton-containedSizeLarge MuiButton-colorPrimary css-1jzwgk1-MuiButtonBase-root-MuiButton-root"
+        class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeLarge MuiButton-containedSizeLarge MuiButton-colorPrimary MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeLarge MuiButton-containedSizeLarge MuiButton-colorPrimary css-1r976ha-MuiButtonBase-root-MuiButton-root"
         tabindex="0"
         type="button"
       >
         Triste
       </button>
       <button
-        class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeLarge MuiButton-containedSizeLarge MuiButton-colorPrimary MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeLarge MuiButton-containedSizeLarge MuiButton-colorPrimary css-1jzwgk1-MuiButtonBase-root-MuiButton-root"
+        class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeLarge MuiButton-containedSizeLarge MuiButton-colorPrimary MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeLarge MuiButton-containedSizeLarge MuiButton-colorPrimary css-1r976ha-MuiButtonBase-root-MuiButton-root"
         tabindex="0"
         type="button"
       >
         Ansioso
       </button>
       <button
-        class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeLarge MuiButton-containedSizeLarge MuiButton-colorPrimary MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeLarge MuiButton-containedSizeLarge MuiButton-colorPrimary css-1jzwgk1-MuiButtonBase-root-MuiButton-root"
+        class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeLarge MuiButton-containedSizeLarge MuiButton-colorPrimary MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeLarge MuiButton-containedSizeLarge MuiButton-colorPrimary css-1r976ha-MuiButtonBase-root-MuiButton-root"
         tabindex="0"
         type="button"
       >
         Bem animado
       </button>
       <button
-        class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeLarge MuiButton-containedSizeLarge MuiButton-colorPrimary MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeLarge MuiButton-containedSizeLarge MuiButton-colorPrimary css-1jzwgk1-MuiButtonBase-root-MuiButton-root"
+        class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeLarge MuiButton-containedSizeLarge MuiButton-colorPrimary MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeLarge MuiButton-containedSizeLarge MuiButton-colorPrimary css-1r976ha-MuiButtonBase-root-MuiButton-root"
         tabindex="0"
         type="button"
       >
@@ -300,7 +300,7 @@ exports[`Home Renderizando a página inicial 1`] = `
           class="w-full flex flex-col justify-center items-center"
         >
           <button
-            class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeLarge MuiButton-containedSizeLarge MuiButton-colorPrimary MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeLarge MuiButton-containedSizeLarge MuiButton-colorPrimary css-1jzwgk1-MuiButtonBase-root-MuiButton-root"
+            class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeLarge MuiButton-containedSizeLarge MuiButton-colorPrimary MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeLarge MuiButton-containedSizeLarge MuiButton-colorPrimary css-1r976ha-MuiButtonBase-root-MuiButton-root"
             tabindex="0"
             type="button"
           >

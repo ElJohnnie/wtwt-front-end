@@ -1,10 +1,10 @@
 import React from 'react';
-import { render } from '@testing-library/react';
 import ImageComponent from '../../../components/images/ImageComponent';
+import { renderWithOutContextProvider } from '../../../utils/tests/helpers';
 
 describe('ImageComponent', () => {
   it('quero que minha imagem renderize sem problemas', () => {
-    const { container } = render(
+    const { container } = renderWithOutContextProvider(
       <ImageComponent
         href="https://image.tmdb.org/t/p/w500/pB8BM7pdSp6B6Ih7QZ4DrQ3PmJK.jpg"
         title="Clube da Luta"

@@ -26,7 +26,7 @@ const Home: React.FC = () => {
     if (showResult) {
       replace(RoutesUrls.RESULT);
     }
-  });
+  }, [showResult, replace]);
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-center">

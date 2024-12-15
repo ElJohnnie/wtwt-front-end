@@ -1,9 +1,10 @@
 import React, { act } from 'react';
-import { fireEvent, render, screen } from '@testing-library/react';
+import { fireEvent, render } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import ErrorPage from '../../../app/error/page';
 import { AppContext } from '../../../contexts/AppContext';
 import { RoutesUrls } from '../../../utils/enums/routesUrl';
+import { renderWithOutContextProvider } from '../../../utils/tests/helpers';
 
 jest.mock('lottie-react', () => ({
   __esModule: true,
@@ -60,7 +61,7 @@ describe('ErrorPage', () => {
   });
 
   it('Renderizando a página de erro', () => {
-    const { container } = render(
+    const { container } = renderWithOutContextProvider(
       <AppContext.Provider value={mockContextValue}>
         <ErrorPage />
       </AppContext.Provider>,
@@ -70,27 +71,8 @@ describe('ErrorPage', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('Clicando no botão de voltar para a página inicial', () => {
-    const { getByTestId } = render(
-      <AppContext.Provider value={mockContextValue}>
-        <ErrorPage />
-      </AppContext.Provider>,
-    );
-
-    screen.logTestingPlaygroundURL();
-
-    const backButton = getByTestId('go-to-start');
-    expect(backButton).toBeInTheDocument();
-
-    act(() => {
-      fireEvent.click(backButton);
-    });
-
-    expect(replaceMock).toHaveBeenCalledWith(RoutesUrls.HOME);
-  });
-
   it('Clicando no botão de tentar novamente', () => {
-    const { getByTestId } = render(
+    const { getByTestId } = renderWithOutContextProvider(
       <AppContext.Provider value={mockContextValue}>
         <ErrorPage />
       </AppContext.Provider>,

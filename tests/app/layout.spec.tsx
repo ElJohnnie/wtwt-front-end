@@ -1,8 +1,8 @@
 import React from 'react';
-import { render } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import RootLayout from '../../app/layout';
 import HeroFeaturesPage from '../../app/page';
+import { renderWithOutContextProvider } from '../../utils/tests/helpers';
 
 jest.mock('lottie-react', () => ({
   __esModule: true,
@@ -22,7 +22,7 @@ jest.mock('../../hooks/useNavigation/index.tsx', () => ({
 
 describe.skip('RootLayout', () => {
   it('Renderizando o layout raiz', () => {
-    const { container } = render(
+    const { container } = renderWithOutContextProvider(
       <RootLayout>
         <HeroFeaturesPage />
       </RootLayout>,

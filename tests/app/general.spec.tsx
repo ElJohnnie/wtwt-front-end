@@ -1,10 +1,11 @@
 import React, { act } from 'react';
-import { render, fireEvent } from '@testing-library/react';
+import { fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import HomePage from '../../app/movie/page';
 import { metadata } from '../../app/layout';
 import { Providers } from '../../app/providers';
 import { RoutesUrls } from '../../utils/enums/routesUrl';
+import { renderWithOutContextProvider } from '../../utils/tests/helpers';
 
 jest.mock('lottie-react', () => ({
   __esModule: true,
@@ -24,7 +25,7 @@ jest.mock('../../hooks/useNavigation/index.tsx', () => ({
 
 describe('Test home page', () => {
   it('Testando completamente a home page', () => {
-    const { container, getByText } = render(
+    const { container, getByText } = renderWithOutContextProvider(
       <Providers>
         <HomePage />
       </Providers>,
