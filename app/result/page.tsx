@@ -1,5 +1,5 @@
 'use client';
-import React, { FC, useCallback, useContext, useEffect } from 'react';
+import React, { FC, useCallback, useContext } from 'react';
 import ImageComponent from '../../components/images/ImageComponent';
 import StepsButton from '../../components/buttons/StepsButton';
 import LoadingComponent from '../../components/loading/LoadingComponent';
@@ -11,18 +11,10 @@ import { useFetchMovies } from '../../hooks/use-fetch-movies';
 import { useQueryClient } from '@tanstack/react-query';
 
 const Result: FC = () => {
+  const queryClient = useQueryClient();
   const { replace } = useNavigation();
   const { answers, resetState } = useContext(AppContext);
   const { data, isFetchMovieLoading, isError } = useFetchMovies(answers);
-  const queryClient = useQueryClient();
-
-  useEffect(() => {
-    const abortController = new AbortController();
-
-    return () => {
-      abortController.abort();
-    };
-  }, []);
 
   if (isError) {
     replace(RoutesUrls.ERROR);
