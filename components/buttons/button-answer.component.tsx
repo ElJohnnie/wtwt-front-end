@@ -5,8 +5,6 @@ import Button from '@mui/material/Button';
 export default function ButtonAnswer(props: ButtonAnswerProps) {
   const { text, onClick, selectedAnswer, value } = props;
 
-
-
   const handleClick = () => {
     if (onClick && value) {
       onClick(value);
@@ -14,11 +12,7 @@ export default function ButtonAnswer(props: ButtonAnswerProps) {
   };
 
   return (
-    <Button
-      variant='contained'
-      size="large"
-      onClick={handleClick}
-    >
+    <Button variant="contained" size="large" onClick={handleClick}>
       {text}
     </Button>
   );
