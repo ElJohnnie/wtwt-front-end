@@ -6,7 +6,7 @@ exports[`Description renderizar o component Question 1`] = `
     class="py-2 px-2 md:px-12 rounded-full text-center"
   >
     <h2
-      class="MuiTypography-root MuiTypography-h2 css-1bkebpk-MuiTypography-root"
+      class="MuiTypography-root MuiTypography-h2 css-12vu8f8-MuiTypography-root"
     >
       batatinha?
     </h2>

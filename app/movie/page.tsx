@@ -1,13 +1,13 @@
 'use client';
 import React, { useContext, useEffect } from 'react';
 import { AppContext } from '../../contexts/AppContext';
-import Question from '../../components/texts/Question';
-import ButtonAnswer from '../../components/buttons/ButtonAnswer';
-import Description from '../../components/texts/Description';
-import StepsButton from '../../components/buttons/StepsButton';
+import Question from '../../components/texts/question.component';
+import ButtonAnswer from '../../components/buttons/button-answer.component';
+import Description from '../../components/texts/description.component';
+import StepsButton from '../../components/buttons/steps-button.component';
 import { RoutesUrls } from '../../utils/enums/routesUrl';
 import { useNavigation } from '../../hooks/useNavigation';
-import StepsNew from '../../components/core/StepsNew';
+import StepsNew from '../../components/core/steps-new.component';
 
 const Home: React.FC = () => {
   const {
@@ -26,7 +26,7 @@ const Home: React.FC = () => {
     if (showResult) {
       replace(RoutesUrls.RESULT);
     }
-  });
+  }, [showResult, replace]);
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-center">
@@ -39,7 +39,7 @@ const Home: React.FC = () => {
       <div className="my-4 flex flex-wrap gap-4 justify-center max-w-2xl">
         {questions[currentStep].answers.map((answer, index) => (
           <ButtonAnswer
-            key={index}
+            key={answer.text}
             text={answer.text}
             value={answer.value}
             selectedAnswer={answers[index]}

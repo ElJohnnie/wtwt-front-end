@@ -1,7 +1,7 @@
 'use client';
 import React from 'react';
 import { Container, Typography, Button, Box, Paper, Grid } from '@mui/material';
-import LoadingComponent from '../components/loading/LoadingComponent';
+import LoadingComponent from '../components/loading/loading.component';
 import Link from 'next/link';
 import {
   Star as StarIcon,
@@ -10,8 +10,9 @@ import {
   Movie as MovieIcon,
   MonetizationOn as MonetizationOnIcon,
 } from '@mui/icons-material';
-import Navbar from '../components/navbar/NavBar';
-import Footer from '../components/footer/Footer';
+import Navbar from '../components/navbar/nav-bar.component';
+import Footer from '../components/footer/footer.component';
+import { RoutesUrls } from '../utils/enums/routesUrl';
 
 const featuresData = [
   {
@@ -46,14 +47,12 @@ const HeroFeaturesPage = () => {
             alignItems: 'center',
             justifyContent: 'space-between',
             minHeight: '60vh',
-            backgroundImage:
-              'url("https://source.unsplash.com/random/1920x1080?movies")',
-            backgroundSize: 'cover',
             padding: { xs: 3, sm: 4, md: 8 },
             borderRadius: 2,
             position: 'relative',
-            height: { xs: 'calc(100vh - 56px)', md: 'calc(80vh - 128px)' },
+            height: 'auto',
             marginBottom: { xs: 4, md: 8 },
+            textAlign: { xs: 'center', md: 'left' },
           }}
         >
           <Box sx={{ flex: 1, display: 'flex', justifyContent: 'center' }}>
@@ -92,7 +91,7 @@ const HeroFeaturesPage = () => {
                 alignItems: 'center',
               }}
             >
-              <Link href="/movie" passHref>
+              <Link href={RoutesUrls.MOVIE} passHref>
                 <Button
                   variant="contained"
                   color="primary"

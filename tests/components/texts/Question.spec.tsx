@@ -1,11 +1,13 @@
 import React from 'react';
-import { render } from '@testing-library/react';
-import Question from '../../../components/texts/Question';
+import Question from '../../../components/texts/question.component';
 import '@testing-library/jest-dom';
+import { renderWithOutContextProvider } from '../../../utils/tests/helpers';
 
 describe('Description', () => {
   it('renderizar o component Question', () => {
-    const { container, getByText } = render(<Question text="batatinha?" />);
+    const { container, getByText } = renderWithOutContextProvider(
+      <Question text="batatinha?" />,
+    );
 
     const receipt = getByText('batatinha?');
     expect(receipt).toBeInTheDocument();

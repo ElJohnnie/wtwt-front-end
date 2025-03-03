@@ -1,6 +1,6 @@
 import React from 'react';
 import { Meta, StoryFn } from '@storybook/react';
-import ImageComponent from '../../components/images/ImageComponent';
+import ImageComponent from '../../components/images/image.component';
 import { ImageComponentProps } from '../../types';
 
 export default {

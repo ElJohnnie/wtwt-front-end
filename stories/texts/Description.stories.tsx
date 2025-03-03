@@ -1,6 +1,6 @@
 import React from 'react';
 import { Meta, StoryFn } from '@storybook/react';
-import Description from '../../components/texts/Description';
+import Description from '../../components/texts/description.component';
 import { DescriptionProps } from '../../types';
 
 export default {

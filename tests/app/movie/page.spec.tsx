@@ -1,8 +1,8 @@
 import React from 'react';
-import { render } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import HomePage from '../../../app/movie/page';
 import { AppContext } from '../../../contexts/AppContext';
+import { renderWithOutContextProvider } from '../../../utils/tests/helpers';
 
 jest.mock('lottie-react', () => ({
   __esModule: true,
@@ -55,7 +55,7 @@ const mockContextValue = {
 
 describe('Home', () => {
   it('Renderizando a página inicial', () => {
-    const { container } = render(
+    const { container } = renderWithOutContextProvider(
       <AppContext.Provider value={mockContextValue}>
         <HomePage />
       </AppContext.Provider>,

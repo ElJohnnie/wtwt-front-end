@@ -1,10 +1,10 @@
 import React from 'react';
-import { render } from '@testing-library/react';
-import StepsButton from '../../../components/buttons/StepsButton';
+import StepsButton from '../../../components/buttons/steps-button.component';
+import { renderWithOutContextProvider } from '../../../utils/tests/helpers';
 
 describe('StepsButton', () => {
   it('quero renderizar o StepsButton inicialmente', () => {
-    const { container } = render(
+    const { container } = renderWithOutContextProvider(
       <StepsButton
         icon={
           <svg

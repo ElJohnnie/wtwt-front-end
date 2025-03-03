@@ -1,91 +1,58 @@
 'use client';
-import React, { FC, useEffect, useState, useContext, useRef } from 'react';
-import ImageComponent from '../../components/images/ImageComponent';
-import StepsButton from '../../components/buttons/StepsButton';
-import LoadingComponent from '../../components/loading/LoadingComponent';
-import { fetchData } from '../../services/api';
+import React, { FC, useCallback, useContext } from 'react';
+import ImageComponent from '../../components/images/image.component';
+import StepsButton from '../../components/buttons/steps-button.component';
+import LoadingComponent from '../../components/loading/loading.component';
 import { AppContext } from '../../contexts/AppContext';
 import { RoutesUrls } from '../../utils/enums/routesUrl';
 import { useNavigation } from '../../hooks/useNavigation';
-import { MoviesResponse } from '../../types';
-import StarRating from '../../components/star-rating/StarRatingComponent';
-import { executeWithDelay } from '../../utils/execute-with-delay';
+import StarRating from '../../components/star-rating/star-rating.component';
+import { useFetchMovies } from '../../hooks/use-fetch-movies';
+import { useQueryClient } from '@tanstack/react-query';
 
 const Result: FC = () => {
+  const queryClient = useQueryClient();
   const { replace } = useNavigation();
   const { answers, resetState } = useContext(AppContext);
-  const [loading, setLoading] = useState(true);
-  const result = useRef<MoviesResponse | null>(null);
+  const { data, isFetchMovieLoading, isError } = useFetchMovies(answers);
 
-  const TIME_DELAY = 5000;
+  if (isError) {
+    replace(RoutesUrls.ERROR);
+  }
 
-  useEffect(() => {
-    const loadData = async (signal: AbortSignal) => {
-      if (answers.length < 4) {
-        replace(RoutesUrls.HOME);
-        return;
-      }
-
-      try {
-        const response: MoviesResponse = await executeWithDelay(
-          fetchData('/movies', {
-            mood: answers[0],
-            primaryGenre: answers[1],
-            secondaryGenre: answers[2],
-            epoch: answers[3],
-            signal,
-          }),
-          TIME_DELAY,
-        );
-
-        result.current = response;
-      } catch (error) {
-        replace(RoutesUrls.ERROR);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    const abortController = new AbortController();
-    loadData(abortController.signal);
-
-    return () => {
-      abortController.abort();
-    };
-  });
-
-  const goToStart = () => {
+  const goToStart = useCallback(() => {
     if (resetState) {
       resetState();
     }
-    replace(RoutesUrls.HOME);
-  };
+    setTimeout(() => {
+      queryClient.clear();
+      replace(RoutesUrls.MOVIE);
+    }, 0);
+  }, [resetState, replace, queryClient]);
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-center p-12">
-      {loading ? (
+      {isFetchMovieLoading ? (
         <div className="flex items-center justify-center w-full h-full">
           <LoadingComponent />
         </div>
       ) : (
         <>
           <div className="flex flex-col items-center my-4">
-            {result.current && (
+            {data && (
               <ImageComponent
-                href={`${process.env.NEXT_PUBLIC_THE_MOVIE_DB_IMAGE_BASE_URL}${result.current.backdrop_path}`}
-                title={result.current.title}
-                description={result.current.overview}
+                href={`${process.env.NEXT_PUBLIC_THE_MOVIE_DB_IMAGE_BASE_URL}${data.backdrop_path}`}
+                title={data.title}
+                description={data.overview}
               />
             )}
           </div>
           <div className="flex flex-col items-center my-4">
-            {result.current && (
-              <StarRating rating={result.current.popularity}></StarRating>
-            )}
+            {data && <StarRating rating={data.popularity}></StarRating>}
           </div>
           <div className="my-4 grid">
             <StepsButton
-              text="Refazer novamente"
+              text="Refazer com escolhas diferentes"
               onClick={goToStart}
               testId="go-to-start"
               type={'go-to-start'}
