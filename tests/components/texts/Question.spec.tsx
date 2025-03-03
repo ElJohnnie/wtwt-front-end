@@ -1,5 +1,5 @@
 import React from 'react';
-import Question from '../../../components/texts/Question';
+import Question from '../../../components/texts/question.component';
 import '@testing-library/jest-dom';
 import { renderWithOutContextProvider } from '../../../utils/tests/helpers';
 

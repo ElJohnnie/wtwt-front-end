@@ -2,7 +2,7 @@
 import React, { FC, useContext } from 'react';
 import { useNavigation } from '../../hooks/useNavigation';
 import { RoutesUrls } from '../../utils/enums/routesUrl';
-import StepsButton from '../../components/buttons/StepsButton';
+import StepsButton from '../../components/buttons/steps-button.component';
 import { AppContext } from '../../contexts/AppContext';
 
 const ErrorPage: FC = () => {

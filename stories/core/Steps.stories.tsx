@@ -1,6 +1,6 @@
 import React from 'react';
 import { Meta, StoryFn } from '@storybook/react';
-import Steps from '../../components/core/Steps';
+import Steps from '../../components/core/steps.component';
 import { StepsProps } from '../../types';
 
 export default {

@@ -1,13 +1,13 @@
 'use client';
 import React, { useContext, useEffect } from 'react';
 import { AppContext } from '../../contexts/AppContext';
-import Question from '../../components/texts/Question';
-import ButtonAnswer from '../../components/buttons/ButtonAnswer';
-import Description from '../../components/texts/Description';
-import StepsButton from '../../components/buttons/StepsButton';
+import Question from '../../components/texts/question.component';
+import ButtonAnswer from '../../components/buttons/button-answer.component';
+import Description from '../../components/texts/description.component';
+import StepsButton from '../../components/buttons/steps-button.component';
 import { RoutesUrls } from '../../utils/enums/routesUrl';
 import { useNavigation } from '../../hooks/useNavigation';
-import StepsNew from '../../components/core/StepsNew';
+import StepsNew from '../../components/core/steps-new.component';
 
 const Home: React.FC = () => {
   const {

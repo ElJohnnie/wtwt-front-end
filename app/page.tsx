@@ -1,7 +1,7 @@
 'use client';
 import React from 'react';
 import { Container, Typography, Button, Box, Paper, Grid } from '@mui/material';
-import LoadingComponent from '../components/loading/LoadingComponent';
+import LoadingComponent from '../components/loading/loading.component';
 import Link from 'next/link';
 import {
   Star as StarIcon,
@@ -10,8 +10,8 @@ import {
   Movie as MovieIcon,
   MonetizationOn as MonetizationOnIcon,
 } from '@mui/icons-material';
-import Navbar from '../components/navbar/NavBar';
-import Footer from '../components/footer/Footer';
+import Navbar from '../components/navbar/nav-bar.component';
+import Footer from '../components/footer/footer.component';
 import { RoutesUrls } from '../utils/enums/routesUrl';
 
 const featuresData = [

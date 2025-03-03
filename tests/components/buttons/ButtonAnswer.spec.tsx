@@ -1,6 +1,6 @@
 import React from 'react';
 import { fireEvent } from '@testing-library/react';
-import ButtonAnswer from '../../../components/buttons/ButtonAnswer';
+import ButtonAnswer from '../../../components/buttons/button-answer.component';
 import { renderWithOutContextProvider } from '../../../utils/tests/helpers';
 
 describe('ButtonAnswer', () => {

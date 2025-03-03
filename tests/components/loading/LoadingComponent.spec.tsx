@@ -1,5 +1,5 @@
 import React from 'react';
-import LoadingComponent from '../../../components/loading/LoadingComponent';
+import LoadingComponent from '../../../components/loading/loading.component';
 import { renderWithOutContextProvider } from '../../../utils/tests/helpers';
 
 jest.mock('lottie-react', () => ({

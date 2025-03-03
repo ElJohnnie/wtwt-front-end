@@ -1,12 +1,12 @@
 'use client';
 import React, { FC, useCallback, useContext } from 'react';
-import ImageComponent from '../../components/images/ImageComponent';
-import StepsButton from '../../components/buttons/StepsButton';
-import LoadingComponent from '../../components/loading/LoadingComponent';
+import ImageComponent from '../../components/images/image.component';
+import StepsButton from '../../components/buttons/steps-button.component';
+import LoadingComponent from '../../components/loading/loading.component';
 import { AppContext } from '../../contexts/AppContext';
 import { RoutesUrls } from '../../utils/enums/routesUrl';
 import { useNavigation } from '../../hooks/useNavigation';
-import StarRating from '../../components/star-rating/StarRatingComponent';
+import StarRating from '../../components/star-rating/star-rating.component';
 import { useFetchMovies } from '../../hooks/use-fetch-movies';
 import { useQueryClient } from '@tanstack/react-query';
 

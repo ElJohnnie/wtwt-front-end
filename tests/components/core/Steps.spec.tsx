@@ -1,5 +1,5 @@
 import React from 'react';
-import Steps from '../../../components/core/Steps';
+import Steps from '../../../components/core/steps.component';
 import { renderWithOutContextProvider } from '../../../utils/tests/helpers';
 
 describe('Steps', () => {

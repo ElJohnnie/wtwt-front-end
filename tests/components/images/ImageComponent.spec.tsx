@@ -1,5 +1,5 @@
 import React from 'react';
-import ImageComponent from '../../../components/images/ImageComponent';
+import ImageComponent from '../../../components/images/image.component';
 import { renderWithOutContextProvider } from '../../../utils/tests/helpers';
 
 describe('ImageComponent', () => {

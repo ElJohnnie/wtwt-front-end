@@ -1,5 +1,5 @@
 import React from 'react';
-import StepsButton from '../../../components/buttons/StepsButton';
+import StepsButton from '../../../components/buttons/steps-button.component';
 import { renderWithOutContextProvider } from '../../../utils/tests/helpers';
 
 describe('StepsButton', () => {

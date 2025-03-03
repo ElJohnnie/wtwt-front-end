@@ -1,6 +1,6 @@
 import React from 'react';
 import { Meta, StoryFn } from '@storybook/react';
-import Question from '../../components/texts/Question';
+import Question from '../../components/texts/question.component';
 import { QuestionProps } from '../../types';
 
 export default {
