@@ -1,6 +1,5 @@
 import axios from 'axios';
 
-// ver em respeito do tempo de aguarde
 export const axiosInstance = axios.create({
   baseURL: process.env.NEXT_PUBLIC_API_URL,
   timeout: Infinity,
