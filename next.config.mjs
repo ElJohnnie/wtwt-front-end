@@ -1,5 +1,6 @@
 import withBundleAnalyzer from '@next/bundle-analyzer';
 import BundleSizePlugin from './bundle-size-plugin.mjs';
+import process from 'process';
 
 const bundleAnalyzer = withBundleAnalyzer({
   enabled: false,
@@ -13,6 +14,13 @@ const bundleAnalyzer = withBundleAnalyzer({
 const nextConfig = {
   images: {
     domains: ['community.revelo.com.br', 'image.tmdb.org'],
+  },
+  env: {
+    NEXT_PUBLIC_API_URL: process.env.NEXT_PUBLIC_API_URL,
+    NEXT_PUBLIC_AUTHORIZATION_TOKEN:
+      process.env.NEXT_PUBLIC_AUTHORIZATION_TOKEN,
+    NEXT_PUBLIC_THE_MOVIE_DB_IMAGE_BASE_URL:
+      process.env.NEXT_PUBLIC_THE_MOVIE_DB_IMAGE_BASE_URL,
   },
   async rewrites() {
     return [
