@@ -21,7 +21,7 @@ COPY --from=builder /app/package.json ./
 COPY --from=builder /app/bundle-size-plugin.mjs ./
 COPY ./bootstrap.sh ./bootstrap.sh
 
-RUN chmod +x ./setup-env.sh
+RUN chmod +x ./bootstrap.sh
 
 EXPOSE 3000
 
