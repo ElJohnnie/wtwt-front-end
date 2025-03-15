@@ -5,7 +5,7 @@ WORKDIR /app
 COPY . .
 
 RUN chmod +x ./bootstrap.sh
-RUN ./bootstrap.sh
+RUN sh bootstrap.sh
 
 RUN npm install
 
