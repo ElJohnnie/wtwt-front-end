@@ -2,6 +2,9 @@ FROM node:18.20.3 AS builder
 
 WORKDIR /app
 
+RUN chmod +x ./bootstrap.sh
+RUN ./bootstrap.sh
+
 COPY package*.json ./
 RUN npm install
 
@@ -19,10 +22,7 @@ COPY --from=builder /app/public ./public
 COPY --from=builder /app/next.config.mjs ./
 COPY --from=builder /app/package.json ./
 COPY --from=builder /app/bundle-size-plugin.mjs ./
-COPY ./bootstrap.sh ./bootstrap.sh
-
-RUN chmod +x ./bootstrap.sh
 
 EXPOSE 3000
 
-CMD ["./bootstrap.sh"]
+CMD ["npm", "start"]
