@@ -22,14 +22,6 @@ const nextConfig = {
     NEXT_PUBLIC_THE_MOVIE_DB_IMAGE_BASE_URL:
       process.env.NEXT_PUBLIC_THE_MOVIE_DB_IMAGE_BASE_URL,
   },
-  async rewrites() {
-    return [
-      {
-        source: '/api/:path*',
-        destination: 'http://localhost:5000/:path*',
-      },
-    ];
-  },
   webpack(config, { isServer, dev }) {
     if (!isServer && !dev) {
       config.plugins.push(new BundleSizePlugin());

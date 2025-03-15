@@ -14,6 +14,7 @@ const fetchData = async (
   queryParams: Record<string, unknown> = {},
 ) => {
   try {
+    console.log(axiosInstance.defaults.baseURL);
     const response = await axiosInstance.get(url, {
       params: queryParams,
     });
