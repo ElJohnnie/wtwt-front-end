@@ -1,5 +1,11 @@
 import axios from 'axios';
 
+console.log('NEXT_PUBLIC_API_URL:', process.env.NEXT_PUBLIC_API_URL);
+console.log(
+  'NEXT_PUBLIC_AUTHORIZATION_TOKEN:',
+  process.env.NEXT_PUBLIC_AUTHORIZATION_TOKEN,
+);
+
 const fetchData = async (
   url: string,
   queryParams: Record<string, unknown> = {},
