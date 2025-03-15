@@ -19,14 +19,6 @@ COPY --from=builder /app/next.config.mjs ./
 COPY --from=builder /app/package.json ./
 COPY --from=builder /app/bundle-size-plugin.mjs ./
 
-ARG NEXT_PUBLIC_API_URL
-ARG NEXT_PUBLIC_AUTHORIZATION_TOKEN
-ARG NEXT_PUBLIC_THE_MOVIE_DB_IMAGE_BASE_URL
-
-RUN echo "NEXT_PUBLIC_API_URL=$NEXT_PUBLIC_API_URL" > .env.local \
-    && echo "NEXT_PUBLIC_AUTHORIZATION_TOKEN=$NEXT_PUBLIC_AUTHORIZATION_TOKEN" >> .env.local \
-    && echo "NEXT_PUBLIC_THE_MOVIE_DB_IMAGE_BASE_URL=$NEXT_PUBLIC_THE_MOVIE_DB_IMAGE_BASE_URL" >> .env.local
-
 EXPOSE 3000
 
 CMD ["npm", "start"]
