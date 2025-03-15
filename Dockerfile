@@ -4,8 +4,9 @@ WORKDIR /app
 
 COPY . .
 
-RUN chmod +x ./bootstrap.sh
-RUN sh bootstrap.sh
+RUN echo "NEXT_PUBLIC_API_URL=$NEXT_PUBLIC_API_URL" > .env.local \
+    && echo "NEXT_PUBLIC_AUTHORIZATION_TOKEN=$NEXT_PUBLIC_AUTHORIZATION_TOKEN" >> .env.local \
+    && echo "NEXT_PUBLIC_THE_MOVIE_DB_IMAGE_BASE_URL=$NEXT_PUBLIC_THE_MOVIE_DB_IMAGE_BASE_URL" >> .env.local
 
 RUN npm install
 
@@ -21,6 +22,7 @@ COPY --from=builder /app/public ./public
 COPY --from=builder /app/next.config.mjs ./
 COPY --from=builder /app/package.json ./
 COPY --from=builder /app/bundle-size-plugin.mjs ./
+COPY --from=builder /app/.env.local ./
 
 EXPOSE 3000
 
