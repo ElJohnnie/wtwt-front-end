@@ -2,13 +2,12 @@ FROM node:18.20.3 AS builder
 
 WORKDIR /app
 
+COPY . .
+
 RUN chmod +x ./bootstrap.sh
 RUN ./bootstrap.sh
 
-COPY package*.json ./
 RUN npm install
-
-COPY . .
 
 RUN npm run build
 
