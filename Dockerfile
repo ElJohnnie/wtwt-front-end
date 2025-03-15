@@ -1,11 +1,5 @@
 FROM node:18.20.3 AS builder
 
-ARG NEXT_PUBLIC_API_URL
-ARG NEXT_PUBLIC_AUTHORIZATION_TOKEN
-
-ENV NEXT_PUBLIC_API_URL=${NEXT_PUBLIC_API_URL}
-ENV NEXT_PUBLIC_AUTHORIZATION_TOKEN=${NEXT_PUBLIC_AUTHORIZATION_TOKEN}
-
 WORKDIR /app
 
 COPY package*.json ./
@@ -25,7 +19,10 @@ COPY --from=builder /app/public ./public
 COPY --from=builder /app/next.config.mjs ./
 COPY --from=builder /app/package.json ./
 COPY --from=builder /app/bundle-size-plugin.mjs ./
+COPY ./bootstrap.sh ./bootstrap.sh
+
+RUN chmod +x ./setup-env.sh
 
 EXPOSE 3000
 
-CMD ["npm", "start"]
+CMD ["./setup-env.sh"]
