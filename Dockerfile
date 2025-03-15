@@ -25,4 +25,4 @@ RUN chmod +x ./bootstrap.sh
 
 EXPOSE 3000
 
-CMD ["./setup-env.sh"]
+CMD ["./bootstrap.sh"]
