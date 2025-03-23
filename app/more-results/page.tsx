@@ -58,7 +58,7 @@ const Result: FC = () => {
           </div>
         </>
       )}
-      {isFetchMoreResultsLoading && (
+      {!isFetchMoreResultsLoading && (
         <Button
           variant="contained"
           color="primary"
