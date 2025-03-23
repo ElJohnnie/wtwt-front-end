@@ -1,5 +1,5 @@
 'use client';
-import React, { FC, useContext } from 'react';
+import React, { FC, useCallback, useContext } from 'react';
 import LoadingComponent from '../../components/loading/loading.component';
 import { AppContext } from '../../contexts/AppContext';
 import { RoutesUrls } from '../../utils/enums/routesUrl';
@@ -9,10 +9,12 @@ import { useMoreResults } from '../../hooks/use-more-results';
 import CardComponent from '../../components/card-result/card-result.component';
 import { Button } from '@mui/material';
 import Home from '@mui/icons-material/Home';
+import { useQueryClient } from '@tanstack/react-query';
 
 const Result: FC = () => {
+  const queryClient = useQueryClient();
   const { replace } = useNavigation();
-  const { answers } = useContext(AppContext);
+  const { answers, resetState } = useContext(AppContext);
   const { data } = useFetchMovies(answers);
 
   const {
@@ -24,6 +26,15 @@ const Result: FC = () => {
   if (isError) {
     replace(RoutesUrls.ERROR);
   }
+
+  const goToStart = useCallback(() => {
+    if (resetState) {
+      resetState();
+    }
+
+    queryClient.clear();
+    replace(RoutesUrls.MOVIE);
+  }, [resetState, replace, queryClient]);
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-center p-12 relative">
@@ -45,16 +56,18 @@ const Result: FC = () => {
                 />
               ))}
           </div>
-          <Button
-            variant="contained"
-            color="primary"
-            className="fixed bottom-4 right-4 z-50"
-            startIcon={<Home />}
-            onClick={() => replace(RoutesUrls.MOVIE)}
-          >
-            Refazer algorítmo
-          </Button>
         </>
+      )}
+      {isFetchMoreResultsLoading && (
+        <Button
+          variant="contained"
+          color="primary"
+          className="fixed bottom-4 right-4 z-50"
+          startIcon={<Home />}
+          onClick={goToStart}
+        >
+          Refazer algorítmo
+        </Button>
       )}
     </main>
   );
