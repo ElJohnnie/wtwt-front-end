@@ -1,7 +1,7 @@
 import React from 'react';
 import { StepsButtonProps } from '../../types';
 import { Button } from '@mui/material';
-import { Redo, Undo, Replay } from '@mui/icons-material';
+import { Redo, Undo, Replay, Home, AddCircle } from '@mui/icons-material';
 
 export default function StepsButton(props: Readonly<StepsButtonProps>) {
   const { type, onClick, testId, text } = props;
@@ -14,7 +14,6 @@ export default function StepsButton(props: Readonly<StepsButtonProps>) {
         testId={testId}
         text={text}
       />
-      {/* <p className="text-[18px] mt-1 text-pink-600">{text}</p> */}
     </div>
   );
 }
@@ -25,10 +24,26 @@ function ButtonComponent({
   testId,
   text,
 }: Readonly<StepsButtonProps>) {
-  if (type === 'go-to-start' || type === 'try-again') {
+  if (type === 'try-again') {
     return (
       <Button variant="contained" onClick={onClick} data-testid={testId}>
         <Replay></Replay>
+        <h3>{text}</h3>
+      </Button>
+    );
+  }
+  if (type === 'more-results') {
+    return (
+      <Button variant="contained" onClick={onClick} data-testid={testId}>
+        <AddCircle></AddCircle>
+        <h3>{text}</h3>
+      </Button>
+    );
+  }
+  if (type === 'go-to-start') {
+    return (
+      <Button variant="contained" onClick={onClick} data-testid={testId}>
+        <Home></Home>
         <h3>{text}</h3>
       </Button>
     );
