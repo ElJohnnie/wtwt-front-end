@@ -1,14 +1,13 @@
 'use client';
 import React, { FC, useCallback, useContext } from 'react';
-import ImageComponent from '../../components/images/image.component';
 import StepsButton from '../../components/buttons/steps-button.component';
 import LoadingComponent from '../../components/loading/loading.component';
 import { AppContext } from '../../contexts/AppContext';
 import { RoutesUrls } from '../../utils/enums/routesUrl';
 import { useNavigation } from '../../hooks/useNavigation';
-import StarRating from '../../components/star-rating/star-rating.component';
 import { useFetchMovies } from '../../hooks/use-fetch-movies';
 import { useQueryClient } from '@tanstack/react-query';
+import CardComponent from '../../components/card-result/card-result.component';
 
 const Result: FC = () => {
   const queryClient = useQueryClient();
@@ -24,10 +23,9 @@ const Result: FC = () => {
     if (resetState) {
       resetState();
     }
-    setTimeout(() => {
-      queryClient.clear();
-      replace(RoutesUrls.MOVIE);
-    }, 0);
+
+    queryClient.clear();
+    replace(RoutesUrls.MOVIE);
   }, [resetState, replace, queryClient]);
 
   return (
@@ -40,24 +38,31 @@ const Result: FC = () => {
         <>
           <div className="flex flex-col items-center my-4">
             {data && (
-              <ImageComponent
+              <CardComponent
                 href={`${process.env.NEXT_PUBLIC_THE_MOVIE_DB_IMAGE_BASE_URL}${data.backdrop_path}`}
                 title={data.title}
                 description={data.overview}
+                rating={data.popularity}
+                button1={
+                  <StepsButton
+                    text="Para o início"
+                    onClick={goToStart}
+                    testId="go-to-start"
+                    type={'go-to-start'}
+                  />
+                }
+                button2={
+                  <StepsButton
+                    text="Mais recomendações"
+                    onClick={() => replace(RoutesUrls.MORE_RESULTS)}
+                    testId="go-to-start"
+                    type={'more-results'}
+                  />
+                }
               />
             )}
           </div>
-          <div className="flex flex-col items-center my-4">
-            {data && <StarRating rating={data.popularity}></StarRating>}
-          </div>
-          <div className="my-4 grid">
-            <StepsButton
-              text="Refazer com escolhas diferentes"
-              onClick={goToStart}
-              testId="go-to-start"
-              type={'go-to-start'}
-            />
-          </div>
+          <div className="my-4 grid"></div>
         </>
       )}
     </main>

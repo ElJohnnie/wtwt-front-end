@@ -19,13 +19,13 @@ const featuresData = [
     title: 'Recomendações Personalizadas',
     description:
       'Receba sugestões de filmes com base em seu humor e preferências de gênero.',
-    icon: <StarIcon fontSize="large" sx={{ color: '#FFD700' }} />,
+    icon: <StarIcon fontSize="large" sx={{ color: '#2196F3' }} />,
   },
   {
     title: 'Análise de Clustering',
     description:
       'Utiliza algoritmos de clustering para agrupar filmes semelhantes.',
-    icon: <BarChartIcon fontSize="large" sx={{ color: '#4CAF50' }} />,
+    icon: <BarChartIcon fontSize="large" sx={{ color: '#2196F3' }} />,
   },
   {
     title: 'Filtros Avançados',
@@ -55,10 +55,6 @@ const HeroFeaturesPage = () => {
             textAlign: { xs: 'center', md: 'left' },
           }}
         >
-          <Box sx={{ flex: 1, display: 'flex', justifyContent: 'center' }}>
-            <LoadingComponent />
-          </Box>
-
           <Box sx={{ flex: 1, mt: { xs: 4, md: 0 } }}>
             <Typography
               variant="h2"
@@ -96,13 +92,16 @@ const HeroFeaturesPage = () => {
                   variant="contained"
                   color="primary"
                   size="large"
-                  sx={{ marginTop: 4, marginBottom: 2 }}
+                  sx={{ marginTop: 4, marginBottom: 2, width: '100%' }}
                   startIcon={<MovieIcon />}
                 >
                   Encontrar um filme
                 </Button>
               </Link>
             </Box>
+          </Box>
+          <Box sx={{ flex: 1, display: 'flex', justifyContent: 'center' }}>
+            <LoadingComponent />
           </Box>
         </Box>
 

@@ -36,7 +36,12 @@ export interface AppContextProps {
 }
 
 export interface StepsButtonProps {
-  type: string;
+  type:
+    | 'prev-step'
+    | 'next-step'
+    | 'go-to-start'
+    | 'try-again'
+    | 'more-results';
   onClick?: () => void;
   text?: string;
   testId?: string;
@@ -66,6 +71,9 @@ export interface ImageComponentProps {
   href: string;
   title?: string;
   description?: string;
+  rating: number;
+  button1?: React.ReactElement;
+  button2?: React.ReactElement;
 }
 
 export interface DescriptionProps {
@@ -77,10 +85,29 @@ export interface QuestionProps {
 }
 
 export interface MoviesResponse {
-  backdrop_path: string;
+  id: number;
+  backdrop_path?: string;
   popularity: number;
   title: string;
   overview: string;
+  otherMovies: string[];
+}
+
+export interface MoreResultsResponse {
+  adult: boolean;
+  backdrop_path?: string;
+  genre_ids: number[];
+  id: number;
+  original_language: string;
+  original_title: string;
+  overview: string;
+  popularity: number;
+  poster_path: string;
+  release_date: string;
+  title: string;
+  video: boolean;
+  vote_average: number;
+  vote_count: number;
 }
 
 export type AsyncFunction<TResult, TParams> = TParams extends void

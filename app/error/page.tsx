@@ -9,15 +9,11 @@ const ErrorPage: FC = () => {
   const { replace } = useNavigation();
   const { resetState } = useContext(AppContext);
 
-  const handleBack = () => {
-    replace(RoutesUrls.RESULT);
-  };
-
   const goToStart = () => {
     if (resetState) {
       resetState();
     }
-    replace(RoutesUrls.HOME);
+    replace(RoutesUrls.MOVIE);
   };
   return (
     <div className="flex flex-col items-center justify-center min-h-screen p-4">
@@ -30,7 +26,7 @@ const ErrorPage: FC = () => {
           <StepsButton
             text="Tentar novamente"
             testId="try-again"
-            onClick={handleBack}
+            onClick={goToStart}
             type="try-again"
           />
         </div>
