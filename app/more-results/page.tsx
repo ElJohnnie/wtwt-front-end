@@ -49,7 +49,9 @@ const Result: FC = () => {
               moreResultsData.map((movie) => (
                 <CardComponent
                   key={movie.id}
-                  href={`${process.env.NEXT_PUBLIC_THE_MOVIE_DB_IMAGE_BASE_URL}${movie.backdrop_path}`}
+                  href={`${
+                    process.env.NEXT_PUBLIC_THE_MOVIE_DB_IMAGE_BASE_URL
+                  }${movie.backdrop_path ?? movie.poster_path}`}
                   title={movie.title}
                   description={movie.overview}
                   rating={movie.popularity}
