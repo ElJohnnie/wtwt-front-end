@@ -45,7 +45,7 @@ const Result: FC = () => {
                 rating={data.popularity}
                 button1={
                   <StepsButton
-                    text="Para o início"
+                    text="Refazer as escolhas"
                     onClick={goToStart}
                     testId="go-to-start"
                     type={'go-to-start'}
@@ -53,7 +53,7 @@ const Result: FC = () => {
                 }
                 button2={
                   <StepsButton
-                    text="Mais recomendações"
+                    text="Outras recomendações"
                     onClick={() => replace(RoutesUrls.MORE_RESULTS)}
                     testId="go-to-start"
                     type={'more-results'}
